@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* QuantumHub Design System */
+
+
+
+@layer base {
+  :root {
+    /* QuantumHub Brand Colors */
+    --quantum-black: 0 0% 0%;
+    --quantum-dark-blue: 221 75% 19%;
+    --quantum-purple: 268 37% 27%;
+    --quantum-lilac: 299 30% 55%;
+    --quantum-orange: 37 93% 51%;
+
+    /* Base colors using quantum brand */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 221 75% 19%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 268 37% 27%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 221 75% 95%;
+    --muted-foreground: 221 75% 40%;
+
+    --accent: 299 30% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --quantum-cta: 37 93% 51%;
+    --quantum-cta-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 221 75% 90%;
+    --input: 221 75% 90%;
+    --ring: 221 75% 19%;
+
+    --radius: 0.75rem;
+
+    /* Quantum Gradients */
+    --gradient-quantum: linear-gradient(135deg, hsl(var(--quantum-dark-blue)), hsl(var(--quantum-purple)), hsl(var(--quantum-lilac)));
+    --gradient-quantum-hero: linear-gradient(135deg, hsl(var(--quantum-black)), hsl(var(--quantum-dark-blue)), hsl(var(--quantum-purple)));
+    --gradient-quantum-card: linear-gradient(135deg, hsl(var(--quantum-purple) / 0.1), hsl(var(--quantum-lilac) / 0.1));
+    --gradient-quantum-test: linear-gradient(to bottom,
+          hsl(var(--quantum-purple)),
+          hsl(var(--quantum-lilac)),
+      hsl(var(--quantum-orange)));
+    /* Animations */
+    --transition-quantum: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-float: transform 3s ease-in-out infinite;
+
+    /* Shadows */
+    --shadow-quantum: 0 10px 40px -10px hsl(var(--quantum-purple) / 0.3);
+    --shadow-quantum-glow: 0 0 30px hsl(var(--quantum-lilac) / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-arimo;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-staatliches;
+  }
+
+  .font-flatory {
+    font-family: 'Times New Roman', serif; /* Fallback for Flatory Serif */
+  }
+}
+
+@layer utilities {
+  /* Quantum animations */
+  .animate-quantum-float {
+    animation: quantumFloat 6s ease-in-out infinite;
+  }
+
+  .animate-quantum-pulse {
+    animation: quantumPulse 2s ease-in-out infinite;
+  }
+
+  .animate-quantum-particles {
+    animation: quantumParticles 8s linear infinite;
+  }
+
+  .animate-quantum-superposition {
+    animation: quantumSuperposition 4s ease-in-out infinite;
+  }
+
+
+
+  
+  .animate-quantum-decoherence {
+    animation: quantumDecoherence 6s ease-in-out infinite;
+  }
+
+  .animate-quantum-entanglement {
+    animation: quantumEntanglement 5s linear infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .hover-quantum {
+    transition: var(--transition-quantum);
+  }
+
+  .hover-quantum:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-quantum-glow);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-quantum {
+    background: var(--gradient-quantum);
+  }
+
+  .bg-gradient-quantum-hero {
+    background: var(--gradient-quantum-hero);
+  }
+
+  .bg-gradient-quantum-card {
+    background: var(--gradient-quantum-card);
+  }
+
+  /* Quantum text effects */
+  .text-gradient-quantum {
+    background: var(--gradient-quantum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+    .text-gradient-quantum-test {
+      background: var(--gradient-quantum-test);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientTestShift 10s ease infinite;
+    }
+
+    .bg-gradient-quantum-test {
+      background: var(--gradient-quantum-test);
+      background-size: 400% 400%;
+      animation: gradientTestShift 10s ease infinite;
+    }
+}
+
+@keyframes quantumFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(0px) rotate(0deg); }
+  75% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes quantumPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes quantumParticles {
+  0% { transform: translateX(-100px) translateY(0px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100vw) translateY(-50px); opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes gradientTestShift {
+  0% {
+    background-position: 50% 0%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@keyframes quantumSuperposition {
+  0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+  25% { opacity: 0.8; transform: scale(1.1) rotate(90deg); }
+  50% { opacity: 0.2; transform: scale(0.9) rotate(180deg); }
+  75% { opacity: 0.9; transform: scale(1.05) rotate(270deg); }
+}
+
+@keyframes quantumDecoherence {
+  0% { opacity: 1; filter: blur(0px); }
+  50% { opacity: 0.3; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0px); }
+}
+
+@keyframes quantumEntanglement {
+  0% { transform: translateX(0) rotate(0deg); opacity: 0.5; }
+  25% { transform: translateX(20px) rotate(90deg); opacity: 0.8; }
+  50% { transform: translateX(0) rotate(180deg); opacity: 0.3; }
+  75% { transform: translateX(-20px) rotate(270deg); opacity: 0.9; }
+  100% { transform: translateX(0) rotate(360deg); opacity: 0.5; }
+}
