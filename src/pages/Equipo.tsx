@@ -126,7 +126,7 @@ linkedin: "https://linkedin.com/in/roberto-vega",
     id: 12,
     name: "Miguel",
     position: "Director de Pedagogía",
-    image: "../public/miguel.png",
+    image: "/miguel.png",
     bio: `En los últimos años ha sido docente en ingeniería de sistemas y analítica de datos con más de veinte años de experiencia en educación y labor humanitaria. Inició su carrera en la Cruz Roja Colombiana, donde formó y capacitó a voluntarios en unidades de respuesta ante emergencias y desastres en escenarios urbanos y rurales, hasta alcanzar el cargo de Director de Salud y coordinar el componente sanitario del primer simulacro nacional de erupción volcánica en Colombia.
 
     Posteriormente, orientó su trayectoria hacia la enseñanza de las STEM en educación básica, universitaria y de posgrado. Obtuvo los títulos de pregrado como ingeniero de sistemas y especialista en analítica en la CUN, a su vez es  licenciado en educación básica con énfasis en matemáticas de la Universidad Santo Tomás donde cursa la Maestría en Educación STEM para el desarrollo social. Sus proyectos de grado han combinado saberes ancestrales con tecnologías de vanguardia para democratizar el acceso a las ciencias. Ha liderado proyectos académicos en Internet de las Cosas (IoT) enfocados en cambio climático, desarrolló un prototipo de alerta temprana sísmica con acelerómetros MEMS y diseñó modelos de didáctica matemática adaptados a la comunidad Nasa Yuwe. Cuenta además con certificaciones en computación cuántica otorgadas por IBM y QWorld.
