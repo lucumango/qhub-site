@@ -300,8 +300,23 @@ const Curso = () => {
                 size="lg"
                 className="border-quantum-purple text-quantum-purple hover:bg-quantum-purple hover:text-white px-8 py-6 text-lg hover-quantum"
               >
-                <Link to="/equipo">Conoce a nuestros profesores</Link>
+                <Link to="/equipo">Conoce a nuestro equipo</Link>
               </Button>
+
+              <Button
+    asChild
+    variant="outline"
+    size="lg"
+    className="border-quantum-orange text-quantum-orange hover:bg-quantum-orange hover:text-black px-8 py-6 text-lg hover-quantum"
+  >
+    <a 
+      href="https://drive.google.com/file/d/1eJqaIuTRpVZmG7OEB2ptMqNksSybF977/view?usp=sharing" // ✅ Cambia esto por tu enlace real
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Descargar Brochure
+    </a>
+  </Button>
             </div>
           </div>
         </div>
