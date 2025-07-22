@@ -64,8 +64,13 @@ Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de Yo
     name: "Escarle",
     position: "Asistenta de Diseño",
     image: "https://static.wixstatic.com/media/9552ba_838ffaeec1984963bfa47649ac87bcb4~mv2.png/v1/fill/w_456,h_458,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Captura%20de%20pantalla%202025-07-12%20a%20la(s)%2023_36_51.png",
-    bio: `Adriana Alvarado es una estudiante peruana apasionada por la computación cuántica y la educación STEM. Representó al Perú en la Olimpiada Iberoamericana de Informática (OII) y la Olimpiada Panamericana Femenina de Matemática (PAGMO) en su etapa escolar. Asimismo, en 2022, cofundó SigMath, organización dedicada a mostrar el lado creativo de las matemáticas que ha llegado a 800+ estudiantes de Perú y Latinoamérica. En 2025, cofundó QuantumHub Perú con la visión de formar desde cero a jóvenes en ciencia cuántica, conectándolos con académicos internacionales. Actualmente, es intern en el proyecto de investigación Framework for Efficient Computing in Distributed Quantum Systems, y ha sido nominada al Top 50 del Global Student Prize por su trayectoria y labor educativa.
-Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
+    bio: `Escarle Sánchez Luna es estudiante de Física en la Universidad Autónoma de Santo Domingo (República Dominicana).
+
+Desde pequeña, Escarle sintió una profunda curiosidad por entender el universo. Esa inquietud la llevó a participar en competencias científicas y a representar a la República Dominicana en olimpiadas como la Panamericana de Matemáticas, la Olimpíada Regional de Física y la competencia internacional Space Apps Challenge de la NASA. Fue en ese entorno de olimpiadas y desafíos tecnológicos donde descubrió la necesidad de compartir lo que ella misma había aprendido, reconociendo que muchos de sus logros habían sido posibles gracias a oportunidades que otros le brindaron.
+
+Esa convicción la impulsó a comenzar a formar a otros jóvenes desde muy temprana edad, fundando y liderando iniciativas que han capacitado a +1,000 estudiantes en América Latina. Una de ellas es A. Olimpics, una academia dedicada a entrenar estudiantes para olimpiadas nacionales e internacionales de ciencias y matemáticas, donde algunos de sus alumnos han obtenido medallas en la Olimpiada Centroamericana de Matemáticas. Otro de sus proyectos es LISTEM, una organización enfocada en capacitar a +500 jóvenes en habilidades tecnológicas y de liderazgo aplicadas a la resolución de problemas sociales.
+
+Escarle continúa su camino en la ciencia con especial interés en áreas como la física cuántica, la relatividad y la investigación fundamental. 
 `,
 linkedin: "https://linkedin.com/in/patricia-lima"
   },
