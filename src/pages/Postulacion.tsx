@@ -20,28 +20,21 @@ const Postulacion = () => {
   const timeline = [
     {
       phase: "Postulación",
-      date: "15 Ene - 15 Feb 2025",
+      date: "25 de Julio - 11 Agosto",
       description: "Envío de documentos y formulario de postulación",
       icon: FileText,
       status: "upcoming" as const
     },
     {
       phase: "Evaluación",
-      date: "16 Feb - 28 Feb 2025",
-      description: "Revisión de expedientes y evaluación académica",
+      date: "Sábado 16 de Agosto 3 - 5 PM",
+      description: "Revisión de expedientes y evaluación escrita. Sede: UNI",
       icon: Users,
       status: "upcoming" as const
     },
     {
-      phase: "Entrevistas",
-      date: "01 Mar - 15 Mar 2025",
-      description: "Entrevistas virtuales con candidatos preseleccionados",
-      icon: MessageSquare,
-      status: "upcoming" as const
-    },
-    {
       phase: "Resultados",
-      date: "20 Mar 2025",
+      date: "Domingo 17 de Agosto",
       description: "Publicación de resultados y notificación a admitidos",
       icon: Award,
       status: "upcoming" as const
@@ -144,7 +137,7 @@ const Postulacion = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {timeline.map((phase, index) => (
               <Card 
                 key={index}
