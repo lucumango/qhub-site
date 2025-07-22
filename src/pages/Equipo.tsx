@@ -76,12 +76,10 @@ const teamMembers: TeamMember[] = [
     position: "Directora de Investigación",
     image: "/xd.jpeg",
     bio: `Daniella Alexandra Crysti Vargas Saldaña es una estudiante de Ciencias de la Computación en la Universidad Peruana de Ciencias Aplicadas (UPC). Actualmente combina la ciencia de datos y la ingeniería de software como practicante preprofesional en el Laboratorio de Innovación de El Comercio, el diario más importante de su país. Pronto asumirá un nuevo reto como Data Analyst Intern en el área de Forensics & Data Integrity en EY.
-
-    Apasionada por la tecnología y la educación, está aprendiendo Kotlin para desarrollar aplicaciones Android y desarrolla una app de monitoreo estudiantil para docentes, también está a cargo del sitio de Quantum Hub. Su interés se centra en investigar cómo la inteligencia artificial y el análisis de datos pueden hacer que la tecnología sea más humana y accesible.
     
     A lo largo de su trayectoria, ha representado a Perú en competencias internacionales de programación competitiva, logrando un lugar en el top 1% en la maratón femenina más grande de la región, organizada por la Sociedad Brasileña de Computación en São Paulo. Además, es fundadora del capítulo IEEE Computer Society UPC y ha sido ponente en iniciativas como IEEE Women in Engineering y ACM-Women, impulsando la participación femenina en tecnología.
     
-    Más allá del código, disfruta de la ilustración, practica yoga y hace experimentos en la cocina. Como dato curioso, Daniella nació a los cinco meses de gestación, una historia que refuerza su carácter resiliente.`,
+    Más allá del código, disfruta de la ilustración, el yoga y hacer experimentos en la cocina. Como dato curioso, Daniella nació a los cinco meses de gestación, una historia que refuerza su carácter resiliente.`,
     linkedin: "https://linkedin.com/in/lonelynode",
   },
   {
