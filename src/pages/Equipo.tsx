@@ -26,7 +26,6 @@ const teamMembers: TeamMember[] = [
 
 Fun fact: En plena pandemia, Freddy dejó su carrera de ingeniería en la UNI (Perú) para fundar ScienceTech, la primera academia gratuita online que llegó a miles de estudiantes sin escuela en varios países de América Latina. Desde entonces, ha hecho del inicio incierto su terreno natural: cruzar fronteras, empezar de nuevo, crear comunidad. También encuentra refugio en los cuentos de Borges y Cortázar, donde el tiempo y la realidad se doblan como la luz.`,
     linkedin: "https://linkedin.com/in/ana-garcia",
-    instagram: "https://instagram.com/ana.garcia"
   },
 
   {
@@ -36,7 +35,6 @@ Fun fact: En plena pandemia, Freddy dejó su carrera de ingeniería en la UNI (P
     image: "https://static.wixstatic.com/media/9552ba_68a9b4fc26c6412393cfc35c17e4a4aa~mv2.jpg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_1957_edited_edited.jpg",
     bio: `Vania Alexandra Pachas Acuña. Fundadora, instructora y diseñadora de programas educativos en programación, electrónica y robótica en Tech Para Mí, organización que promueve la educación STEM impactando a más de 170 estudiantes. Lidera Misión Tech, el primer campamento gratuito de robótica del Perú. Becaria de STEM Para Todas 2024 y del curso de Computación Cuántica de The Coding School & Google AI. Desarrolló el capstone "Optimizing Satellite Placement with QAOA", nominado a Mejor Comunicación Visual en el Graduation Showcase. Finalista global top 30 en el NGFP Young Voices Award 2024 y mentee en el REYES Mentorship Program de UC Berkeley.`,
     linkedin: "https://linkedin.com/in/carlos-mendoza",
-    instagram: "https://instagram.com/carlos.mendoza"
   },
   {
     id: 3,
@@ -57,15 +55,19 @@ Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de Yo
 Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
 `,
  linkedin: "https://linkedin.com/in/miguel-santos",
-    instagram: "https://instagram.com/miguel.santos"
   },
   {
     id: 5,
     name: "Escarle",
     position: "Asistenta de Diseño",
     image: "https://static.wixstatic.com/media/9552ba_838ffaeec1984963bfa47649ac87bcb4~mv2.png/v1/fill/w_456,h_458,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Captura%20de%20pantalla%202025-07-12%20a%20la(s)%2023_36_51.png",
-    bio: `Adriana Alvarado es una estudiante peruana apasionada por la computación cuántica y la educación STEM. Representó al Perú en la Olimpiada Iberoamericana de Informática (OII) y la Olimpiada Panamericana Femenina de Matemática (PAGMO) en su etapa escolar. Asimismo, en 2022, cofundó SigMath, organización dedicada a mostrar el lado creativo de las matemáticas que ha llegado a 800+ estudiantes de Perú y Latinoamérica. En 2025, cofundó QuantumHub Perú con la visión de formar desde cero a jóvenes en ciencia cuántica, conectándolos con académicos internacionales. Actualmente, es intern en el proyecto de investigación Framework for Efficient Computing in Distributed Quantum Systems, y ha sido nominada al Top 50 del Global Student Prize por su trayectoria y labor educativa.
-Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
+    bio: `Escarle Sánchez Luna es estudiante de Física en la Universidad Autónoma de Santo Domingo (República Dominicana).
+
+Desde pequeña, Escarle sintió una profunda curiosidad por entender el universo. Esa inquietud la llevó a participar en competencias científicas y a representar a la República Dominicana en olimpiadas como la Panamericana de Matemáticas, la Olimpíada Regional de Física y la competencia internacional Space Apps Challenge de la NASA. Fue en ese entorno de olimpiadas y desafíos tecnológicos donde descubrió la necesidad de compartir lo que ella misma había aprendido, reconociendo que muchos de sus logros habían sido posibles gracias a oportunidades que otros le brindaron.
+
+Esa convicción la impulsó a comenzar a formar a otros jóvenes desde muy temprana edad, fundando y liderando iniciativas que han capacitado a +1,000 estudiantes en América Latina. Una de ellas es A. Olimpics, una academia dedicada a entrenar estudiantes para olimpiadas nacionales e internacionales de ciencias y matemáticas, donde algunos de sus alumnos han obtenido medallas en la Olimpiada Centroamericana de Matemáticas. Otro de sus proyectos es LISTEM, una organización enfocada en capacitar a +500 jóvenes en habilidades tecnológicas y de liderazgo aplicadas a la resolución de problemas sociales.
+
+Escarle continúa su camino en la ciencia con especial interés en áreas como la física cuántica, la relatividad y la investigación fundamental. 
 `,
 linkedin: "https://linkedin.com/in/patricia-lima"
   },
@@ -76,7 +78,6 @@ linkedin: "https://linkedin.com/in/patricia-lima"
     image: "https://static.wixstatic.com/media/9552ba_d0a5ab277f9c410391fb12a1890b9661~mv2.jpg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-12%20at%2018_00_edited.jpg",
     bio: "Especialista en enseñanza de fundamentos cuánticos. Desarrollador del currículo para estudiantes de secundaria.",
     linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
   },
   {
     id: 7,
@@ -87,7 +88,6 @@ linkedin: "https://linkedin.com/in/patricia-lima"
 Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
 `,
 linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
   },
   {
     id: 8,
@@ -96,7 +96,6 @@ linkedin: "https://linkedin.com/in/roberto-vega",
     image: "https://static.wixstatic.com/media/9552ba_4b2b8acc8c32438692b859ae20d855e7~mv2.jpg/v1/crop/x_0,y_137,w_1200,h_1205/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-12%20at%2017_33_37_edited.jpg",
     bio: "Especialista en enseñanza de fundamentos cuánticos. Desarrollador del currículo para estudiantes de secundaria.",
     linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
   },
   {
     id: 9,
@@ -114,7 +113,6 @@ linkedin: "https://linkedin.com/in/roberto-vega",
     image: "https://static.wixstatic.com/media/9552ba_e0c3f6fbdbcc4edbbcc43094b051d3c5~mv2.jpeg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-10%20at%2020_32_04.jpeg",
     bio: "Especialista en enseñanza de fundamentos cuánticos. Desarrollador del currículo para estudiantes de secundaria.",
     linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
   },
   {
     id: 11,
@@ -123,7 +121,6 @@ linkedin: "https://linkedin.com/in/roberto-vega",
     image: "https://static.wixstatic.com/media/9552ba_8fbd2f4da30140368c59f4fb6cc4d753~mv2.jpeg/v1/crop/x_0,y_79,w_1203,h_1209/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-10%20at%2017_09_29.jpeg",
     bio: "Especialista en enseñanza de fundamentos cuánticos. Desarrollador del currículo para estudiantes de secundaria.",
     linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
   },
   {
     id: 12,
@@ -136,7 +133,6 @@ linkedin: "https://linkedin.com/in/roberto-vega",
 
     Con vocación por motivar a sus estudiantes a superar sus dificultades, se destaca tanto por su rigor profesional como por su cercanía humana. Es un hombre de fe, le encantan los conejos y es  aficionado a viajar en moto con su amada esposa.`,
     linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
   }
 ];
 
