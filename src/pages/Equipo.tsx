@@ -53,8 +53,10 @@ Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de Yo
     name: "Gabriela",
     position: "Directora de RRHH",
     image: "https://static.wixstatic.com/media/9552ba_391bb2485b2e405782e9e2ebb9eb9578~mv2.jpg/v1/crop/x_95,y_137,w_1012,h_1127/fill/w_428,h_464,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Foto%20bachiller_edited.jpg",
-    bio: "Especialista en hardware cuántico y sistemas de control. Responsable del laboratorio de computación cuántica.",
-    linkedin: "https://linkedin.com/in/miguel-santos",
+    bio: `Adriana Alvarado es una estudiante peruana apasionada por la computación cuántica y la educación STEM. Representó al Perú en la Olimpiada Iberoamericana de Informática (OII) y la Olimpiada Panamericana Femenina de Matemática (PAGMO) en su etapa escolar. Asimismo, en 2022, cofundó SigMath, organización dedicada a mostrar el lado creativo de las matemáticas que ha llegado a 800+ estudiantes de Perú y Latinoamérica. En 2025, cofundó QuantumHub Perú con la visión de formar desde cero a jóvenes en ciencia cuántica, conectándolos con académicos internacionales. Actualmente, es intern en el proyecto de investigación Framework for Efficient Computing in Distributed Quantum Systems, y ha sido nominada al Top 50 del Global Student Prize por su trayectoria y labor educativa.
+Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
+`,
+ linkedin: "https://linkedin.com/in/miguel-santos",
     instagram: "https://instagram.com/miguel.santos"
   },
   {
@@ -62,8 +64,10 @@ Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de Yo
     name: "Escarle",
     position: "Asistenta de Diseño",
     image: "https://static.wixstatic.com/media/9552ba_838ffaeec1984963bfa47649ac87bcb4~mv2.png/v1/fill/w_456,h_458,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Captura%20de%20pantalla%202025-07-12%20a%20la(s)%2023_36_51.png",
-    bio: "Doctora en Criptografía Cuántica. Especialista en protocolos de seguridad cuántica y distribución de claves.",
-    linkedin: "https://linkedin.com/in/patricia-lima"
+    bio: `Adriana Alvarado es una estudiante peruana apasionada por la computación cuántica y la educación STEM. Representó al Perú en la Olimpiada Iberoamericana de Informática (OII) y la Olimpiada Panamericana Femenina de Matemática (PAGMO) en su etapa escolar. Asimismo, en 2022, cofundó SigMath, organización dedicada a mostrar el lado creativo de las matemáticas que ha llegado a 800+ estudiantes de Perú y Latinoamérica. En 2025, cofundó QuantumHub Perú con la visión de formar desde cero a jóvenes en ciencia cuántica, conectándolos con académicos internacionales. Actualmente, es intern en el proyecto de investigación Framework for Efficient Computing in Distributed Quantum Systems, y ha sido nominada al Top 50 del Global Student Prize por su trayectoria y labor educativa.
+Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
+`,
+linkedin: "https://linkedin.com/in/patricia-lima"
   },
   {
     id: 6,
@@ -79,8 +83,10 @@ Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de Yo
     name: "Nicolas",
     position: "Analista de Productos",
     image: "https://static.wixstatic.com/media/9552ba_43b4cea37392421bad3e1d8a7b5f93de~mv2.png/v1/fill/w_456,h_458,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Captura%20de%20pantalla%202025-07-12%20a%20la(s)%2023_57_31.png",
-    bio: "Especialista en enseñanza de fundamentos cuánticos. Desarrollador del currículo para estudiantes de secundaria.",
-    linkedin: "https://linkedin.com/in/roberto-vega",
+    bio: `Adriana Alvarado es una estudiante peruana apasionada por la computación cuántica y la educación STEM. Representó al Perú en la Olimpiada Iberoamericana de Informática (OII) y la Olimpiada Panamericana Femenina de Matemática (PAGMO) en su etapa escolar. Asimismo, en 2022, cofundó SigMath, organización dedicada a mostrar el lado creativo de las matemáticas que ha llegado a 800+ estudiantes de Perú y Latinoamérica. En 2025, cofundó QuantumHub Perú con la visión de formar desde cero a jóvenes en ciencia cuántica, conectándolos con académicos internacionales. Actualmente, es intern en el proyecto de investigación Framework for Efficient Computing in Distributed Quantum Systems, y ha sido nominada al Top 50 del Global Student Prize por su trayectoria y labor educativa.
+Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.
+`,
+linkedin: "https://linkedin.com/in/roberto-vega",
     instagram: "https://instagram.com/roberto.vega"
   },
   {
@@ -123,8 +129,12 @@ Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de Yo
     id: 12,
     name: "Miguel",
     position: "Director de Pedagogía",
-    image: "https://cdn.britannica.com/70/234870-050-D4D024BB/Orange-colored-cat-yawns-displaying-teeth.jpg",
-    bio: "Especialista en enseñanza de fundamentos cuánticos. Desarrollador del currículo para estudiantes de secundaria.",
+    image: "../public/miguel.png",
+    bio: `En los últimos años ha sido docente en ingeniería de sistemas y analítica de datos con más de veinte años de experiencia en educación y labor humanitaria. Inició su carrera en la Cruz Roja Colombiana, donde formó y capacitó a voluntarios en unidades de respuesta ante emergencias y desastres en escenarios urbanos y rurales, hasta alcanzar el cargo de Director de Salud y coordinar el componente sanitario del primer simulacro nacional de erupción volcánica en Colombia.
+
+    Posteriormente, orientó su trayectoria hacia la enseñanza de las STEM en educación básica, universitaria y de posgrado. Obtuvo los títulos de pregrado como ingeniero de sistemas y especialista en analítica en la CUN, a su vez es  licenciado en educación básica con énfasis en matemáticas de la Universidad Santo Tomás donde cursa la Maestría en Educación STEM para el desarrollo social. Sus proyectos de grado han combinado saberes ancestrales con tecnologías de vanguardia para democratizar el acceso a las ciencias. Ha liderado proyectos académicos en Internet de las Cosas (IoT) enfocados en cambio climático, desarrolló un prototipo de alerta temprana sísmica con acelerómetros MEMS y diseñó modelos de didáctica matemática adaptados a la comunidad Nasa Yuwe. Cuenta además con certificaciones en computación cuántica otorgadas por IBM y QWorld.
+
+    Con vocación por motivar a sus estudiantes a superar sus dificultades, se destaca tanto por su rigor profesional como por su cercanía humana. Es un hombre de fe, le encantan los conejos y es  aficionado a viajar en moto con su amada esposa.`,
     linkedin: "https://linkedin.com/in/roberto-vega",
     instagram: "https://instagram.com/roberto.vega"
   }
