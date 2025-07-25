@@ -15,7 +15,7 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-quantum-hero overflow-hidden">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/722bc348-fb6d-4030-bb5f-2cf1c834e9d1.png')] bg-cover bg-center opacity-30" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 pb-20">
           <div className="animate-fade-in-up">
             <img 
               src="/logo.png" 
@@ -32,7 +32,7 @@ const Home = () => {
 
             
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto font-flatory leading-relaxed">
-              Descubre los misterios de la computación cuántica y únete a la revolución tecnológica que transformará el mundo.
+              El futuro no es determinista: es cuántico. <br></br>Aprende con nosotros sin colapsar tu intuición.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -55,7 +55,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        
+       
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
