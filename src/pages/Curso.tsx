@@ -159,11 +159,11 @@ const Curso = () => {
               </CardHeader>
               <CardContent>
                 <p className="font-arimo text-muted-foreground mb-4">
-                  Pueden postular únicamente al <strong>Módulo 1</strong>, diseñado específicamente 
-                  para introducir los conceptos fundamentales de manera accesible.
+                  Pueden postular únicamente desde el <strong>Módulo 1</strong>, diseñado específicamente 
+                  para introducir los conceptos fundamentales de manera accesible y avanzar hasta el Módulo 3 según su progreso.
                 </p>
                 <Badge variant="outline" className="border-quantum-dark-blue text-quantum-dark-blue">
-                  Solo Módulo 1
+                  Módulos 1, 2, 3 y 4
                 </Badge>
               </CardContent>
             </Card>
@@ -177,7 +177,7 @@ const Curso = () => {
               </CardHeader>
               <CardContent>
                 <p className="font-arimo text-muted-foreground mb-4">
-                  Pueden postular a partir del <strong>Módulo 2</strong>, con la opción de avanzar 
+                  Pueden postular únicanente a partir del <strong>Módulo 2</strong>, con la opción de avanzar 
                   hasta el Módulo 4 según su nivel de conocimiento.
                 </p>
                 <Badge variant="outline" className="border-quantum-purple text-quantum-purple">
