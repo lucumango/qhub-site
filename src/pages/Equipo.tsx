@@ -245,14 +245,8 @@ const Equipo = () => {
                       {selectedMember.position}
                     </p>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setSelectedMember(null)}
-                    className="hover:bg-quantum-purple/10"
-                  >
-                    <X className="w-4 h-4" />
-                  </Button>
+                 
+                  
                 </div>
               </DialogHeader>
 
