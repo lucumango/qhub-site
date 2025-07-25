@@ -150,7 +150,7 @@ const Layout = ({ children }: LayoutProps) => {
             <div>
               <h3 className="font-staatliches text-lg mb-4">Contacto</h3>
               <div className="space-y-2 text-gray-400 font-arimo">
-                <p>@quantumhubperu</p>
+                <p>@quantumhub.pe</p>
                 <p>Lima, Peru</p>
               </div>
             </div>
