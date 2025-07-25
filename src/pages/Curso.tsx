@@ -7,75 +7,85 @@ import QuantumParticles from "@/components/QuantumParticles";
 
 const Curso = () => {
   const modules = [
-    {
-      id: 1,
-      title: "Módulo 1: Fundamentos Cuánticos",
-      target: "Estudiantes de Secundaria",
-      duration: "8 semanas",
-      difficulty: "Principiante",
-      description: "Introducción a los conceptos básicos de la mecánica cuántica y computación cuántica.",
-      topics: [
-        "¿Qué es la computación cuántica?",
-        "Conceptos básicos: superposición y entrelazamiento",
-        "Diferencias con la computación clásica",
-        "Aplicaciones en la vida cotidiana",
-        "Ejercicios prácticos con simuladores"
-      ],
-      prerequisites: "Conocimientos básicos de matemáticas de secundaria",
-      color: "quantum-dark-blue"
-    },
-    {
-      id: 2,
-      title: "Módulo 2: Matemáticas Cuánticas",
-      target: "Estudiantes Universitarios",
-      duration: "10 semanas",
-      difficulty: "Intermedio",
-      description: "Fundamentos matemáticos necesarios para entender la computación cuántica.",
-      topics: [
-        "Álgebra lineal avanzada",
-        "Espacios de Hilbert",
-        "Operadores y matrices unitarias",
-        "Notación de Dirac",
-        "Probabilidades cuánticas"
-      ],
-      prerequisites: "Cálculo diferencial e integral, álgebra lineal básica",
-      color: "quantum-purple"
-    },
-    {
-      id: 3,
-      title: "Módulo 3: Algoritmos Cuánticos",
-      target: "Estudiantes Universitarios",
-      duration: "12 semanas",
-      difficulty: "Avanzado",
-      description: "Estudio detallado de los principales algoritmos cuánticos y sus aplicaciones.",
-      topics: [
-        "Algoritmo de Shor",
-        "Algoritmo de Grover",
-        "Algoritmo de simulación cuántica",
-        "Quantum Machine Learning",
-        "Implementación práctica"
-      ],
-      prerequisites: "Módulo 2 completado, programación básica",
-      color: "quantum-lilac"
-    },
-    {
-      id: 4,
-      title: "Módulo 4: Aplicaciones Industriales",
-      target: "Estudiantes Universitarios",
-      duration: "14 semanas",
-      difficulty: "Experto",
-      description: "Aplicaciones prácticas de la computación cuántica en diferentes industrias.",
-      topics: [
-        "Criptografía cuántica",
-        "Optimización cuántica",
-        "Química cuántica computacional",
-        "Inteligencia artificial cuántica",
-        "Proyecto final de investigación"
-      ],
-      prerequisites: "Módulo 3 completado, experiencia en programación",
-      color: "quantum-orange"
-    }
-  ];
+  {
+    id: 1,
+    title: "Módulo 1: Matemáticas y Computación Científica",
+    target: "Estudiantes de Secundaria (4.º y 5.º)",
+    duration: "4 semanas (25 Ago - 20 Sep)",
+    difficulty: "Introductorio",
+    description:
+      "Este módulo intensivo está diseñado exclusivamente para estudiantes de secundaria admitidos tras examen de ingreso. Nivelará en fundamentos matemáticos y computacionales necesarios para abordar la computación cuántica. No cubre física cuántica ni algoritmos cuánticos.",
+    topics: [
+      "Números complejos: forma polar, módulo, argumento, fórmula de Euler",
+      "Vectores y matrices: producto escalar, ortogonalidad, matrices hermíticas",
+      "Espacios vectoriales y operadores lineales",
+      "Autovalores, autovectores y notación de Dirac",
+      "Probabilidad clásica y cuántica (regla de Born)",
+      "Fundamentos de Python, NumPy y matplotlib",
+      "Simulación básica de operadores y mediciones cuánticas"
+    ],
+    prerequisites: "Álgebra, geometría, trigonometría y probabilidad preuniversitaria",
+    color: "quantum-dark-blue"
+  },
+  {
+    id: 2,
+    title: "Módulo 2: Fundamentos de Computación Cuántica",
+    target: "Estudiantes Universitarios (1.º y 2.º ciclo)",
+    duration: "4 semanas (22 Sep - 19 Oct)",
+    difficulty: "Intermedio",
+    description:
+      "Introducción formal al modelo de qubit, compuertas cuánticas de uno y dos qubits, esfera de Bloch, entrelazamiento y medición. Clases con prácticas en simuladores cuánticos con Qiskit.",
+    topics: [
+      "Qubits y superposición de estados",
+      "Esfera de Bloch y fases relativas",
+      "Compuertas cuánticas (X, Y, Z, Hadamard, CNOT)",
+      "Sistemas compuestos y producto tensorial",
+      "Entrelazamiento cuántico y estados de Bell",
+      "Postulado de medición y colapso del estado",
+      "Introducción al modelo de circuitos cuánticos"
+    ],
+    prerequisites: "Álgebra lineal básica y conocimientos de Python",
+    color: "quantum-purple"
+  },
+  {
+    id: 3,
+    title: "Módulo 3: Protocolos y Algoritmos Cuánticos",
+    target: "Universitarios que completaron el Módulo 2",
+    duration: "4 semanas (27 Oct - 23 Nov)",
+    difficulty: "Avanzado",
+    description:
+      "Profundiza en algoritmos cuánticos y protocolos de información cuántica como teleportación y codificación superdensa. Incluye Deutsch–Jozsa y Grover. Teoría y simulación en Qiskit.",
+    topics: [
+      "Teleportación cuántica",
+      "Codificación superdensa",
+      "Algoritmo de Deutsch–Jozsa",
+      "Algoritmo de Grover",
+      "Comparación de estrategias clásicas y cuánticas",
+      "Construcción e interpretación de circuitos avanzados en Qiskit"
+    ],
+    prerequisites: "QC201 aprobado",
+    color: "quantum-lilac"
+  },
+  {
+    id: 4,
+    title: "Módulo 4: Proyecto de Investigación (Capstone)",
+    target: "Universitarios que completaron el Módulo 3",
+    duration: "3 semanas (01 Dic - 21 Dic)",
+    difficulty: "Aplicado",
+    description:
+      "Proyecto de investigación guiado por mentores para aplicar conocimientos en optimización, QML, simulación de sistemas físicos o análisis de hardware real. Culmina con póster de investigación.",
+    topics: [
+      "Algoritmo de Optimización Cuántica Aproximada (QAOA)",
+      "Quantum Machine Learning (QML)",
+      "Estimación de fase cuántica y Transformada cuántica de Fourier (QFT)",
+      "Simulación variacional de Hamiltonianos",
+      "Comparación entre simuladores y hardware real"
+    ],
+    prerequisites: "QC301 aprobado",
+    color: "quantum-orange"
+  }
+];
+
 
   const benefits = [
     {

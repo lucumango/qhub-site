@@ -18,37 +18,34 @@ import QuantumParticles from "@/components/QuantumParticles";
 
 const Postulacion = () => {
   const timeline = [
-    {
-      phase: "Postulación",
-      date: "25 de Julio - 11 Agosto",
-      description: "Envío de documentos y formulario de postulación",
-      icon: FileText,
-      status: "upcoming" as const
-    },
-    {
-      phase: "Evaluación",
-      date: "Sábado 16 de Agosto 3 - 5 PM",
-      description: "Revisión de expedientes y evaluación escrita. Sedes: UNI, UTEC, UPC. Traer DNI, lapicero y corrector.",
-      icon: Users,
-      status: "upcoming" as const
-    },
-    {
-      phase: "Resultados",
-      date: "Domingo 17 de Agosto",
-      description: "Publicación de resultados y notificación a admitidos",
-      icon: Award,
-      status: "upcoming" as const
-    }
-  ];
+  {
+    phase: "Postulación",
+    date: "25 de Julio - 10 Agosto",
+    description: "Envío de formulario de postulación y verificación de documentos.",
+    icon: FileText,
+    status: "upcoming" as const
+  },
+  {
+    phase: "Evaluación",
+    date: "Sábado 16 de Agosto 3 - 5 PM",
+    description: "Examen de ingreso presencial. Sedes: UNI (Lima Norte) y UTEC (Lima Sur). Traer DNI, lapicero y corrector.",
+    icon: Users,
+    status: "upcoming" as const
+  },
+  {
+    phase: "Resultados",
+    date: "Domingo 17 de Agosto",
+    description: "Publicación de resultados y notificación a admitidos.",
+    icon: Award,
+    status: "upcoming" as const
+  }
+];
 
   const requirements = [
-    "Formulario de postulación completo",
-    "Certificado de estudios (secundaria o universitario)",
-    "Carta de motivación (máximo 500 palabras)",
-    "Dos cartas de recomendación",
-    "Documento de identidad",
-    "Foto tamaño carnet"
-  ];
+  "Formulario de postulación completo",
+  "DNI válido (se requerirá el día del examen)",
+  "Lapicero y corrector (se utilizarán en el examen)"
+];
 
   const collaborators = [
     {
@@ -193,6 +190,8 @@ const Postulacion = () => {
                   </li>
                 ))}
               </ul>
+
+              
               
               <div className="mt-8 p-6 bg-quantum-orange/10 rounded-lg border border-quantum-orange/30">
                 <div className="flex items-start space-x-3">
@@ -202,10 +201,14 @@ const Postulacion = () => {
                       Fecha límite de postulación
                     </h4>
                     <p className="font-arimo text-muted-foreground">
-                      15 de febrero de 2025 a las 11:59 PM (hora de Lima). 
-                      No se aceptarán postulaciones tardías.
-                    </p>
+                  10 de agosto de 2025 a las 11:59 PM (hora Perú) para Módulo 1. <br/>
+                  Módulo 2: Primera semana de septiembre (fecha exacta por confirmar).
+                </p>
+
+
+
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -261,35 +264,116 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {[
         {
-          name: "Álgebra",
+  name: "Álgebra",
+  topics: [
+    "Ecuaciones e inecuaciones lineales",
+    "Factorización y polinomios",
+    "Sistemas de ecuaciones",
+    "Modelado simbólico (programación lineal)",
+    "Funciones"
+  ]
+},
+{
+  name: "Geometría",
+  topics: [
+    "Áreas y volúmenes",
+    "Geometría analítica: coordenadas cartesianas",
+    "Rotaciones, distancia y coordenadas"
+  ]
+},
+{
+  name: "Trigonometría",
+  topics: [
+    "Razones trigonométricas",
+    "Ángulos y triángulos"
+  ]
+},
+{
+  name: "Probabilidad",
+  topics: [
+    "Conteo con y sin reemplazo",
+    "Combinatoria básica",
+    "Eventos compuestos",
+    "Análisis de casos extremos"
+  ]
+}
+
+      ].map((topic, index) => (
+        <Card
+          key={index}
+          className="hover-quantum bg-gradient-quantum-card border-quantum-orange/20 text-center animate-fade-in-up"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          <CardContent className="p-6">
+            <div className="w-16 h-16 mx-auto mb-4 bg-quantum-orange/10 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-8 h-8 text-quantum-orange" />
+            </div>
+            <h3 className="font-staatliches text-xl text-foreground mb-2">
+              {topic.name}
+            </h3>
+            <ul className="font-arimo text-sm text-muted-foreground space-y-1">
+              {topic.topics.map((sub, subIndex) => (
+                <li key={subIndex}>{sub}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section className="py-20 relative z-10">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12 animate-fade-in-up">
+      <h2 className="text-4xl md:text-5xl font-staatliches text-foreground mb-4">
+        Las Fijas del Módulo 2
+      </h2>
+      <p className="text-xl text-muted-foreground font-flatory">
+        Estos son los temas clave del examen para estudiantes universitarios.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          name: "Álgebra Lineal",
           topics: [
-            "Ecuaciones y desigualdades",
-            "Polinomios y factorización",
-            "Sistemas de ecuaciones"
+            "Vectores en ℝⁿ y ℂⁿ",
+            "Matrices hermíticas y unitarias",
+            "Producto escalar",
+            "Operadores",
+            "Autovalores y autovectores"
           ]
         },
         {
-          name: "Trigonometría",
+          name: "Números Complejos",
           topics: [
-            "Razones trigonométricas",
-            "Identidades y ecuaciones",
-            "Ángulos y triángulos"
+            "Forma binómica y polar",
+            "Módulo y argumento",
+            "Operaciones básicas",
+            "Plano complejo",
+            "Fórmula de Euler"
           ]
         },
         {
-          name: "Geometría",
+          name: "Probabilidad y Estadística",
           topics: [
-            "Áreas y volúmenes",
-            "Teorema de Pitágoras",
-            "Circunferencia y polígonos"
+            "Eventos simples y compuestos",
+            "Probabilidad condicional",
+            "Reglas de suma y producto",
+            "Distribuciones discretas",
+            "Análisis de frecuencias"
           ]
         },
         {
-          name: "Probabilidad",
+          name: "Algoritmos",
           topics: [
-            "Conteo y combinatoria",
-            "Eventos y experimentos",
-            "Probabilidad simple"
+            "Pseudocódigo",
+            "Estructuras condicionales",
+            "Bucles",
+            "Definición de funciones",
+            "Eficiencia básica"
           ]
         }
       ].map((topic, index) => (
