@@ -49,51 +49,46 @@ const Postulacion = () => {
 
   const collaborators = [
     {
-      name: "IBM Quantum Network",
-      logo: "https://logos-world.net/wp-content/uploads/2020/09/IBM-Logo.png",
-      description: "Partner tecnológico oficial"
+      name: "Clubes de Ciencia Perú",
+      logo: "/club.jpg",
+      description: "Comunidad educativa"
     },
     {
-      name: "Universidad Nacional Mayor de San Marcos",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/UNMSM_coatofarms_seal.svg",
-      description: "Colaboración académica"
-    },
-    {
-      name: "CONCYTEC",
-      logo: "https://portal.concytec.gob.pe/images/stories/images2013/logo_concytec.png",
+      name: "Universidad Nacional de Ingeniería",
+      logo: "/uni.png",
       description: "Apoyo institucional"
     },
     {
-      name: "Qiskit Community",
-      logo: "https://qiskit.org/images/qiskit-logo.png",
-      description: "Comunidad técnica"
+      name: "Universidad de Ingeniería y Tecnología",
+      logo: "utec.png",
+      description: "Apoyo institucional"
     }
   ];
 
   const faqs = [
     {
       question: "¿Cuánto cuesta el curso?",
-      answer: "El costo varía según el módulo. Módulo 1: S/ 800, Módulos 2-4: S/ 1,200 cada uno. Ofrecemos becas parciales y totales para estudiantes destacados con recursos limitados."
+      answer: "El curso es 100% gratis, por ello contamos con plazas limitadas."
     },
     {
       question: "¿Las clases son presenciales o virtuales?",
-      answer: "Ofrecemos modalidad híbrida: clases presenciales 2 veces por semana en nuestro laboratorio y sesiones virtuales complementarias. Los estudiantes de provincias pueden optar por modalidad 100% virtual."
+      answer: "La modalidad es 100% virtual pues contamos con docentes que dictarán a larga distancia."
     },
     {
-      question: "¿Necesito conocimientos previos de física cuántica?",
-      answer: "Para el Módulo 1 no se requieren conocimientos previos. Para módulos superiores, cada uno tiene prerrequisitos específicos que se detallan en la sección del curso."
+      question: "¿Necesito conocimientos previos de ...?",
+      answer: "Cada módulo tiene prerrequisitos específicos que se detallan en la sección del curso."
     },
     {
       question: "¿Qué certificación obtengo al completar el curso?",
-      answer: "Al completar cada módulo recibes un certificado de QuantumHub Peru. Al completar los 4 módulos, obtienes el Certificado de Especialización en Computación Cuántica."
+      answer: "Al completar el programa recibes un certificado de QuantumHub Perú"
     },
     {
       question: "¿Hay límite de edad para postular?",
-      answer: "No hay límite de edad. Estudiantes de secundaria pueden postular al Módulo 1, y estudiantes universitarios o profesionales pueden postular a partir del Módulo 2."
+      answer: "Los estudiantes de secundaria (menores de edad) pueden postular al Módulo 1, y estudiantes universitarios o de academias preuniversitarias pueden postular a partir del Módulo 2."
     },
     {
       question: "¿Ofrecen apoyo para conseguir trabajo después del curso?",
-      answer: "Sí, tenemos una red de empresas aliadas y ofrecemos orientación profesional, así como conexiones con oportunidades de investigación y desarrollo en el área cuántica."
+      answer: "Tenemos una red de empresas aliadas y profesionales en investigación y desarrollo en el área cuántica, pero no es parte del programa per se."
     }
   ];
 
@@ -449,35 +444,38 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
               Nuestros Colaboradores
             </h2>
             <p className="text-xl text-muted-foreground font-flatory max-w-3xl mx-auto">
-              Trabajamos con las mejores instituciones y empresas para ofrecer una educación de clase mundial.
+              Trabajamos con las mejores instituciones para ofrecer una educación de calidad.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {collaborators.map((collaborator, index) => (
-              <Card 
-                key={index}
-                className="hover-quantum bg-white border-quantum-purple/20 group text-center animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
-                    <img 
-                      src={collaborator.logo}
-                      alt={collaborator.name}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                  <h3 className="font-staatliches text-lg text-foreground mb-2 group-hover:text-quantum-purple transition-colors">
-                    {collaborator.name}
-                  </h3>
-                  <p className="font-arimo text-sm text-muted-foreground">
-                    {collaborator.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+         <div className="flex flex-wrap justify-center gap-8">
+  {collaborators.map((collaborator, index) => (
+    <Card 
+      key={index}
+      className="hover-quantum bg-white border-quantum-purple/20 group text-center animate-fade-in-up flex flex-col items-center w-full sm:w-1/2 lg:w-1/4"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <CardContent className="p-6 flex flex-col items-center">
+        <div className="w-24 h-24 mb-4 rounded-lg flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
+          <img 
+            src={collaborator.logo}
+            alt={collaborator.name}
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+        <h3 className="font-staatliches text-lg text-foreground mb-2 group-hover:text-quantum-purple transition-colors">
+          {collaborator.name}
+        </h3>
+        <p className="font-arimo text-sm text-muted-foreground">
+          {collaborator.description}
+        </p>
+      </CardContent>
+    </Card>
+  ))}
+</div>
+
+
+
         </div>
       </section>
 
