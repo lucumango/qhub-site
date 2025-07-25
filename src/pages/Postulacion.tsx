@@ -11,10 +11,25 @@ import {
   Clock, 
   MessageSquare,
   ChevronRight,
-  HelpCircle
+  HelpCircle,
+  FunctionSquare, 
+  Triangle, 
+  Move3D,
+  Sigma,
+  Percent, 
+  Dice5, 
+  Grid3x3, 
+  Compass,
+  Ruler,
+  Infinity as InfinityIcon, 
+  Circle, 
+  BarChart, 
+  Code, 
+  Cpu 
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import QuantumParticles from "@/components/QuantumParticles";
+import { Bar } from "recharts";
 
 const Postulacion = () => {
   const timeline = [
@@ -260,6 +275,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
       {[
         {
   name: "Álgebra",
+  icon: FunctionSquare,
   topics: [
     "Ecuaciones e inecuaciones lineales",
     "Factorización y polinomios",
@@ -270,6 +286,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
 },
 {
   name: "Geometría",
+  icon: Ruler,
   topics: [
     "Áreas y volúmenes",
     "Geometría analítica: coordenadas cartesianas",
@@ -278,6 +295,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
 },
 {
   name: "Trigonometría",
+  icon: Triangle,
   topics: [
     "Razones trigonométricas",
     "Ángulos y triángulos"
@@ -285,6 +303,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
 },
 {
   name: "Probabilidad",
+  icon: Dice5,
   topics: [
     "Conteo con y sin reemplazo",
     "Combinatoria básica",
@@ -301,7 +320,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
         >
           <CardContent className="p-6">
             <div className="w-16 h-16 mx-auto mb-4 bg-quantum-orange/10 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-8 h-8 text-quantum-orange" />
+              <topic.icon className="w-8 h-8 text-quantum-orange" />
             </div>
             <h3 className="font-staatliches text-xl text-foreground mb-2">
               {topic.name}
@@ -333,6 +352,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
       {[
         {
           name: "Álgebra Lineal",
+          icon: Grid3x3,
           topics: [
             "Vectores en ℝⁿ y ℂⁿ",
             "Matrices hermíticas y unitarias",
@@ -343,6 +363,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
         },
         {
           name: "Números Complejos",
+          icon: InfinityIcon,
           topics: [
             "Forma binómica y polar",
             "Módulo y argumento",
@@ -353,6 +374,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
         },
         {
           name: "Probabilidad y Estadística",
+          icon: BarChart,
           topics: [
             "Eventos simples y compuestos",
             "Probabilidad condicional",
@@ -363,6 +385,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
         },
         {
           name: "Algoritmos",
+          icon: Code,
           topics: [
             "Pseudocódigo",
             "Estructuras condicionales",
@@ -379,7 +402,7 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
         >
           <CardContent className="p-6">
             <div className="w-16 h-16 mx-auto mb-4 bg-quantum-orange/10 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-8 h-8 text-quantum-orange" />
+              <topic.icon className="w-8 h-8 text-quantum-orange" />
             </div>
             <h3 className="font-staatliches text-xl text-foreground mb-2">
               {topic.name}
