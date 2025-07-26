@@ -320,7 +320,7 @@ const Curso = () => {
     className="border-quantum-orange text-quantum-orange hover:bg-quantum-orange hover:text-black px-8 py-6 text-lg hover-quantum"
   >
     <a 
-      href="https://drive.google.com/file/d/1eJqaIuTRpVZmG7OEB2ptMqNksSybF977/view?usp=sharing" // ✅ Cambia esto por tu enlace real
+      href="https://drive.google.com/file/d/150Yq_1kVkldriLvVhFzkCn3hp1WceaqM/view?usp=sharing" // ✅ Cambia esto por tu enlace real
       target="_blank"
       rel="noopener noreferrer"
     >

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -244,12 +245,13 @@ const Postulacion = () => {
                   </div>
                 </div>
                 
-                <Button 
-                  size="lg"
-                  className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold w-full py-4 text-lg hover-quantum"
-                >
-                  Iniciar Postulación
-                </Button>
+<Button
+      asChild
+      size="lg"
+      className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold w-full py-4 text-lg hover-quantum"
+    >
+      <Link to="https://forms.gle/HpPLHeN9SMro19bA6">Iniciar Postulación</Link>
+    </Button>
                 
                 <p className="text-sm text-gray-300 mt-4 font-arimo">
                   El proceso de postulación toma aproximadamente 15-20 minutos
