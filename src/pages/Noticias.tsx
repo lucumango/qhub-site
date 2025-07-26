@@ -15,69 +15,20 @@ interface Article {
   category: string;
   readTime: string;
   featured?: boolean;
-}
-
+}//alianza ocn clubes de ciencia
+//avances cientificos
+//logros de estudiantes
 const articles: Article[] = [
   {
     id: 1,
-    title: "QuantumHub Peru inaugura su primer laboratorio cuántico",
-    description: "Conoce las nuevas instalaciones equipadas con simuladores cuánticos de última generación que permitirán a nuestros estudiantes experimentar directamente con tecnología cuántica.",
+    title: "QuantumHub Peru abre convocatoria para el curso de Computación Cuántica",
+    description: "Conviértete en un pionero de la computación cuántica con nuestro curso intensivo. Inscríbete ahora y forma parte del futuro tecnológico.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
-    author: "Dr. Ana García",
-    date: "15 Dic 2024",
-    category: "Laboratorio",
+    author: "QuantumHub Team",
+    date: "25 Jul 2025",
+    category: "Eventos",
     readTime: "5 min",
     featured: true
-  },
-  {
-    id: 2,
-    title: "Estudiantes de QuantumHub ganan competencia internacional",
-    description: "Un equipo de estudiantes del Módulo 4 obtuvo el primer lugar en la Quantum Computing Challenge 2024, demostrando la excelencia de nuestro programa educativo.",
-    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&h=600&fit=crop",
-    author: "Dr. Carlos Mendoza",
-    date: "02 Dic 2024",
-    category: "Logros",
-    readTime: "3 min"
-  },
-  {
-    id: 3,
-    title: "Nueva alianza con IBM Quantum Network",
-    description: "QuantumHub Peru se convierte en partner académico de IBM Quantum Network, brindando acceso a computadoras cuánticas reales a nuestros estudiantes.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
-    author: "Dra. Elena Rodríguez",
-    date: "28 Nov 2024",
-    category: "Alianzas",
-    readTime: "4 min"
-  },
-  {
-    id: 4,
-    title: "Webinar gratuito: Introducción a la Computación Cuántica",
-    description: "Únete a nuestro webinar abierto donde exploraremos los conceptos básicos de la computación cuántica y sus aplicaciones futuras.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
-    author: "Dr. Roberto Vega",
-    date: "20 Nov 2024",
-    category: "Eventos",
-    readTime: "2 min"
-  },
-  {
-    id: 5,
-    title: "Investigación: Algoritmos cuánticos para optimización logística",
-    description: "Nuestro equipo de investigación publica un paper sobre aplicaciones de algoritmos cuánticos en la optimización de rutas de transporte en Lima.",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=600&fit=crop",
-    author: "Dr. Miguel Santos",
-    date: "12 Nov 2024",
-    category: "Investigación",
-    readTime: "6 min"
-  },
-  {
-    id: 6,
-    title: "Beca de estudios para estudiantes destacados",
-    description: "Anunciamos el programa de becas QuantumHub 2025 para estudiantes de escasos recursos con excelencia académica.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
-    author: "Dra. Patricia Lima",
-    date: "05 Nov 2024",
-    category: "Becas",
-    readTime: "3 min"
   }
 ];
 
