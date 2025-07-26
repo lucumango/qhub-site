@@ -128,7 +128,7 @@ const Postulacion = () => {
             size="lg"
             className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum animate-fade-in-up"
           >
-            <Link to="#apply">¡Postular Ahora!</Link>
+  <a href="#requisitos">¡Postular Ahora!</a>
           </Button>
         </div>
       </section>
@@ -182,7 +182,7 @@ const Postulacion = () => {
       </section>
 
       {/* Requirements Section */}
-      <section className="py-20 bg-gradient-quantum-card/30 relative z-10">
+      <section id="requisitos" className="py-20 bg-gradient-quantum-card/30 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">

@@ -5,7 +5,9 @@
 /* QuantumHub Design System */
 
 
-
+html {
+  scroll-behavior: smooth;
+}
 @layer base {
   :root {
     /* QuantumHub Brand Colors */
