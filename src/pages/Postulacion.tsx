@@ -43,7 +43,7 @@ const Postulacion = () => {
   },
   {
     phase: "Evaluación",
-    date: "Sábado 16 de Agosto 3 - 5 PM",
+    date: "Sábado 16 de Agosto 10:30 AM - 12:30 PM",
     description: "Examen de ingreso presencial. Sedes: UNI (Lima Norte) y UTEC (Lima Sur). Traer DNI, lapicero y corrector.",
     icon: Users,
     status: "upcoming" as const
