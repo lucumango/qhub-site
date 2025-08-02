@@ -9,8 +9,8 @@ const Curso = () => {
   const modules = [
   {
     id: 1,
-    title: "Módulo 1: Matemáticas y Computación Científica",
-    target: "Estudiantes de Secundaria (4.º y 5.º)",
+    title: "QC101 Matemáticas y Computación Científica - Módulo 1",
+    target: "⚠️ Solo escolares",
     duration: "4 semanas (25 Ago - 20 Sep)",
     difficulty: "Introductorio",
     description:
@@ -25,12 +25,12 @@ const Curso = () => {
       "Simulación básica de operadores y mediciones cuánticas"
     ],
     prerequisites: "Álgebra, geometría, trigonometría y probabilidad preuniversitaria",
-    color: "quantum-dark-blue"
+    color: "quantum-orange"
   },
   {
     id: 2,
-    title: "Módulo 2: Fundamentos de Computación Cuántica",
-    target: "Estudiantes Universitarios (1.º y 2.º ciclo)",
+    title: "QC201 Fundamentos de Computación Cuántica -  Módulo 2",
+    target: "⚠️ Inicio de universitarios",
     duration: "4 semanas (22 Sep - 19 Oct)",
     difficulty: "Intermedio",
     description:
@@ -45,12 +45,12 @@ const Curso = () => {
       "Introducción al modelo de circuitos cuánticos"
     ],
     prerequisites: "Álgebra lineal básica y conocimientos de Python",
-    color: "quantum-purple"
+    color: "quantum-orange"
   },
   {
     id: 3,
-    title: "Módulo 3: Protocolos y Algoritmos Cuánticos",
-    target: "Universitarios que completaron el Módulo 2",
+    title: "QC301 Protocolos y Algoritmos Cuánticos - Módulo 3",
+    target: "Estudiantes de Quantum Hub",
     duration: "4 semanas (27 Oct - 23 Nov)",
     difficulty: "Avanzado",
     description:
@@ -68,8 +68,8 @@ const Curso = () => {
   },
   {
     id: 4,
-    title: "Módulo 4: Proyecto de Investigación (Capstone)",
-    target: "Universitarios que completaron el Módulo 3",
+    title: "QC401 Proyecto de Investigación (Capstone) -  Módulo 4",
+    target: "Estudiantes de Quantum Hub",
     duration: "3 semanas (01 Dic - 21 Dic)",
     difficulty: "Aplicado",
     description:
@@ -82,7 +82,7 @@ const Curso = () => {
       "Comparación entre simuladores y hardware real"
     ],
     prerequisites: "QC301 aprobado",
-    color: "quantum-orange"
+    color: "quantum-lilac"
   }
 ];
 
@@ -106,7 +106,7 @@ const Curso = () => {
     {
       icon: Clock,
       title: "Horarios Flexibles",
-      description: "Clases presenciales y virtuales adaptadas a tu horario"
+      description: "Clases virtuales \nMartes y Jueves | 6:00 - 8:00 pm \nSábados | 11:30 - 1:30 pm"
     }
   ];
 
@@ -130,7 +130,7 @@ const Curso = () => {
             size="lg"
             className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum animate-fade-in-up"
           >
-            <Link to="/postulacion">¡Inscríbete Ahora!</Link>
+            <Link to="/https://forms.gle/HpPLHeN9SMro19bA6">¡Inscríbete Ahora!</Link>
           </Button>
         </div>
       </section>
@@ -177,7 +177,7 @@ const Curso = () => {
               </CardHeader>
               <CardContent>
                 <p className="font-arimo text-muted-foreground mb-4">
-                  Pueden postular únicanente a partir del <strong>Módulo 2</strong>, con la opción de avanzar 
+                  Pueden postular únicamente a partir del <strong>Módulo 2</strong>, con la opción de avanzar 
                   hasta el Módulo 4 según su nivel de conocimiento.
                 </p>
                 <Badge variant="outline" className="border-quantum-purple text-quantum-purple">
@@ -277,7 +277,7 @@ const Curso = () => {
                   <benefit.icon className="w-8 h-8 text-quantum-orange" />
                 </div>
                 <h3 className="font-staatliches text-xl mb-3">{benefit.title}</h3>
-                <p className="font-arimo text-gray-200">{benefit.description}</p>
+                <p className="font-arimo text-gray-200 whitespace-pre-line">{benefit.description}</p>
               </div>
             ))}
           </div>

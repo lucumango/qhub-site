@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     position: "Co-Fundadora | Directora de Diseño",
     image: "https://static.wixstatic.com/media/9552ba_68a9b4fc26c6412393cfc35c17e4a4aa~mv2.jpg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_1957_edited_edited.jpg",
     bio: `Vania Alexandra Pachas Acuña. Fundadora, instructora y diseñadora de programas educativos en programación, electrónica y robótica en Tech Para Mí, organización que promueve la educación STEM impactando a más de 170 estudiantes. Lidera Misión Tech, el primer campamento gratuito de robótica del Perú. Becaria de STEM Para Todas 2024 y del curso de Computación Cuántica de The Coding School & Google AI. Desarrolló el capstone "Optimizing Satellite Placement with QAOA", nominado a Mejor Comunicación Visual en el Graduation Showcase. Finalista global top 30 en el NGFP Young Voices Award 2024 y mentee en el REYES Mentorship Program de UC Berkeley.`,
-    linkedin: "https://linkedin.com/in/carlos-mendoza",
+    linkedin: "https://www.linkedin.com/in/vania-pachas/",
   },
   {
     id: 3,
@@ -43,44 +43,7 @@ const teamMembers: TeamMember[] = [
     image: "https://static.wixstatic.com/media/9552ba_f436e85ab35c468e8fe421c206f00932~mv2.jpg/v1/crop/x_4,y_60,w_798,h_816/fill/w_454,h_464,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-12%20at%2012_01_05_edited.jpg",
     bio: `Adriana Alvarado es una estudiante peruana apasionada por la computación cuántica y la educación STEM. Representó al Perú en la Olimpiada Iberoamericana de Informática (OII) y la Olimpiada Panamericana Femenina de Matemática (PAGMO) en su etapa escolar. Asimismo, en 2022, cofundó SigMath, organización dedicada a mostrar el lado creativo de las matemáticas que ha llegado a 800+ estudiantes de Perú y Latinoamérica. En 2025, cofundó QuantumHub Perú con la visión de formar desde cero a jóvenes en ciencia cuántica, conectándolos con académicos internacionales. Actualmente, es intern en el proyecto de investigación Framework for Efficient Computing in Distributed Quantum Systems, y ha sido nominada al Top 50 del Global Student Prize por su trayectoria y labor educativa.
     Escribe y graba momentos que no quiere olvidar desde niña. Tiene un canal de YouTube privado donde guarda esos recuerdos como tesoros personales.`,
-    linkedin: "https://linkedin.com/in/elena-rodriguez"
-  },
-  {
-    id: 4,
-    name: "Gabriela",
-    position: "Directora de RRHH",
-    image: "https://static.wixstatic.com/media/9552ba_391bb2485b2e405782e9e2ebb9eb9578~mv2.jpg/v1/crop/x_95,y_137,w_1012,h_1127/fill/w_428,h_464,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Foto%20bachiller_edited.jpg",
-    bio: `Soy Psicóloga Organizacional, perteneciente al tercio superior de la Universidad Nacional Mayor de San Marcos. Actualmente, me encuentro cursando una especialización en la Escuela de Posgrado Centrum PUCP, además tengo certificados en metodología de la enseñanza y coaching. 
-    Dentro de mi experiencia laboral, laboro en el área de Gestión del Talento Humano en empresas del rubro industrial, inmobiliario y educativo a nivel nacional y trasnacional. A lo largo de mi carrera, he sido reconocida por mis líderes por mi alto nivel de compromiso, proactividad y resultados sostenidos, destacando como talento de alto rendimiento dentro de los equipos en los que he participado. 
-    Me considero una persona empática, asertiva, responsable y alegre, siempre dispuesta a apoyar, brindar ideas nuevas frente a cualquier situación que se presente. Desde muy pequeña siempre he mostrado interés por el cuidado de animales, es por ello que actualmente mi mascota Mora se ha convertido en una inspiración fundamental para mí.
-
-    Fun fact: Visito al menos una o dos veces al mes a mi fisioterapeuta debido a que constantemente sufro alguna lesión o esguince, especialmente en mi tobillo.`,
-  linkedin: "https://linkedin.com/in/miguel-santos",
-  },
-  {
-    id: 12,
-    name: "Miguel",
-    position: "Director de Pedagogía",
-    image: "/miguel.png",
-    bio: `En los últimos años ha sido docente en ingeniería de sistemas y analítica de datos con más de veinte años de experiencia en educación y labor humanitaria. Inició su carrera en la Cruz Roja Colombiana, donde formó y capacitó a voluntarios en unidades de respuesta ante emergencias y desastres en escenarios urbanos y rurales, hasta alcanzar el cargo de Director de Salud y coordinar el componente sanitario del primer simulacro nacional de erupción volcánica en Colombia.
-
-    Posteriormente, orientó su trayectoria hacia la enseñanza de las STEM en educación básica, universitaria y de posgrado. Obtuvo los títulos de pregrado como ingeniero de sistemas y especialista en analítica en la CUN, a su vez es  licenciado en educación básica con énfasis en matemáticas de la Universidad Santo Tomás donde cursa la Maestría en Educación STEM para el desarrollo social. Sus proyectos de grado han combinado saberes ancestrales con tecnologías de vanguardia para democratizar el acceso a las ciencias. Ha liderado proyectos académicos en Internet de las Cosas (IoT) enfocados en cambio climático, desarrolló un prototipo de alerta temprana sísmica con acelerómetros MEMS y diseñó modelos de didáctica matemática adaptados a la comunidad Nasa Yuwe. Cuenta además con certificaciones en computación cuántica otorgadas por IBM y QWorld.
-
-    Con vocación por motivar a sus estudiantes a superar sus dificultades, se destaca tanto por su rigor profesional como por su cercanía humana. Es un hombre de fe, le encantan los conejos y es  aficionado a viajar en moto con su amada esposa.`,
-    linkedin: "https://linkedin.com/in/roberto-vega",
-  },
-
-  {
-    id: 10,
-    name: "Daniella",
-    position: "Directora de Investigación",
-    image: "/xd.jpeg",
-    bio: `Daniella Alexandra Crysti Vargas Saldaña es una estudiante de Ciencias de la Computación en la Universidad Peruana de Ciencias Aplicadas (UPC). Actualmente combina la ciencia de datos y la ingeniería de software como practicante preprofesional en el Laboratorio de Innovación de El Comercio, el diario más importante de su país. Pronto asumirá un nuevo reto como Data Analyst Intern en el área de Forensics & Data Integrity en EY.
-    
-    A lo largo de su trayectoria, ha representado a Perú en competencias internacionales de programación competitiva, logrando un lugar en el top 1% en la maratón femenina más grande de la región, organizada por la Sociedad Brasileña de Computación en São Paulo. Además, es fundadora del capítulo IEEE Computer Society UPC y ha sido ponente en iniciativas como IEEE Women in Engineering y ACM-Women, impulsando la participación femenina en tecnología.
-    
-    Más allá del código, disfruta de la ilustración, el yoga y hacer experimentos en la cocina. Como dato curioso, Daniella nació a los cinco meses de gestación, una historia que refuerza su carácter resiliente.`,
-    linkedin: "https://linkedin.com/in/lonelynode",
+    linkedin: "https://www.linkedin.com/in/adriana-alvarado-leon/"
   },
   {
     id: 9,
@@ -88,23 +51,7 @@ const teamMembers: TeamMember[] = [
     position: "Director Logístico",
     image: "https://static.wixstatic.com/media/9552ba_30e02b10ca7549b29e1311a1a7491761~mv2.jpeg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9552ba_30e02b10ca7549b29e1311a1a7491761~mv2.jpeg",
     bio: `¡Hola! Me llamo Manuel Francisco Cáceres Maldonado. Soy bachiller en Ingeniería Industrial de la Universidad de Ciencias y Humanidades, y actualmente me desempeño como practicante de procesos en la empresa logística Dinet. Entre mis logros puedo resaltar haber concluido mi carrera universitaria dentro del décimo superior, haber publicado un artículo científico en una base de datos internacional, haber ganado el consurso "Creatón" en mi universidad, y haber sido seleccionado como uno de los representantes de la UCH en el evento de jóvenes líderes CADE Universitario 2024. Las cosas que me llaman la atención son muy variadas y van desde tópicos como la cultura y la historia, hasta los autos y el automovilismo en toda su diversidad. Por último, mis hobbies definitivos son las caminatas de noche y las conversaciones largas y tendidas.`,
-    linkedin: "https://linkedin.com/in/roberto-vega",
-    instagram: "https://instagram.com/roberto.vega"
-  },
-  {
-    id: 8,
-    name: "Osmar",
-    position: "Director de Marketing",
-    image: "https://static.wixstatic.com/media/9552ba_4b2b8acc8c32438692b859ae20d855e7~mv2.jpg/v1/crop/x_0,y_137,w_1200,h_1205/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-12%20at%2017_33_37_edited.jpg",
-    bio: `Estudiante de Ciencias de la Computación en UTEC
-
-    Logros personales, académicos, honores:
-    Miembro activo de Modo Serio Academy, una organización educativa acreditada por la SENAJU.
-    Participación en concursos de matemáticas y apasionado por su estudio.
-                                                                                                                                                                                                                                      Experiencia liderando y colaborando en iniciativas educativas y voluntariados sociales.
-                                                                                                                                                                                                                                      Participación destacada en la Semana del Espacio y en eventos tecnológicos
-    Fun fact: Me gusta practicar downhill y jugar fútbol en mis tiempos libres. También disfruto resolver problemas matemáticos por diversión y crear proyectos tecnológicos con impacto social.`,
-    linkedin: "https://linkedin.com/in/roberto-vega",
+    linkedin: "https://www.linkedin.com/in/manuelcáceresmaldonado/",
   },
   
   {
@@ -117,7 +64,19 @@ const teamMembers: TeamMember[] = [
 
     Ha ganado dos hackatones de desarrollo web.
     Le gusta nadar y todo sobre la vida marina.`,
-    linkedin: "https://linkedin.com/in/roberto-vega",
+    linkedin: "https://www.linkedin.com/in/rocio-lizeth-valentin-carhuancho-59651a195/",
+  },
+  {
+    id: 10,
+    name: "Daniella",
+    position: "Directora de Investigación",
+    image: "/xd.jpeg",
+    bio: `Daniella Alexandra Crysti Vargas Saldaña es una estudiante de Ciencias de la Computación en la Universidad Peruana de Ciencias Aplicadas (UPC). Actualmente combina la ciencia de datos y la ingeniería de software como practicante preprofesional en el Laboratorio de Innovación de El Comercio, el diario más importante de su país. Pronto asumirá un nuevo reto como Data Analyst Intern en el área de Forensics & Data Integrity en EY.
+    
+    A lo largo de su trayectoria, ha representado a Perú en competencias internacionales de programación competitiva, logrando un lugar en el top 1% en la maratón femenina más grande de la región, organizada por la Sociedad Brasileña de Computación en São Paulo. Además, es fundadora del capítulo IEEE Computer Society UPC y ha sido ponente en iniciativas como IEEE Women in Engineering y ACM-Women, impulsando la participación femenina en tecnología.
+    
+    Más allá del código, disfruta de la ilustración, el yoga y hacer experimentos en la cocina. Como dato curioso, Daniella nació a los cinco meses de gestación, una historia que refuerza su carácter resiliente.`,
+    linkedin: "https://linkedin.com/in/lonelynode",
   },
   {
     id: 7,
@@ -138,7 +97,22 @@ const teamMembers: TeamMember[] = [
       •⁠  ⁠⁠Me gustan las películas y sobretodo en el cine.
       •⁠  ⁠⁠Me encanta mi soledad. No obstante, también disfruto pasar tiempo con las personas que aprecio y amo.
       `,
-linkedin: "https://linkedin.com/in/roberto-vega",
+linkedin: "https://www.linkedin.com/in/mestanza-cipriani/",
+  },
+  {
+    id: 8,
+    name: "Osmar",
+    position: "Director de Marketing",
+    image: "https://static.wixstatic.com/media/9552ba_4b2b8acc8c32438692b859ae20d855e7~mv2.jpg/v1/crop/x_0,y_137,w_1200,h_1205/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202025-07-12%20at%2017_33_37_edited.jpg",
+    bio: `Estudiante de Ciencias de la Computación en UTEC
+
+    Logros personales, académicos, honores:
+    Miembro activo de Modo Serio Academy, una organización educativa acreditada por la SENAJU.
+    Participación en concursos de matemáticas y apasionado por su estudio.
+                                                                                                                                                                                                                                      Experiencia liderando y colaborando en iniciativas educativas y voluntariados sociales.
+                                                                                                                                                                                                                                      Participación destacada en la Semana del Espacio y en eventos tecnológicos
+    Fun fact: Me gusta practicar downhill y jugar fútbol en mis tiempos libres. También disfruto resolver problemas matemáticos por diversión y crear proyectos tecnológicos con impacto social.`,
+    linkedin: "https://www.linkedin.com/in/osmar-vilchez-51212a205/",
   },
   {
     id: 5,
@@ -149,7 +123,29 @@ linkedin: "https://linkedin.com/in/roberto-vega",
     Desde pequeña, Escarle sintió una profunda curiosidad por entender el universo. Esa inquietud la llevó a participar en competencias científicas y a representar a la República Dominicana en olimpiadas como la Panamericana de Matemáticas, la Olimpíada Regional de Física y la competencia internacional Space Apps Challenge de la NASA. Fue en ese entorno de olimpiadas y desafíos tecnológicos donde descubrió la necesidad de compartir lo que ella misma había aprendido, reconociendo que muchos de sus logros habían sido posibles gracias a oportunidades que otros le brindaron.
     Esa convicción la impulsó a comenzar a formar a otros jóvenes desde muy temprana edad, fundando y liderando iniciativas que han capacitado a +1,000 estudiantes en América Latina. Una de ellas es A. Olimpics, una academia dedicada a entrenar estudiantes para olimpiadas nacionales e internacionales de ciencias y matemáticas, donde algunos de sus alumnos han obtenido medallas en la Olimpiada Centroamericana de Matemáticas. Otro de sus proyectos es LISTEM, una organización enfocada en capacitar a +500 jóvenes en habilidades tecnológicas y de liderazgo aplicadas a la resolución de problemas sociales.
     Escarle continúa su camino en la ciencia con especial interés en áreas como la física cuántica, la relatividad y la investigación fundamental.`,
-    linkedin: "https://linkedin.com/in/patricia-lima"
+    linkedin: "https://www.linkedin.com/in/escarle-luna-515454247/"
+  },
+  {
+    id: 12,
+    name: "Miguel",
+    position: "Director de Pedagogía",
+    image: "/miguel.png",
+    bio: `En los últimos años ha sido docente en ingeniería de sistemas y analítica de datos con más de veinte años de experiencia en educación y labor humanitaria. Inició su carrera en la Cruz Roja Colombiana, donde formó y capacitó a voluntarios en unidades de respuesta ante emergencias y desastres en escenarios urbanos y rurales, hasta alcanzar el cargo de Director de Salud y coordinar el componente sanitario del primer simulacro nacional de erupción volcánica en Colombia.
+
+    Posteriormente, orientó su trayectoria hacia la enseñanza de las STEM en educación básica, universitaria y de posgrado. Obtuvo los títulos de pregrado como ingeniero de sistemas y especialista en analítica en la CUN, a su vez es  licenciado en educación básica con énfasis en matemáticas de la Universidad Santo Tomás donde cursa la Maestría en Educación STEM para el desarrollo social. Sus proyectos de grado han combinado saberes ancestrales con tecnologías de vanguardia para democratizar el acceso a las ciencias. Ha liderado proyectos académicos en Internet de las Cosas (IoT) enfocados en cambio climático, desarrolló un prototipo de alerta temprana sísmica con acelerómetros MEMS y diseñó modelos de didáctica matemática adaptados a la comunidad Nasa Yuwe. Cuenta además con certificaciones en computación cuántica otorgadas por IBM y QWorld.
+
+    Con vocación por motivar a sus estudiantes a superar sus dificultades, se destaca tanto por su rigor profesional como por su cercanía humana. Es un hombre de fe, le encantan los conejos y es  aficionado a viajar en moto con su amada esposa.`,
+  },
+{
+    id: 4,
+    name: "Gabriela",
+    position: "Directora de RRHH",
+    image: "https://static.wixstatic.com/media/9552ba_391bb2485b2e405782e9e2ebb9eb9578~mv2.jpg/v1/crop/x_95,y_137,w_1012,h_1127/fill/w_428,h_464,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Foto%20bachiller_edited.jpg",
+    bio: `Soy Psicóloga Organizacional, perteneciente al tercio superior de la Universidad Nacional Mayor de San Marcos. Actualmente, me encuentro cursando una especialización en la Escuela de Posgrado Centrum PUCP, además tengo certificados en metodología de la enseñanza y coaching. 
+    Dentro de mi experiencia laboral, laboro en el área de Gestión del Talento Humano en empresas del rubro industrial, inmobiliario y educativo a nivel nacional y trasnacional. A lo largo de mi carrera, he sido reconocida por mis líderes por mi alto nivel de compromiso, proactividad y resultados sostenidos, destacando como talento de alto rendimiento dentro de los equipos en los que he participado. 
+    Me considero una persona empática, asertiva, responsable y alegre, siempre dispuesta a apoyar, brindar ideas nuevas frente a cualquier situación que se presente. Desde muy pequeña siempre he mostrado interés por el cuidado de animales, es por ello que actualmente mi mascota Mora se ha convertido en una inspiración fundamental para mí.
+
+    Fun fact: Visito al menos una o dos veces al mes a mi fisioterapeuta debido a que constantemente sufro alguna lesión o esguince, especialmente en mi tobillo.`,
   },
 
   {
@@ -161,9 +157,8 @@ linkedin: "https://linkedin.com/in/roberto-vega",
     •⁠  ⁠Estudiante de Ciencias de la Computación en la UPC
     •⁠  ⁠Quinto superior en secundaria y beneficiario de la beca Laureate Transforma 2025-2
     •⁠  ⁠Fun fact: Amante de la música indie, practico guitarra y canto. Además soy apasionado a las ciencias exactas, especialmente la física.`,
-    linkedin: "https://linkedin.com/in/roberto-vega",
   }
-];
+  ];
 
 const Equipo = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);

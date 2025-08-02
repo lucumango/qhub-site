@@ -16,7 +16,6 @@ const Layout = ({ children }: LayoutProps) => {
     { name: "Inicio", href: "/" },
     { name: "Curso", href: "/curso" },
     { name: "Equipo", href: "/equipo" },
-    { name: "Noticias", href: "/noticias" },
   ];
 
   const isActivePath = (path: string) => {

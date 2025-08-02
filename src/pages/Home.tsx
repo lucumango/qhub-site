@@ -41,7 +41,7 @@ const Home = () => {
                 size="lg"
                 className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum"
               >
-                <Link to="/postulacion">¡Inscríbete Ahora!</Link>
+                <Link to="https://forms.gle/HpPLHeN9SMro19bA6">¡Inscríbete Ahora!</Link>
               </Button>
               
               <Button 
@@ -94,7 +94,7 @@ const Home = () => {
               {
                 icon: Calendar,
                 title: "Flexibilidad",
-                description: "Horarios adaptados para estudiantes y profesionales",
+                description: "Clases virtuales \nMartes y Jueves | 6:00 - 8:00 pm \nSábados | 11:30 - 1:30 pm",
                 color: "quantum-lilac"
               },
               {
@@ -112,7 +112,7 @@ const Home = () => {
                   <CardTitle className="font-staatliches text-xl">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-center font-arimo">
+                  <CardDescription className="text-center font-arimo whitespace-pre-line">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
@@ -129,8 +129,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
             {[
               { number: "4", label: "Módulos Especializados", description: "Desde fundamentos hasta aplicaciones avanzadas" },
-              { number: "12", label: "Instructores Expertos", description: "Investigadores y profesionales del área" },
-              { number: "100+", label: "Estudiantes Formados", description: "Preparados para el futuro cuántico" }
+              { number: "4", label: "Instructores Expertos", description: "Investigadores y profesionales del área" },
+              { number: "1°", label: "Escuela cuántica en el Perú", description: "Somos pioneros en la educación" }
             ].map((stat, index) => (
               <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
                 <div className="text-6xl font-staatliches text-quantum-orange mb-2 animate-quantum-pulse">
@@ -164,7 +164,7 @@ const Home = () => {
           size="lg"
           className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-12 py-6 text-xl hover-quantum"
         >
-          <Link to="/postulacion">¡Inscríbete Ahora!</Link>
+          <Link to="https://forms.gle/HpPLHeN9SMro19bA6">¡Inscríbete Ahora!</Link>
         </Button>
       </div>
     </div>

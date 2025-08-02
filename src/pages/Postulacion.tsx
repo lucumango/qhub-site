@@ -71,12 +71,12 @@ const Postulacion = () => {
     },
     {
       name: "Universidad Nacional de Ingeniería",
-      logo: "/uni.png",
+      logo: "/unii.webp",
       description: "Apoyo institucional"
     },
     {
       name: "Universidad de Ingeniería y Tecnología",
-      logo: "utec.png",
+      logo: "/logoUTEC_horizontal.png",
       description: "Apoyo institucional"
     }
   ];
@@ -254,7 +254,7 @@ const Postulacion = () => {
     </Button>
                 
                 <p className="text-sm text-gray-300 mt-4 font-arimo">
-                  El proceso de postulación toma aproximadamente 15-20 minutos
+                  El proceso de postulación toma aproximadamente 5 minutos
                 </p>
               </CardContent>
             </Card>
