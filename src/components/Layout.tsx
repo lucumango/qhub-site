@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Mail, MapPin, AtSign } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -115,12 +116,16 @@ const Layout = ({ children }: LayoutProps) => {
 
       {/* Footer */}
       <footer className="bg-quantum-black text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
+  <div className="max-w-screen-xl mx-auto px-6" >
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 ">
+      <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-quantum-orange rounded-full flex items-center justify-center">
-                  <span className="text-quantum-black font-bold text-lg">Q</span>
+                                
+<div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+                  <Link to="/" className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+  <img src="/logo.png" alt="Logo QHub" className="w-full h-full object-contain" />
+</Link>
+
                 </div>
                 <span className="font-staatliches text-xl">QuantumHub Peru</span>
               </div>
@@ -128,9 +133,7 @@ const Layout = ({ children }: LayoutProps) => {
                 Escuela de Computación Cuántica dedicada a formar la próxima generación de científicos y tecnólogos cuánticos.
               </p>
             </div>
-            <div className="animate-quantum-float"> ... </div>
-
-            <div>
+      <div>
               <h3 className="font-staatliches text-lg mb-4">Enlaces</h3>
               <ul className="space-y-2 font-arimo">
                 {navigation.map((item) => (
@@ -145,22 +148,35 @@ const Layout = ({ children }: LayoutProps) => {
                 ))}
               </ul>
             </div>
-            
-            <div>
-              <h3 className="font-staatliches text-lg mb-4">Contacto</h3>
-              <div className="space-y-2 text-gray-400 font-arimo">
-                <p>@quantumhub.pe</p>
-                <p>Lima, Peru</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 font-arimo">
-            <p>&copy; 2024 QuantumHub Peru. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <div>
+  <h3 className="font-staatliches text-lg mb-4">Contacto</h3>
+  <ul className="space-y-2 font-arimo">
+    <li className="flex items-center gap-2 text-gray-400 hover:text-quantum-orange transition-colors">
+      <AtSign className="w-4 h-4" />
+      <span>quantumhub.pe</span>
+    </li>
+    <li className="flex items-center gap-2 text-gray-400 hover:text-quantum-orange transition-colors">
+      <Mail className="w-4 h-4" />
+      <a href="mailto:contacto@qhubperu.org" className="hover:underline">
+        contacto@qhubperu.org
+      </a>
+    </li>
+    <li className="flex items-center gap-2 text-gray-400 hover:text-quantum-orange transition-colors">
+      <MapPin className="w-4 h-4" />
+      <span>Lima, Perú</span>
+    </li>
+  </ul>
+</div>
     </div>
+
+    <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 font-arimo">
+      <p>&copy; 2025 QuantumHub Peru. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
   );
 };
 

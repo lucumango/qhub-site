@@ -515,12 +515,16 @@ Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes d
               Nuestro equipo está listo para ayudarte con cualquier duda sobre el proceso de admisión o nuestros programas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg"
-                className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum"
-              >
-                Contactar Admisiones
-              </Button>
+              <Button
+  asChild
+  size="lg"
+  className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum"
+>
+  <a href="mailto:contacto@qhubperu.org">
+    Contactar Admisiones
+  </a>
+</Button>
+
               
               <Button 
                 asChild
