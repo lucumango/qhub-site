@@ -95,8 +95,8 @@ const Curso = () => {
     },
     {
       icon: Users,
-      title: "Grupos Reducidos",
-      description: "Máximo 20 estudiantes por módulo para atención personalizada"
+      title: "Docentes especializados",
+      description: "Instructores internacionales con maestrías y doctorados en el área"
     },
     {
       icon: Target,
