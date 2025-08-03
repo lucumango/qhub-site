@@ -128,7 +128,7 @@ const Postulacion = () => {
             size="lg"
             className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum animate-fade-in-up"
           >
-  <a href="#requisitos">¡Postular Ahora!</a>
+  <a href="https://forms.gle/HpPLHeN9SMro19bA6">¡Postular Ahora!</a>
           </Button>
         </div>
       </section>
@@ -240,8 +240,8 @@ const Postulacion = () => {
                     <Badge className="bg-quantum-orange text-quantum-black">Módulo 1</Badge>
                   </div>
                   <div className="flex items-center justify-between py-2 border-b border-white/20">
-                    <span className="font-arimo">Estudiantes Universitarios</span>
-                    <Badge className="bg-quantum-orange text-quantum-black">Módulos 2-4</Badge>
+                    <span className="font-arimo">Estudiantes Universitarios (proximamente)</span>
+                    <Badge className="bg-quantum-orange text-quantum-black">Módulo 2</Badge>
                   </div>
                 </div>
                 
