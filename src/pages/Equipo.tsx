@@ -135,6 +135,8 @@ linkedin: "https://www.linkedin.com/in/mestanza-cipriani/",
     Posteriormente, orientó su trayectoria hacia la enseñanza de las STEM en educación básica, universitaria y de posgrado. Obtuvo los títulos de pregrado como ingeniero de sistemas y especialista en analítica en la CUN, a su vez es  licenciado en educación básica con énfasis en matemáticas de la Universidad Santo Tomás donde cursa la Maestría en Educación STEM para el desarrollo social. Sus proyectos de grado han combinado saberes ancestrales con tecnologías de vanguardia para democratizar el acceso a las ciencias. Ha liderado proyectos académicos en Internet de las Cosas (IoT) enfocados en cambio climático, desarrolló un prototipo de alerta temprana sísmica con acelerómetros MEMS y diseñó modelos de didáctica matemática adaptados a la comunidad Nasa Yuwe. Cuenta además con certificaciones en computación cuántica otorgadas por IBM y QWorld.
 
     Con vocación por motivar a sus estudiantes a superar sus dificultades, se destaca tanto por su rigor profesional como por su cercanía humana. Es un hombre de fe, le encantan los conejos y es  aficionado a viajar en moto con su amada esposa.`,
+    linkedin: "https://www.linkedin.com/in/ui4054/"
+
   },
 {
     id: 4,
@@ -146,6 +148,7 @@ linkedin: "https://www.linkedin.com/in/mestanza-cipriani/",
     Me considero una persona empática, asertiva, responsable y alegre, siempre dispuesta a apoyar, brindar ideas nuevas frente a cualquier situación que se presente. Desde muy pequeña siempre he mostrado interés por el cuidado de animales, es por ello que actualmente mi mascota Mora se ha convertido en una inspiración fundamental para mí.
 
     Fun fact: Visito al menos una o dos veces al mes a mi fisioterapeuta debido a que constantemente sufro alguna lesión o esguince, especialmente en mi tobillo.`,
+    linkedin: "https://www.linkedin.com/in/gabriela-fernanda-granados-santos/"
   },
 
   {
@@ -157,6 +160,8 @@ linkedin: "https://www.linkedin.com/in/mestanza-cipriani/",
     •⁠  ⁠Estudiante de Ciencias de la Computación en la UPC
     •⁠  ⁠Quinto superior en secundaria y beneficiario de la beca Laureate Transforma 2025-2
     •⁠  ⁠Fun fact: Amante de la música indie, practico guitarra y canto. Además soy apasionado a las ciencias exactas, especialmente la física.`,
+      linkedin: "https://www.linkedin.com/in/alvaro-steven-de-tomas-sanchez-03a8b32b6/"
+
   }
   ];
 
