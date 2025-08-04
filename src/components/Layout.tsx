@@ -15,9 +15,9 @@ const Layout = ({ children }: LayoutProps) => {
 
   const navigation = [
     { name: "Inicio", href: "/" },
-    { name: "Curso", href: "/curso" },
-    { name: "Equipo", href: "/equipo" },
     { name: "Nosotros", href: "/nosotros" },
+    { name: "Curso", href: "/curso" },
+    { name: "Equipo", href: "/equipo" }
   ];
 
   const isActivePath = (path: string) => {
