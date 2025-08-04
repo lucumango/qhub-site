@@ -72,8 +72,7 @@ const Home = () => {
               ¿Por qué QuantumHub?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-flatory">
-              Somos la primera escuela especializada en computación cuántica de Perú, 
-              ofreciendo educación de vanguardia para estudiantes de secundaria y universidad.
+              Somos la primera escuela en América Latina especializada en computación cuántica con un enfoque pedagógico para estudiantes de secundaria y pregrado.
             </p>
           </div>
 
@@ -129,8 +128,8 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
             {[
               { number: "4", label: "Módulos Especializados", description: "Desde fundamentos hasta aplicaciones avanzadas" },
-              { number: "6", label: "Instructores Expertos", description: "Investigadores y profesionales del área" },
-              { number: "1°", label: "Escuela cuántica en el Perú", description: "Somos pioneros en la educación" }
+              { number: "7", label: "Instructores Expertos", description: "Investigadores y profesionales del área" },
+              { number: "10", label: "Países", description: "Nuestra comunidad cuántica tiene presencia en todo el mundo" }
             ].map((stat, index) => (
               <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
                 <div className="text-6xl font-staatliches text-quantum-orange mb-2 animate-quantum-pulse">

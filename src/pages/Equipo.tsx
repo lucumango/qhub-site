@@ -22,9 +22,9 @@ const teamMembers: TeamMember[] = [
     name: "Freddy",
     position: "CEO & Co-Fundador | Director Académico",
     image: "https://static.wixstatic.com/media/9552ba_f3dbc54381484acc86aca2089f93982c~mv2.jpeg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Headshot%20(Edited).jpeg",
-    bio: `Freddy es físico y matemático por Amherst College (EE.UU.) y actualmente trabaja en el Center for Quantum Networks de la Universidad de Maryland, donde investiga fuentes de luz cuántica y plataformas ópticas para comunicaciones cuánticas. En 2024 participó en diversas conferencias internacionales en Austria, Argentina, y Estados Unidos, donde su trabajo fue reconocido con el Best Poster Award por la Universidad de Harvard. En 2025, la escasa representación hispanohablante que presenció en estos espacios lo impulsó a fundar QuantumHub, un proyecto pionero dirigido a formar la primera generación de estudiantes latinos que buscan iniciarse en las ciencia cuánticas.
+    bio: `Freddy Herrera Cueva es físico y matemático por Amherst College (EE.UU.) y actualmente trabaja en el Center for Quantum Networks de la Universidad de Maryland, donde investiga plataformas ópticas para una internet cuántica. En 2024 presentó en diversas conferencias en Austria, Argentina, y Estados Unidos, donde su trabajo fue reconocido con el Best Poster Award por la Universidad de Harvard. La escasa representación latina que presenció en estos espacios lo impulsó a fundar Quantum Hub este 2025.
 
-    Fun fact: En plena pandemia, Freddy dejó su carrera de ingeniería en la UNI (Perú) para fundar ScienceTech, la primera academia gratuita online que llegó a miles de estudiantes sin escuela en varios países de América Latina. Desde entonces, ha hecho del inicio incierto su terreno natural: cruzar fronteras, empezar de nuevo, crear comunidad. También encuentra refugio en los cuentos de Borges y Cortázar, donde el tiempo y la realidad se doblan como la luz.`,
+Fun fact: En plena pandemia a inicios del 2020, Freddy dejó su carrera de ingeniería en la UNI (Perú) para fundar ScienceTech, la primera academia gratuita online que llegó a miles de estudiantes en América Latina. Desde entonces, ha hecho del inicio incierto su terreno natural: cruzar fronteras, empezar de nuevo, crear comunidad.`,
     linkedin: "https://linkedin.com/in/fredyhc2001",
   },
 
