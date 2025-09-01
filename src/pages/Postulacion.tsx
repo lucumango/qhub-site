@@ -36,21 +36,21 @@ const Postulacion = () => {
   const timeline = [
   {
     phase: "Postulación",
-    date: "25 de Julio - 10 Agosto",
+    date: "1 de Septiembre - 7 de Septiembre",
     description: "Envío de formulario de postulación y verificación de documentos.",
     icon: FileText,
     status: "upcoming" as const
   },
   {
     phase: "Evaluación",
-    date: "Sábado 16 de Agosto 10:30 AM - 12:30 PM",
-    description: "Examen de ingreso presencial. Sedes: UNI (Lima Norte) y UTEC (Lima Sur). Traer DNI, lapicero y corrector.",
+    date: "Sábado 13 de Septiembre 3:00 PM - 5:00 PM",
+    description: "Examen de ingreso presencial. Sede UTEC. Traer DNI, lapicero y corrector.",
     icon: Users,
     status: "upcoming" as const
   },
   {
     phase: "Resultados",
-    date: "Domingo 17 de Agosto",
+    date: "Domingo 14 de Septiembre",
     description: "Publicación de resultados y notificación a admitidos.",
     icon: Award,
     status: "upcoming" as const
@@ -69,11 +69,7 @@ const Postulacion = () => {
       logo: "/club.jpg",
       description: "Comunidad educativa"
     },
-    {
-      name: "Universidad Nacional de Ingeniería",
-      logo: "/unii.webp",
-      description: "Apoyo institucional"
-    },
+
     {
       name: "Universidad de Ingeniería y Tecnología",
       logo: "/logoUTEC_horizontal.png",
@@ -209,11 +205,10 @@ const Postulacion = () => {
                   <Clock className="w-5 h-5 text-quantum-orange mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="font-staatliches text-lg text-quantum-orange mb-2">
-                      Fecha límite de postulación
+                      Atención
                     </h4>
                     <p className="font-arimo text-muted-foreground">
-                  10 de agosto de 2025 a las 11:59 PM (hora Perú) para Módulo 1. <br/>
-                  Módulo 2: Primera semana de septiembre (fecha exacta por confirmar).
+                  Toma en cuenta que para este módulo la única sede para rendir el examen de admisión será la UTEC.
                 </p>
 
 
@@ -263,81 +258,6 @@ const Postulacion = () => {
       </section>
 
 {/* Las Fijas Section */}
-<section className="py-20 relative z-10">
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12 animate-fade-in-up">
-      <h2 className="text-4xl md:text-5xl font-staatliches text-foreground mb-4">
-        Las Fijas del Módulo 1
-      </h2>
-      <p className="text-xl text-muted-foreground font-flatory">
-Los siguientes temas serán evaluados en la prueba de ingreso para estudiantes de secundaria.      </p>
-    </div>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {[
-        {
-  name: "Álgebra",
-  icon: FunctionSquare,
-  topics: [
-    "Ecuaciones e inecuaciones lineales",
-    "Factorización y polinomios",
-    "Sistemas de ecuaciones",
-    "Modelado simbólico (programación lineal)",
-    "Funciones"
-  ]
-},
-{
-  name: "Geometría",
-  icon: Ruler,
-  topics: [
-    "Áreas y volúmenes",
-    "Geometría analítica: coordenadas cartesianas",
-    "Rotaciones, distancia y coordenadas"
-  ]
-},
-{
-  name: "Trigonometría",
-  icon: Triangle,
-  topics: [
-    "Razones trigonométricas",
-    "Ángulos y triángulos"
-  ]
-},
-{
-  name: "Probabilidad",
-  icon: Dice5,
-  topics: [
-    "Conteo con y sin reemplazo",
-    "Combinatoria básica",
-    "Eventos compuestos",
-    "Análisis de casos extremos"
-  ]
-}
-
-      ].map((topic, index) => (
-        <Card
-          key={index}
-          className="hover-quantum bg-gradient-quantum-card border-quantum-orange/20 text-center animate-fade-in-up"
-          style={{ animationDelay: `${index * 0.1}s` }}
-        >
-          <CardContent className="p-6">
-            <div className="w-16 h-16 mx-auto mb-4 bg-quantum-orange/10 rounded-full flex items-center justify-center">
-              <topic.icon className="w-8 h-8 text-quantum-orange" />
-            </div>
-            <h3 className="font-staatliches text-xl text-foreground mb-2">
-              {topic.name}
-            </h3>
-            <ul className="font-arimo text-sm text-muted-foreground space-y-1">
-              {topic.topics.map((sub, subIndex) => (
-                <li key={subIndex}>{sub}</li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section>
 
 <section className="py-20 relative z-10">
   <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
