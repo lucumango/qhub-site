@@ -22,7 +22,7 @@ Our site’s mission is to share information, resources, and opportunities for a
 
 ## 🌐 Live Website
 
-Visit our site here: **[https://qhub-site.vercel.app](https://qhub-site.vercel.app)**  
+Visit our site here: **[http://qhubperu.com](http://qhubperu.com)**  
 
 ---
 
