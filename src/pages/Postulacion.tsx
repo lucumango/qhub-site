@@ -96,7 +96,7 @@ const Postulacion = () => {
     },
     {
       question: "¿Hay límite de edad para postular?",
-      answer: "Los estudiantes de secundaria (menores de edad) pueden postular al Módulo 1, y estudiantes universitarios o de academias preuniversitarias pueden postular a partir del Módulo 2."
+      answer: "Los estudiantes de secundaria (menores de edad) pueden postular al Módulo 1, y estudiantes universitarios de 1er a 4to ciclo o de academias preuniversitarias pueden postular a partir del Módulo 2."
     },
     {
       question: "¿Ofrecen apoyo para conseguir trabajo después del curso?",
@@ -124,7 +124,7 @@ const Postulacion = () => {
             size="lg"
             className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum animate-fade-in-up"
           >
-  <a href="https://forms.gle/HpPLHeN9SMro19bA6">¡Postular Ahora!</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDyYljeJ77f_a_AB0QAMNIx0eWbWhP8AbCmPmujsEglqxwJw/viewform">¡Postular Ahora!</a>
           </Button>
         </div>
       </section>
