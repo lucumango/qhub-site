@@ -71,11 +71,11 @@ Fun fact: En plena pandemia a inicios del 2020, Freddy dejó su carrera de ingen
     name: "Daniella",
     position: "Directora de Investigación",
     image: "/xd.jpeg",
-    bio: `Daniella Alexandra Crysti Vargas Saldaña es una estudiante de Ciencias de la Computación en la Universidad Peruana de Ciencias Aplicadas (UPC). Actualmente combina la ciencia de datos y la ingeniería de software como practicante preprofesional en el Laboratorio de Innovación de El Comercio, el diario más importante de su país. Pronto asumirá un nuevo reto como Data Analyst Intern en el área de Forensics & Data Integrity en EY.
-    
-    A lo largo de su trayectoria, ha representado a Perú en competencias internacionales de programación competitiva, logrando un lugar en el top 1% en la maratón femenina más grande de la región, organizada por la Sociedad Brasileña de Computación en São Paulo. Además, es fundadora del capítulo IEEE Computer Society UPC y ha sido ponente en iniciativas como IEEE Women in Engineering y ACM-Women, impulsando la participación femenina en tecnología.
-    
-    Más allá del código, disfruta de la ilustración, el yoga y hacer experimentos en la cocina. Como dato curioso, Daniella nació a los cinco meses de gestación, una historia que refuerza su carácter resiliente.`,
+    bio: `Daniella Vargas estudia Ciencias de la Computación en la UPC. Hoy forma parte del equipo de Forensics & Integrity Services en EY y colabora con el Laboratorio de Innovación de El Comercio.
+
+    Ha representado al Perú en competencias internacionales de programación competitiva, logrando estar en el top 1% de la maratón femenina más grande de la región, en São Paulo. Fundó el capítulo IEEE Computer Society UPC y ha compartido su experiencia como ponente y tutora en distintas iniciativas, como Quantum Hub, donde acompaña a estudiantes en su camino con algoritmos y estructuras de datos.
+
+    Más allá de la tecnología, disfruta dibujar y practicar yoga. Nació a los cinco meses de gestación, una historia que refleja su espíritu resiliente y lleno de energía.`,
     linkedin: "https://linkedin.com/in/lonelynode",
   },
   {
