@@ -41,7 +41,7 @@ const Home = () => {
                 size="lg"
                 className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold px-8 py-4 text-lg hover-quantum"
               >
-                <Link to="https://forms.gle/HpPLHeN9SMro19bA6">¡Inscríbete Ahora!</Link>
+                <Link to="https://forms.gle/KscwJ4Qv1R5uFbn47">¡Inscríbete Ahora!</Link>
               </Button>
               
               <Button 
