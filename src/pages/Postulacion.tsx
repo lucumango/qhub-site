@@ -245,7 +245,7 @@ const Postulacion = () => {
       size="lg"
       className="bg-quantum-cta hover:bg-quantum-cta/90 text-quantum-cta-foreground font-bold w-full py-4 text-lg hover-quantum"
     >
-      <Link to="https://forms.gle/HpPLHeN9SMro19bA6">Iniciar Postulación</Link>
+      <Link to="https://forms.gle/KscwJ4Qv1R5uFbn47">Iniciar Postulación</Link>
     </Button>
                 
                 <p className="text-sm text-gray-300 mt-4 font-arimo">
