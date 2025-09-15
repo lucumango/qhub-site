@@ -16,9 +16,9 @@ import Aprendizaje from "./pages/Aprendizaje";
 import React, { Suspense, lazy } from "react";
 const queryClient = new QueryClient();
 
-const Modulo1 = lazy(() => import("./pages/Modulo1"));
-const Modulo2 = lazy(() => import("./pages/Modulo2"));
-const Modulo3 = lazy(() => import("./pages/Modulo3"));
+const Modulo1 = lazy(() => import("./pages/modulos/Modulo1"));
+const Modulo2 = lazy(() => import("./pages/modulos/Modulo2"));
+const Modulo3 = lazy(() => import("./pages/modulos/Modulo3"));
 
 const routes = [
   { path: "/aprendizaje/modulo1", component: Modulo1 },
