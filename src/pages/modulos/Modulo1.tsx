@@ -1,10 +1,693 @@
-import React from "react";
+// Modulo1.tsx (Refactorizado)
+import React, { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Lightbulb, Zap, Atom, Cpu, Binary, Infinity, Sparkles, Scale } from "lucide-react";
+import { motion } from "framer-motion";
 
-const Modulo1 = () => (
-  <div className="max-w-2xl mx-auto py-12 px-4">
-    <h1 className="text-3xl font-bold mb-8 text-center">Módulo 1</h1>
-    <p className="text-lg text-center">Contenido del Módulo 1.</p>
-  </div>
-);
+import { aplicacionesCuanticas } from "@/data/quantumData";
+import ConceptClassification from "@/components/ConceptClassification"; 
+
+const Modulo1 = () => {
+  const [bitState, setBitState] = useState(false);
+  const [qubitRotation, setQubitRotation] = useState(0);
+
+  return (
+    <div className="relative min-h-screen bg-background">
+      <section className="relative py-20 bg-gradient-quantum-hero overflow-hidden">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <h1 className="text-4xl md:text-6xl font-staatliches text-white mb-6 animate-fade-in-up">
+            De Bits a Qubits: El salto cuántico
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto font-flatory animate-fade-in-up leading-relaxed">
+            Descubre cómo la información cuántica revoluciona nuestra
+            comprensión de la computación y abre las puertas a un futuro
+            tecnológico extraordinario
+          </p>
+          <div className="pt-10 text-white">
+            <p className="font-arimo italic text-lg md:text-xl max-w-3xl mx-auto">
+              "¡Hola! Soy <strong>Schrödi</strong>, tu guía en este viaje
+              cuántico. <br />
+              Te mostraré los secretos del mundo subatómico. <br />
+              <span className="text-quantum-orange font-bold">
+                ¡Sígueme y descubramos juntos el fascinante universo de los
+                qubits!
+              </span>
+              "
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute right-20 z-20">
+          <div className="relative">
+            <img
+              src="/mascota/schrodi-standing.jpeg"
+              loading="lazy"
+              alt="Schrödi, tu guía cuántico"
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain rounded-full border-4 border-quantum-orange shadow-2xl bg-white/10 backdrop-blur-sm"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Contenido */}
+      <section className="py-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-24">
+          {/* Sección 1: La Pregunta Inicial */}
+          <div className="relative animate-fade-in-up">
+            <div className="absolute -top-8 -left-8 w-24 h-24 bg-quantum-purple/10 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-quantum-orange/10 rounded-full blur-xl"></div>
+
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
+              <h2 className="text-3xl md:text-5xl font-staatliches text-foreground mb-8 text-center">
+                ¿Por qué nos importa la cuántica?
+              </h2>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
+                  <p className="text-xl">
+                    La palabra "cuántica" puede sonar intimidante, como algo
+                    reservado solo para científicos con batas blancas. Sin embargo,
+                    su impacto ya está en nuestras vidas y promete revolucionar la
+                    tecnología, desde los ordenadores hasta la medicina.
+                  </p>
+
+                  <p className="text-lg">
+                    Imagina una tecnología tan potente que podría resolver problemas
+                    que hoy nos parecen imposibles, o crear materiales con
+                    propiedades nunca antes vistas. La física cuántica es la llave a
+                    ese futuro, un mundo donde las reglas de lo muy pequeño son
+                    extrañas y fascinantes.
+                  </p>
+
+                  <p className="text-lg">
+                    No estamos hablando de ciencia ficción. Estamos hablando de la
+                    próxima revolución tecnológica que definirá el siglo XXI, y
+                    sígueme en este viaje para ser parte de ella.
+                  </p>
+                </div>
+
+                <div className="relative flex justify-center">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-quantum-orange/20 rounded-full blur-2xl scale-150"></div>
+                    <img
+                      src="/mascota/schrodi-profile.jpeg"
+                      loading="lazy"
+                      alt="Schrödi pensando"
+                      className="relative w-48 h-48 md:w-56 md:h-56 object-cover rounded-full border-4 border-quantum-orange shadow-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative -mt-8 ml-8 md:ml-16">
+              <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl hover-quantum backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-quantum-orange shadow-lg">
+                      <img
+                        src="/mascota/schrodi-profile.jpeg"
+                        loading="lazy"
+                        alt="Schrödi"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="font-staatliches text-quantum-orange text-xl">
+                      Dato Cuántico de Schrödi
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-quantum-orange/10 p-6 rounded-xl border-l-4 border-quantum-orange">
+                    <p className="font-arimo text-lg leading-relaxed">
+                      <strong>
+                        ¿Sabías que mi amigo Google's Sycamore realizó en 2019 un
+                        cálculo que tomaría 10,000 años al superordenador más
+                        poderoso del mundo en tan solo 200 segundos?
+                      </strong>{" "}
+                      Esta demostración de "supremacía cuántica" marcó el inicio
+                      de una nueva era en la computación.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Sección 2: Bits Clásicos y Visualización Interactiva */}
+          <div className="relative animate-fade-in-up">
+            <div className="grid lg:grid-cols-3 gap-8 items-center">
+              {/* Contenido de texto */}
+              <div className="lg:col-span-2 space-y-6">
+                <h2 className="text-3xl md:text-5xl font-staatliches text-foreground">
+                  Bits Clásicos: La Base de Todo
+                </h2>
+
+                <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
+                  <p className="text-xl">
+                    Para entender el salto cuántico, primero debemos entender cómo
+                    funciona la informática que usamos hoy.
+                  </p>
+
+                  <h3 className="text-2xl font-staatliches text-foreground">
+                    El Bit Clásico: El Interruptor de Luz
+                  </h3>
+
+                  <p className="text-lg">
+                    En el mundo de los ordenadores tradicionales, la información se
+                    guarda en bits. Un bit es la unidad más pequeña de información y
+                    es increíblemente simple: solo puede tener dos estados, un{" "}
+                    <strong>0</strong> o un <strong>1</strong>.
+                  </p>
+
+                  <p className="text-lg">
+                    Todos los datos de tu computadora —imágenes, textos, videos— se
+                    componen de miles de millones de estos interruptores, trabajando
+                    juntos para crear la complejidad que ves en tu pantalla. Es como
+                    construir una catedral con ladrillos: cada ladrillo es simple,
+                    pero juntos crean algo magnífico.
+                  </p>
+                </div>
+              </div>
+              <div className="relative flex justify-center lg:justify-end">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-quantum-dark-blue/20 rounded-full blur-3xl scale-150"></div>
+                  <div className="relative w-48 h-48 bg-gradient-to-br from-quantum-dark-blue/20 to-quantum-purple/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
+                    <Binary className="w-20 h-20 text-quantum-dark-blue" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative mt-16">
+              {/* Fondo flotante */}
+              <div className="absolute inset-0 bg-gradient-to-br from-quantum-dark-blue/10 to-quantum-purple/10 rounded-3xl transform -rotate-1"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-quantum-purple/10 to-quantum-orange/10 rounded-3xl transform rotate-1"></div>
+
+              <Card className="relative bg-white/5 backdrop-blur-sm border-quantum-purple/30 p-8 md:p-12 rounded-3xl">
+                <h2 className="text-3xl md:text-4xl mb-12 text-center font-staatliches text-quantum-orange">
+                  Del interruptor de luz a la esfera mágica
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                  {/* Bit clasico */}
+                  <motion.div
+                    className="text-center space-y-6"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h3 className="text-2xl font-staatliches text-quantum-dark-blue">
+                      Bit clásico
+                    </h3>
+                    <div className="relative mx-auto w-48 h-32 flex items-center justify-center">
+                      <motion.div
+                        className={`relative w-28 h-14 rounded-full border-4 transition-all duration-500 cursor-pointer flex items-center ${
+                          bitState
+                            ? "bg-quantum-orange border-quantum-orange shadow-lg shadow-quantum-orange/30"
+                            : "bg-gray-600 border-gray-400"
+                        }`}
+                        onClick={() => setBitState(!bitState)}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <motion.div
+                          className="w-10 h-10 bg-white rounded-full shadow-md"
+                          animate={{
+                            x: bitState ? 14 : 2,
+                          }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 30,
+                          }}
+                        />
+                      </motion.div>
+                    </div>
+                    <p className="text-lg font-arimo">
+                      Estado:{" "}
+                      <span className="text-quantum-orange font-bold">
+                        {bitState ? "1 (Encendido)" : "0 (Apagado)"}
+                      </span>
+                    </p>
+                    <p className="text-gray-300 text-sm font-arimo">
+                      Un bit solo puede estar en uno de dos estados: 0 o 1
+                    </p>
+                  </motion.div>
+
+                  {/* Qubit  */}
+                  <motion.div
+                    className="text-center space-y-6"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <h3 className="text-2xl font-staatliches text-quantum-purple">
+                      Cúbit cuántico
+                    </h3>
+                    <div className="relative mx-auto w-48 h-32 flex items-center justify-center">
+                      <motion.div
+                        className="relative w-24 h-24 mx-auto cursor-grab active:cursor-grabbing"
+                        drag
+                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                        dragElastic={0.1}
+                        onDrag={(_, info) => {
+                          const angle =
+                            Math.atan2(info.offset.y, info.offset.x) *
+                            (180 / Math.PI);
+                          setQubitRotation((angle + 360) % 360);
+                        }}
+                        animate={{ rotateY: qubitRotation }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 100,
+                        }}
+                      >
+                        <motion.div
+                          className="absolute inset-0 rounded-full bg-gradient-to-br from-quantum-purple to-quantum-orange"
+                          animate={{ opacity: [0.6, 1, 0.6] }}
+                          transition={{
+                            duration: 2,
+                            repeat: Number.POSITIVE_INFINITY,
+                            repeatType: "loop" as const,
+                          }}
+                        />
+                        <motion.div
+                          className="absolute inset-2 rounded-full bg-gradient-to-tr from-quantum-dark-blue to-quantum-purple"
+                          animate={{ rotate: 360 }}
+                          transition={{
+                            duration: 8,
+                            ease: "linear",
+                            repeat: Number.POSITIVE_INFINITY,
+                            repeatType: "loop" as const,
+                          }}
+                        />
+                        <motion.div
+                          className="absolute inset-4 rounded-full bg-white/20 backdrop-blur"
+                          animate={{ y: [0, -5, 0] }}
+                          transition={{
+                            duration: 3,
+                            repeat: Number.POSITIVE_INFINITY,
+                            repeatType: "loop" as const,
+                          }}
+                        />
+                      </motion.div>
+                    </div>
+                    <div className="space-y-2">
+                      <input
+                        type="range"
+                        min="0"
+                        max="360"
+                        value={qubitRotation}
+                        onChange={(e) => setQubitRotation(Number(e.target.value))}
+                        className="w-full accent-quantum-orange"
+                      />
+                      <p className="text-lg font-arimo">
+                        Superposición:{" "}
+                        <span className="text-quantum-orange font-bold">
+                          {Math.round(
+                            (Math.sin((qubitRotation * Math.PI) / 180) + 1) * 50
+                          )}
+                          % |0⟩ +{" "}
+                          {Math.round(
+                            (Math.cos((qubitRotation * Math.PI) / 180) + 1) * 50
+                          )}
+                          % |1⟩
+                        </span>
+                      </p>
+                    </div>
+                    <p className="text-gray-300 text-sm font-arimo">
+                      Un cúbit puede estar en una superposición de ambos estados
+                      simultáneamente. ¡Arrástrame!
+                    </p>
+                  </motion.div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="relative -mt-12 mr-8 md:mr-16">
+              <Card className="bg-gradient-to-br from-quantum-dark-blue/20 to-quantum-dark-blue/10 border-quantum-dark-blue/40 shadow-2xl backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-quantum-dark-blue shadow-lg">
+                      <img
+                        src="/mascota/schrodi-reading.jpeg"
+                        loading="lazy"
+                        alt="Schrödi leyendo"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="font-staatliches text-quantum-dark-blue text-xl">
+                      Mi Caja Cuántica de Analogías
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="relative">
+                  <div className="absolute -top-8 -right-8 w-20 h-20 opacity-20">
+                    <Lightbulb className="w-full h-full text-quantum-dark-blue" />
+                  </div>
+                  <div className="bg-quantum-dark-blue/10 p-6 rounded-xl border-l-4 border-quantum-dark-blue">
+                    <p className="font-arimo mb-4 font-flatory italic text-quantum-dark-blue text-lg">
+                      "Para entender lo básico, te propongo pensar en un bit como
+                      algo muy simple de tu día a día..."
+                    </p>
+                    <p className="font-arimo mb-4 text-lg">
+                      <strong>
+                        Piensa en un bit como un interruptor de luz en tu casa:
+                      </strong>
+                    </p>
+                    <ul className="list-disc pl-6 space-y-3 font-arimo text-base">
+                      <li>
+                        Está <strong>encendido (1)</strong> o{" "}
+                        <strong>apagado (0)</strong>
+                      </li>
+                      <li>No hay nada en el medio</li>
+                      <li>Su estado es siempre claro y definitivo</li>
+                      <li>
+                        Millones de estos "interruptores" trabajan juntos en tu
+                        computadora
+                      </li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Sección 3: Qubits */}
+          <div className="relative animate-fade-in-up">
+            <div className="grid lg:grid-cols-3 gap-8 items-center">
+              {/* Schrodi */}
+              <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-quantum-purple/20 rounded-full blur-3xl scale-150"></div>
+                  <img
+                    src="/mascota/schrodi-flying.jpeg"
+                    loading="lazy"
+                    alt="Schrödi volando"
+                    className="relative w-48 h-48 md:w-56 md:h-56 object-contain rounded-full border-4 border-quantum-purple shadow-2xl bg-white/10 backdrop-blur-sm transform -rotate-12"
+                  />
+                </div>
+              </div>
+
+              <div className="lg:col-span-2 space-y-6 order-1 lg:order-2">
+                <h2 className="text-3xl md:text-5xl font-staatliches text-foreground">
+                  Qubits: La Magia de la Superposición
+                </h2>
+
+                <div className="bg-gradient-to-r from-quantum-purple/20 to-transparent p-6 rounded-xl mb-6 border-l-4 border-quantum-purple">
+                  <p className="italic text-lg font-flatory text-quantum-purple mb-2">
+                    "Sígueme a la parte más fascinante de mi mundo cuántico. Aquí
+                    es donde la realidad deja de ser lo que pensabas..."
+                  </p>
+                  <p className="text-right text-sm font-bold text-quantum-purple/70">
+                    — Schrödi, en estado de superposición
+                  </p>
+                </div>
+
+                <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-staatliches text-foreground">
+                    El Qubit Cuántico: La Esfera Mágica
+                  </h3>
+
+                  <p className="text-xl">
+                    Ahora, olvídate del interruptor y piensa en una esfera. Esta es
+                    la mejor analogía para un qubit (quantum bit).
+                  </p>
+
+                  <p className="text-lg">
+                    Mientras que un bit clásico solo puede ser 0 o 1 (los polos de
+                    la esfera), un qubit puede existir en
+                    <strong> cualquier punto de la superficie de esa esfera</strong>
+                    . Esto significa que un qubit puede ser 0, 1, o una combinación
+                    de 0 y 1 al mismo tiempo. Este estado dual se llama{" "}
+                    <strong>superposición</strong>.
+                  </p>
+
+                  <p className="text-lg">
+                    Solo cuando medimos el qubit, "elige" aleatoriamente ser un 0 o
+                    un 1, colapsando todas las posibilidades a un estado definitivo.
+                    Es como si la realidad misma fuera probabilística hasta el
+                    momento de la observación.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <Card className="bg-gradient-to-br from-quantum-purple/20 to-quantum-purple/10 border-quantum-purple/40 shadow-md">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-purple">
+                    <img
+                      src="/mascota/schrodi-profile.jpeg"
+                      loading="lazy"
+                      alt="Schrödi"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <CardTitle className="font-staatliches text-quantum-purple">
+                      Analogía de Schrödi
+                    </CardTitle>
+                    <CardDescription className="text-quantum-purple/70">
+                      Un gato cuántico sabe de estos temas...
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="relative">
+                <div className="absolute -top-12 right-0 w-24 h-24 opacity-10">
+                  <Atom className="w-full h-full text-quantum-purple" />
+                </div>
+                <div className="bg-quantum-purple/10 p-4 rounded-lg border-l-4 border-quantum-purple">
+                  <p className="font-arimo mb-4 font-flatory italic text-quantum-purple">
+                    "¿Te has preguntado alguna vez cómo puedo estar en mi caja y
+                    fuera de ella al mismo tiempo? Déjame explicártelo con algo
+                    más simple..."
+                  </p>
+                  <p className="font-arimo mb-4">
+                    <strong>Imagina una moneda girando en el aire:</strong>
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 font-arimo">
+                    <li>
+                      Mientras gira, no es cara ni cruz, sino{" "}
+                      <strong>una mezcla de ambas</strong>
+                    </li>
+                    <li>
+                      Existe en un estado de <strong>superposición</strong> de
+                      todas las posibilidades
+                    </li>
+                    <li>
+                      Solo cuando cae y la observas, se "decide" su estado final
+                    </li>
+                    <li>
+                      Un qubit funciona igual: permanece en superposición hasta
+                      que se mide
+                    </li>
+                  </ul>
+                  <p className="font-arimo mt-4 text-sm text-quantum-purple/90 italic">
+                    Esta es la esencia de la mecánica cuántica: la realidad no
+                    está determinada hasta que la observamos. ¡Por eso nosotros
+                    los gatos cuánticos somos tan especiales!
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Sección 4 */}
+          <div className="animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
+              ¿Por Qué es tan Importante esta Diferencia?
+            </h2>
+
+            <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
+              <p className="text-xl mb-6">
+                La superposición le da a la computación cuántica un poder
+                increíble que crece de forma <strong>exponencial</strong>.
+              </p>
+
+              <p className="text-lg mb-6">
+                Mientras que un ordenador clásico con 2 bits solo puede estar en
+                uno de los cuatro estados posibles (00, 01, 10, 11) a la vez, un
+                ordenador cuántico con 2 qubits puede estar en los{" "}
+                <strong>cuatro estados simultáneamente</strong> gracias a la
+                superposición.
+              </p>
+
+              <p className="text-lg mb-6">
+                A medida que agregamos más qubits, el número de estados que
+                pueden procesar a la vez crece exponencialmente:
+              </p>
+
+              <div className="bg-quantum-lilac/10 p-6 rounded-lg mb-6">
+                <ul className="list-none space-y-2 font-staatliches text-lg">
+                  <li>• 1 qubit = 2 estados simultáneos</li>
+                  <li>• 2 qubits = 4 estados simultáneos</li>
+                  <li>• 3 qubits = 8 estados simultáneos</li>
+                  <li>• 10 qubits = 1,024 estados simultáneos</li>
+                  <li>
+                    • 50 qubits = 1,125,899,906,842,624 estados simultáneos
+                  </li>
+                </ul>
+              </div>
+
+              <p className="text-lg mb-8">
+                Esta capacidad de procesar múltiples posibilidades al mismo
+                tiempo es lo que hace a los ordenadores cuánticos
+                extraordinariamente rápidos para resolver ciertos tipos de
+                problemas que son prácticamente imposibles para las computadoras
+                clásicas.
+              </p>
+            </div>
+
+            <Card className="bg-gradient-to-br from-quantum-lilac/20 to-quantum-lilac/10 border-quantum-lilac/40 shadow-md hover-quantum">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-lilac">
+                    <img
+                      src="/mascota/schrodi-standing.jpeg"
+                      loading="lazy"
+                      alt="Schrödi de pie"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardTitle className="font-staatliches text-quantum-lilac">
+                    Dato Asombroso de Schrödi
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="flex flex-col md:flex-row gap-4 items-center">
+                <div className="bg-quantum-lilac/10 p-3 rounded-lg border-l-4 border-quantum-lilac w-full">
+                  <p className="font-arimo">
+                    <strong>
+                      ¡Esto te dejará con la boca abierta! Un ordenador cuántico
+                      de solo 300 qubits podría realizar más cálculos
+                      simultáneos que átomos hay en el universo observable
+                    </strong>{" "}
+                    (aproximadamente 10^80). Esto demuestra el poder exponencial
+                    de la superposición cuántica y por qué esta tecnología
+                    promete resolver problemas que hoy consideramos imposibles.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Sección 5: Aplicaciones del Futuro */}
+          <div className="animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
+              El Futuro Cuántico: Aplicaciones que Cambiarán el Mundo
+            </h2>
+
+            <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
+              <p className="text-xl mb-6">
+                La computación cuántica aún está en sus primeras etapas, pero
+                sus promesas son enormes y están más cerca de lo que imaginas:
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {aplicacionesCuanticas.map((app, index) => (
+                <Card
+                  key={index}
+                  className={`bg-gradient-to-br from-${app.color}/10 to-${app.color}/5 border-${app.color}/30 hover-quantum`}
+                >
+                  <CardHeader>
+                    <CardTitle className={`font-staatliches text-${app.color}`}>
+                      {app.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="font-arimo">
+                      {app.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-xl font-staatliches text-foreground mb-4">
+                En resumen, la cuántica no es solo una teoría extraña, sino una
+                nueva forma de entender y manipular la realidad que podría
+                cambiar radicalmente nuestra tecnología y nuestra sociedad.
+              </p>
+              <p className="text-2xl font-staatliches text-gradient-quantum">
+                ¿Estás listo para el salto cuántico?
+              </p>
+            </div>
+          </div>
+
+          {/* Preguntas con Schrodi */}
+          <div className="animate-fade-in-up">
+            <Card className="bg-gradient-quantum border-quantum-purple/30 shadow-lg">
+              <CardHeader className="text-center">
+                <div className="flex justify-center mb-4">
+                  <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-quantum-orange">
+                    <img
+                      src="/mascota/schrodi-reading.jpeg"
+                      loading="lazy"
+                      alt="Schrödi pensando"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <CardTitle className="text-2xl font-staatliches text-white mb-4">
+                  Preguntas de Schrödi
+                </CardTitle>
+                <CardDescription className="text-gray-200 font-arimo">
+                  Tómate unos minutos para reflexionar conmigo sobre estos
+                  conceptos cuánticos y prepárate para nuestro siguiente viaje
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4 text-white">
+                  <div className="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors">
+                    <p className="font-arimo">
+                      <strong>1.</strong> ¿Cómo crees que la capacidad de un
+                      qubit de estar en superposición podría aplicarse a un
+                      problema específico que te interese (medicina, finanzas,
+                      arte, etc.)?
+                    </p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors">
+                    <p className="font-arimo">
+                      <strong>2.</strong> Si un ordenador clásico es como un
+                      interruptor de luz y un qubit como una moneda girando,
+                      ¿qué otras analogías se te ocurren para explicar la
+                      superposición cuántica?
+                    </p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors">
+                    <p className="font-arimo">
+                      <strong>3.</strong> ¿Qué implicaciones éticas crees que
+                      podría tener una tecnología tan poderosa como la
+                      computación cuántica? ¿Cómo deberíamos prepararnos como
+                      sociedad?
+                    </p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors">
+                    <p className="font-arimo">
+                      <strong>4.</strong> Considerando el crecimiento
+                      exponencial de la capacidad cuántica, ¿en qué área te
+                      gustaría especializarte para contribuir a esta revolución
+                      tecnológica?
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 text-center">
+                  <p className="font-flatory text-quantum-orange italic">
+                    "Recuerda que en el mundo cuántico, las preguntas a veces
+                    son más importantes que las respuestas. ¡Te espero en el
+                    próximo módulo para seguir explorando juntos!" — Schrödi
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <ConceptClassification />
+        </div>
+      </section>
+    </div>
+  );
+};
 
 export default Modulo1;
