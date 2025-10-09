@@ -43,7 +43,7 @@ En 2025 fundó QuantumHub Perú, un ecosistema cuántico nacional que articula p
     positions: {
       Ejecutivo: "Co-Fundadora",
       "Relaciones Públicas": "Directora",
-      Investigación: "Research Associate"
+      Investigación: "Research & Editorial Associate"
     },
   },
   {
@@ -166,7 +166,7 @@ Actualmente Director de Marketing en el departamento de Comunidad y Divulgación
     bio: `Estudiante de 4.º año de secundaria en el Colegio Trilce de Los Olivos. Articula su interés por la economía y las matemáticas con una curiosidad creciente por la computación cuántica. En el Departamento de Investigación de QuantumHub, es coautor de un estudio regional sobre quantum readiness en América Latina y realiza análisis cuantitativos de los estudiantes de nuestra cohorte (escolares de secundaria y universitarios) aplicando machine learning y métodos estadísticos. Su trabajo examina correlaciones fuertes sobre cómo la formación STEM, la motivación y el contexto familiar, socioeconómico y geográfico, se asocian con la comprensión de conceptos cuánticos y con su rendimiento académico a lo largo del curso, aportando una mirada económica a la interpretación de resultados y al diseño de métricas. Fuera del ámbito académico, disfruta del fútbol y el cine, y se interesa por la historia y geopolítica del Perú.`,
     departments: ["Investigación"],
     positions: {
-      Investigación: "Research Associate",
+      Investigación: "Research & Editorial Associate",
     },
   },
   {
