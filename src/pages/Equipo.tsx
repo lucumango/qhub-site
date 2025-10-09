@@ -118,7 +118,7 @@ Reconocido por su vocación de motivar a los estudiantes a superar sus dificulta
     },
   },
   {
-    id: 6,
+    id: 7,
     name: "Rocio Valentin Carhuancho",
     image:
       "https://static.wixstatic.com/media/9552ba_d0a5ab277f9c410391fb12a1890b9661~mv2.jpg",
