@@ -309,7 +309,7 @@ bio:"Estudiante del Colegio Mayor Secundario Presidente del Perú, donde cursa e
     id: 28,
     name: "Gabriel Manayay",
 image:"/gabriel.jpeg",
-bio:"Estudiante del Colegio Mayor Secundario Presidente del Perú, donde cursa el segundo año del Bachillerato Internacional.",
+bio:'Estudiante de segundo año de bachillerato internacional en el COAR Lima. Apasionado por la física y matemáticas en conjunto de las áreas relacionadas. De la misma manera, tiene un interés genuino por el cambio social mediante el liderazgo efectivo demostrado en su participación en diferentes organizaciones y el parlamento escolar 2025. Así mismo, cuenta con diversas participaciones en competencias STEM, como el IYMC, IPhR, SPF, entre otros. En Quantum Hub es un estudiante del módulo 2, "Fundamentos de computación cuántica", habiendo terminado satisfactoriamente el módulo 1, "Matemáticas y computación científica". Además desempeña el rol de Q-Intern, con grandes ideas para el desarrollo de la computación cuántica en Perú.',
    linkedin:"https://www.linkedin.com/in/gabriel-isaac-manayay-cadillo-418535389/",
     departments: ["Quantum Interns"],
     positions: {
