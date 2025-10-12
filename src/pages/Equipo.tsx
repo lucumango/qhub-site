@@ -327,6 +327,7 @@ Fuera de las ecuaciones, disfruta de la música instrumental y practicar escultu
     positions: {
       "Quantum Interns" : "Pasante Junior",
     },
+    linkedin: "http://www.linkedin.com/in/jharold-axel-alvarez-quichca-808534262"
   },
   {
     id: 30,
