@@ -1,64 +1,209 @@
-// Modulo1.tsx (Refactorizado)
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Sidebar from "@/components/Sidebar";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, Zap, Atom, Cpu, Binary, Infinity, Sparkles, Scale } from "lucide-react";
+import { Lightbulb, Zap, Atom, Cpu, Binary, Sparkles, Scale } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { aplicacionesCuanticas } from "@/data/quantumData";
 import ConceptClassification from "@/components/ConceptClassification"; 
 
-const Modulo1 = () => {
+const sections = [
+    { id: "introduccion", title: "Introducción" },
+    { id: "por-que-cuantica", title: "¿Por qué nos importa la cuántica?" },
+    { id: "bits-clasicos", title: "Bits Clásicos" },
+    { id: "qubits", title: "Qubits y Superposición" },
+    { id: "importancia", title: "¿Por qué es importante?" },
+    { id: "aplicaciones", title: "Aplicaciones del Futuro" },
+    { id: "reflexion", title: "Reflexión Final" },
+  ];
+
+export function Modulo1() {
   const [bitState, setBitState] = useState(false);
   const [qubitRotation, setQubitRotation] = useState(0);
+  const [activeSection, setActiveSection] = useState(sections[0].id);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      }, { threshold: 0.3 }
+    );
+    sections.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="relative min-h-screen bg-background">
-      <section className="relative py-20 bg-gradient-quantum-hero overflow-hidden">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <h1 className="text-4xl md:text-6xl font-staatliches text-white mb-6 animate-fade-in-up">
-            De Bits a Qubits: El salto cuántico
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto font-flatory animate-fade-in-up leading-relaxed">
-            Descubre cómo la información cuántica revoluciona nuestra
-            comprensión de la computación y abre las puertas a un futuro
-            tecnológico extraordinario
-          </p>
-          <div className="pt-10 text-white">
-            <p className="font-arimo italic text-lg md:text-xl max-w-3xl mx-auto">
-              "¡Hola! Soy <strong>Schrödi</strong>, tu guía en este viaje
-              cuántico. <br />
-              Te mostraré los secretos del mundo subatómico. <br />
-              <span className="text-quantum-orange font-bold">
-                ¡Sígueme y descubramos juntos el fascinante universo de los
-                qubits!
-              </span>
-              "
-            </p>
-          </div>
-        </div>
+    <div className="flex bg-gray-50 min-h-screen">
+      <Sidebar 
+        sections={sections}
+        activeSection={activeSection} 
+        setActiveSection={setActiveSection}
+        backLink="/aprendizaje"
+      />
+      {/* Contenido principal */}
+      <div className="flex-1">
+      <div className="relative min-h-screen bg-background" id="introduccion">
+      <section className="relative py-20 bg-gradient-quantum-hero relative min-h-screen flex items-center justify-center">
 
-        <div className="absolute right-20 z-20">
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {[...Array(30)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute w-2 h-2 bg-purple-400 rounded-full"
+        initial={{ 
+          x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+          y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+          opacity: 0
+        }}
+        animate={{
+          y: [null, Math.random() * 800 - 400],
+          x: [null, Math.random() * 1000 - 500],
+          opacity: [0, 0.8, 0],
+          scale: [0, 1.5, 0]
+        }}
+        transition={{ duration: Math.random() * 8 + 6, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 5}}
+        style={{ filter: 'blur(1px)', boxShadow: '0 0 10px rgba(168, 85, 247, 0.6)'}}
+      />
+    ))}
+
+    {/* Particulas en naranja */}
+    {[...Array(20)].map((_, i) => (
+      <motion.div
+        key={`orange-${i}`}
+        className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full"
+        initial={{ 
+          x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+          y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+          opacity: 0
+        }}
+        animate={{
+          y: [null, Math.random() * 600 - 300],
+          x: [null, Math.random() * 800 - 400],
+          opacity: [0, 0.6, 0],
+          scale: [0, 1, 0]
+        }}
+        transition={{ duration: Math.random() * 10 + 8, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 7 }}
+        style={{ filter: 'blur(0.5px)', boxShadow: '0 0 8px rgba(251, 146, 60, 0.5)' }}
+      />
+    ))}
+  </div>
+
+  <div className="bg-gradient-to-br from-red-500 via-yellow-300 to-blue-500" />
+  
+  <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+    <motion.h1 
+      className="text-4xl md:text-6xl font-staatliches text-white mb-6"
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      De Bits a Qubits: El salto cuántico
+    </motion.h1>
+    
+    <motion.p 
+      className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto font-flatory leading-relaxed mb-12"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      Descubre cómo la información cuántica revoluciona nuestra
+      comprensión de la computación y abre las puertas a un futuro
+      tecnológico extraordinario
+    </motion.p>
+
+    <motion.div 
+      className="relative max-w-4xl mx-auto"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+    >
+      <div className="grid md:grid-cols-[auto_1fr] gap-6 items-center">
+
+        <motion.div 
+          className="relative mx-auto md:mx-0"
+          animate={{ 
+            y: [0, -15, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-quantum-orange/40 to-quantum-purple/40 rounded-full blur-3xl scale-110 animate-pulse" />
           <div className="relative">
             <img
-              src="/mascota/schrodi-standing.jpeg"
+              src="/mascota/schrodi-reading.png"
               loading="lazy"
               alt="Schrödi, tu guía cuántico"
-              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain rounded-full border-4 border-quantum-orange shadow-2xl bg-white/10 backdrop-blur-sm"
+              className="w-64 h-64 md:w-64 md:h-64 lg:w-96 lg:h-96 object-contain drop-shadow-2xl relative z-10"
             />
           </div>
-        </div>
-      </section>
+        </motion.div>
+
+        {/* Caja de dialogo */}
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          {/* Triangulo apuntador */}
+          <div className="hidden md:block absolute left-[-10px] top-1/2 transform -translate-x-2 -translate-y-1/2 w-0 h-0 
+                          border-t-[15px] border-t-transparent
+                          border-r-[20px] border-r-white/10
+                          border-b-[15px] border-b-transparent
+                          backdrop-blur-xl" 
+               style={{ filter: 'drop-shadow(-2px 0 4px rgba(0,0,0,0.1))' }}
+          />
+          
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+            <p className="font-arimo italic text-lg md:text-xl text-white leading-relaxed">
+              "¡Hola! Soy <strong className="text-quantum-orange">Schrödi</strong>, tu guía en este viaje cuántico.
+              <br />
+              <span className="text-gray-300">
+                Soy el gato que existe y no existe… hasta que me observas.
+              </span>
+              <br />
+              <span className="text-quantum-orange font-bold mt-2 inline-block">
+                ¡Sígueme y descubramos juntos el fascinante universo de los qubits! 
+              </span>
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
+
+    <motion.div
+      className="absolute -bottom-2 left-1/2 transform -translate-x-1/2"
+      animate={{ y: [0, 10, 0] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    >
+      <div className="flex flex-col items-center gap-2 text-white/60">
+        {/* <span className="text-sm font-arimo">Desplázate para continuar</span> */}
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Contenido */}
       <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-24">
-          {/* Sección 1: La Pregunta Inicial */}
-          <div className="relative animate-fade-in-up">
-            <div className="absolute -top-8 -left-8 w-24 h-24 bg-quantum-purple/10 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-quantum-orange/10 rounded-full blur-xl"></div>
-
-            <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
+          {/* Sección 1 */}
+          <div className="relative animate-fade-in-up" id="por-que-cuantica">
+            <div className="bg-white shadow rounded-xl p-10">
               <h2 className="text-3xl md:text-5xl font-staatliches text-foreground mb-8 text-center">
                 ¿Por qué nos importa la cuántica?
               </h2>
@@ -90,7 +235,7 @@ const Modulo1 = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-quantum-orange/20 rounded-full blur-2xl scale-150"></div>
                     <img
-                      src="/mascota/schrodi-profile.jpeg"
+                      src="/mascota/schrodi-profile.png"
                       loading="lazy"
                       alt="Schrödi pensando"
                       className="relative w-48 h-48 md:w-56 md:h-56 object-cover rounded-full border-4 border-quantum-orange shadow-2xl"
@@ -100,13 +245,13 @@ const Modulo1 = () => {
               </div>
             </div>
 
-            <div className="relative -mt-8 ml-8 md:ml-16">
-              <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl hover-quantum backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="mt-8">
+              <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl backdrop-blur-sm">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-quantum-orange shadow-lg">
                       <img
-                        src="/mascota/schrodi-profile.jpeg"
+                        src="/mascota/schrodi-profile.png"
                         loading="lazy"
                         alt="Schrödi"
                         className="w-full h-full object-cover"
@@ -135,9 +280,9 @@ const Modulo1 = () => {
           </div>
 
           {/* Sección 2: Bits Clásicos y Visualización Interactiva */}
-          <div className="relative animate-fade-in-up">
-            <div className="grid lg:grid-cols-3 gap-8 items-center">
-              {/* Contenido de texto */}
+          <div className="relative animate-fade-in-up" id="bits-clasicos">
+            <div className="bg-white shadow rounded-xl p-10">
+              <div className="grid lg:grid-cols-3 gap-8 items-center">
               <div className="lg:col-span-2 space-y-6">
                 <h2 className="text-3xl md:text-5xl font-staatliches text-foreground">
                   Bits Clásicos: La Base de Todo
@@ -169,36 +314,17 @@ const Modulo1 = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative flex justify-center lg:justify-end">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-quantum-dark-blue/20 rounded-full blur-3xl scale-150"></div>
-                  <div className="relative w-48 h-48 bg-gradient-to-br from-quantum-dark-blue/20 to-quantum-purple/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10">
-                    <Binary className="w-20 h-20 text-quantum-dark-blue" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative mt-16">
-              {/* Fondo flotante */}
-              <div className="absolute inset-0 bg-gradient-to-br from-quantum-dark-blue/10 to-quantum-purple/10 rounded-3xl transform -rotate-1"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-quantum-purple/10 to-quantum-orange/10 rounded-3xl transform rotate-1"></div>
-
-              <Card className="relative bg-white/5 backdrop-blur-sm border-quantum-purple/30 p-8 md:p-12 rounded-3xl">
-                <h2 className="text-3xl md:text-4xl mb-12 text-center font-staatliches text-quantum-orange">
-                  Del interruptor de luz a la esfera mágica
-                </h2>
-
-                <div className="grid md:grid-cols-2 gap-16 items-center">
-                  {/* Bit clasico */}
-                  <motion.div
-                    className="text-center space-y-6"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <h3 className="text-2xl font-staatliches text-quantum-dark-blue">
-                      Bit clásico
-                    </h3>
-                    <div className="relative mx-auto w-48 h-32 flex items-center justify-center">
+              
+              <div className="relative"> 
+                {/* Bit clasico */}
+                <motion.div
+                  className="text-center space-y-6"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <h3 className="text-2xl font-staatliches text-quantum-dark-blue">
+                    Bit clásico
+                  </h3>
+                  <div className="relative mx-auto w-48 h-32 flex items-center justify-center">
                       <motion.div
                         className={`relative w-28 h-14 rounded-full border-4 transition-all duration-500 cursor-pointer flex items-center ${
                           bitState
@@ -233,7 +359,65 @@ const Modulo1 = () => {
                     </p>
                   </motion.div>
 
-                  {/* Qubit  */}
+              </div>
+            </div>
+            </div>
+
+            <div className="mt-8">
+              <Card className="bg-gradient-to-br from-quantum-dark-blue/20 to-quantum-dark-blue/10 border-quantum-dark-blue/40 shadow-2xl backdrop-blur-sm">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-quantum-dark-blue shadow-lg">
+                      <img
+                        src="/mascota/schrodi-reading.png"
+                        loading="lazy"
+                        alt="Schrödi leyendo"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="font-staatliches text-quantum-dark-blue text-xl">
+                      Mi Caja Cuántica de Analogías
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="relative">
+                  <div className="absolute -top-8 -right-8 w-20 h-20 opacity-20">
+                    <Lightbulb className="w-full h-full text-quantum-dark-blue" />
+                  </div>
+                  <div className="bg-quantum-dark-blue/10 p-6 rounded-xl border-l-4 border-quantum-dark-blue">
+                    <p className="font-arimo mb-4 font-flatory italic text-quantum-dark-blue text-lg">
+                      "Para entender lo básico, te propongo pensar en un bit como
+                      algo muy simple de tu día a día..."
+                    </p>
+                    <p className="font-arimo mb-4 text-lg">
+                      <strong>
+                        Piensa en un bit como un interruptor de luz en tu casa:
+                      </strong>
+                    </p>
+                    <ul className="list-disc pl-6 space-y-3 font-arimo text-base">
+                      <li>
+                        Está <strong>encendido (1)</strong> o{" "}
+                        <strong>apagado (0)</strong>
+                      </li>
+                      <li>No hay nada en el medio</li>
+                      <li>Su estado es siempre claro y definitivo</li>
+                      <li>
+                        Millones de estos "interruptores" trabajan juntos en tu
+                        computadora
+                      </li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Sección 3: Qubits */}
+          <div className="relative animate-fade-in-up" id="qubits">
+            <div className="bg-white shadow rounded-xl p-10">
+              <div className="grid lg:grid-cols-3 gap-8 items-center">
+              <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
+                <div className="relative"> {/* grid md:grid-cols-2 gap-16 items-center */}
                   <motion.div
                     className="text-center space-y-6"
                     whileHover={{ scale: 1.02 }}
@@ -318,72 +502,6 @@ const Modulo1 = () => {
                     </p>
                   </motion.div>
                 </div>
-              </Card>
-            </div>
-
-            <div className="relative -mt-12 mr-8 md:mr-16">
-              <Card className="bg-gradient-to-br from-quantum-dark-blue/20 to-quantum-dark-blue/10 border-quantum-dark-blue/40 shadow-2xl backdrop-blur-sm transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-quantum-dark-blue shadow-lg">
-                      <img
-                        src="/mascota/schrodi-reading.jpeg"
-                        loading="lazy"
-                        alt="Schrödi leyendo"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardTitle className="font-staatliches text-quantum-dark-blue text-xl">
-                      Mi Caja Cuántica de Analogías
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="relative">
-                  <div className="absolute -top-8 -right-8 w-20 h-20 opacity-20">
-                    <Lightbulb className="w-full h-full text-quantum-dark-blue" />
-                  </div>
-                  <div className="bg-quantum-dark-blue/10 p-6 rounded-xl border-l-4 border-quantum-dark-blue">
-                    <p className="font-arimo mb-4 font-flatory italic text-quantum-dark-blue text-lg">
-                      "Para entender lo básico, te propongo pensar en un bit como
-                      algo muy simple de tu día a día..."
-                    </p>
-                    <p className="font-arimo mb-4 text-lg">
-                      <strong>
-                        Piensa en un bit como un interruptor de luz en tu casa:
-                      </strong>
-                    </p>
-                    <ul className="list-disc pl-6 space-y-3 font-arimo text-base">
-                      <li>
-                        Está <strong>encendido (1)</strong> o{" "}
-                        <strong>apagado (0)</strong>
-                      </li>
-                      <li>No hay nada en el medio</li>
-                      <li>Su estado es siempre claro y definitivo</li>
-                      <li>
-                        Millones de estos "interruptores" trabajan juntos en tu
-                        computadora
-                      </li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Sección 3: Qubits */}
-          <div className="relative animate-fade-in-up">
-            <div className="grid lg:grid-cols-3 gap-8 items-center">
-              {/* Schrodi */}
-              <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-quantum-purple/20 rounded-full blur-3xl scale-150"></div>
-                  <img
-                    src="/mascota/schrodi-flying.jpeg"
-                    loading="lazy"
-                    alt="Schrödi volando"
-                    className="relative w-48 h-48 md:w-56 md:h-56 object-contain rounded-full border-4 border-quantum-purple shadow-2xl bg-white/10 backdrop-blur-sm transform -rotate-12"
-                  />
-                </div>
               </div>
 
               <div className="lg:col-span-2 space-y-6 order-1 lg:order-2">
@@ -435,7 +553,7 @@ const Modulo1 = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-purple">
                     <img
-                      src="/mascota/schrodi-profile.jpeg"
+                      src="/mascota/schrodi-profile.png"
                       loading="lazy"
                       alt="Schrödi"
                       className="w-full h-full object-cover"
@@ -490,9 +608,11 @@ const Modulo1 = () => {
               </CardContent>
             </Card>
           </div>
+          </div>
 
           {/* Sección 4 */}
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up" id="importancia">
+            <div className="bg-white shadow rounded-xl p-10">
             <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
               ¿Por Qué es tan Importante esta Diferencia?
             </h2>
@@ -542,7 +662,7 @@ const Modulo1 = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-lilac">
                     <img
-                      src="/mascota/schrodi-standing.jpeg"
+                      src="/mascota/schrodi-standing.png"
                       loading="lazy"
                       alt="Schrödi de pie"
                       className="w-full h-full object-cover"
@@ -569,9 +689,11 @@ const Modulo1 = () => {
               </CardContent>
             </Card>
           </div>
+          </div>
 
-          {/* Sección 5: Aplicaciones del Futuro */}
-          <div className="animate-fade-in-up">
+          {/* Sección 5*/}
+          <div className="animate-fade-in-up" id="aplicaciones">
+            <div className="bg-white shadow rounded-xl p-10">
             <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
               El Futuro Cuántico: Aplicaciones que Cambiarán el Mundo
             </h2>
@@ -614,15 +736,16 @@ const Modulo1 = () => {
               </p>
             </div>
           </div>
+          </div>
 
           {/* Preguntas con Schrodi */}
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up" id="reflexion">
             <Card className="bg-gradient-quantum border-quantum-purple/30 shadow-lg">
               <CardHeader className="text-center">
                 <div className="flex justify-center mb-4">
                   <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-quantum-orange">
                     <img
-                      src="/mascota/schrodi-reading.jpeg"
+                      src="/mascota/schrodi-reading.png"
                       loading="lazy"
                       alt="Schrödi pensando"
                       className="w-full h-full object-cover"
@@ -686,6 +809,8 @@ const Modulo1 = () => {
           <ConceptClassification />
         </div>
       </section>
+    </div>
+      </div>
     </div>
   );
 };
