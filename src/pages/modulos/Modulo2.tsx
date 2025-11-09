@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import QubitMascot from "@/components/QubitMascot";
+import QuizSuperposicion from "@/components/QuizSuperposicion";
+import AlphaBetaSlider from "@/components/AlphaBetaSlider";
+import 'katex/dist/katex.min.css'
+import { BlockMath } from 'react-katex'
+
 
 const sections = [
-  { id: "superposicion", title: "Superposición", mascot: "¡Imagina que la moneda está en cara y cruz al mismo tiempo!" },
+  { id: "superposicion", title: "Superposición" },
   { id: "interferencia", title: "Interferencia", mascot: "Las ondas cuánticas se suman o cancelan como en la doble rendija." },
   { id: "medicion", title: "Medición", mascot: "Cuando observas, el qubit decide: ¿0 o 1?" },
   { id: "entrelazamiento", title: "Entrelazamiento", mascot: "Dos qubits se conectan: lo que le pase a uno afecta al otro instantáneamente." },
@@ -102,84 +107,164 @@ const Modulo2 = () => {
               {s.title}
             </h2>
 
-            {/* Mascota hablando */}
-            <div className="flex items-start gap-4 mb-6">
-              <QubitMascot className="w-16 h-16" />
-              <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-xl shadow">
-                {s.mascot}
-              </div>
-            </div>
-
             {/* Contenido de la sección */}
-            { s.id === "superposicion" && (
-            <div className="flex flex-col gap-8">
-              {/* Texto explicativo */}
-              <p className="text-justify leading-relaxed text-gray-700">
-                En mecánica cuántica, la <strong>superposición</strong> significa que un sistema puede 
-                encontrarse en varios estados posibles al mismo tiempo, hasta que se realiza una medición. 
-                Un <em>qubit</em>, por ejemplo, no está limitado a ser solo <code>0</code> o solo <code>1</code>, 
-                sino que puede estar en una combinación de ambos.
-                <br /><br />
-                Matemáticamente se expresa como:
-              </p>
+            {s.id === "superposicion" && (
+  <div className="flex flex-col gap-10">
+    {/* 🐱 Schrödi da la bienvenida */}
+    <div className="flex items-start gap-4 mb-4">
+      <img
+        src="/gato.png"
+        alt="Schrödi"
+        className="w-16 h-16 animate-float-slow"
+      />
+      <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-xl shadow ">
+        ¡Hola! Soy <strong>Schrödi</strong>, y hoy veremos cómo
+        un qubit puede estar en dos estados a la vez... ¡como si una moneda fuera cara y sello al mismo tiempo!
+      </div>
+    </div>
 
-              {/* Ecuación */}
-              <div className="bg-gray-100 text-gray-800 px-6 py-4 rounded-lg text-center font-mono shadow">
-                |ψ⟩ = α|0⟩ + β|1⟩  
-                <br />
-                Con la condición: |α|² + |β|² = 1
-              </div>
+    <div className="bg-white border-l-4 border-quantum-purple p-6 rounded-xl shadow-sm">
+      <p className="text-justify leading-relaxed text-gray-700">
+        Imagina que lanzas una moneda al aire. Mientras gira, no sabes si cayó en
+        <strong> cara </strong> o <strong> sello</strong>.  
+        Solo cuando la detienes y la observas, el resultado se define.
+        En el mundo cuántico, algo similar ocurre: una partícula como un electrón puede
+        estar en una mezcla de varios estados al mismo tiempo, hasta que se mide.  
+        A esto se le llama <strong>superposición cuántica</strong>.
+      </p>
+    </div>
 
-              {/* Ejemplo cotidiano */}
-              <p className="text-justify leading-relaxed text-gray-700">
-                Imagina una caja cerrada con una moneda dentro. 
-                En el mundo clásico, la moneda ya está en cara o sello aunque no la veas.  
-                Pero en el mundo cuántico, la moneda está en un estado “mixto”: cara <strong>y</strong> sello 
-                al mismo tiempo, hasta que la observas.  
-              </p>
 
-              {/* Quiz interactivo */}
-              <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 shadow">
-                <h3 className="text-lg font-bold text-quantum-purple mb-4">
-                  Quiz: Comprueba tu comprensión
-                </h3>
-                <form className="space-y-4 text-gray-700">
-                  <div>
-                    <p className="font-semibold mb-2">1. ¿Qué significa la superposición en un qubit?</p>
-                    <label className="block">
-                      <input type="radio" name="q1" className="mr-2" /> 
-                      Que el qubit está indefinido y no tiene estado.
-                    </label>
-                    <label className="block">
-                      <input type="radio" name="q1" className="mr-2" /> 
-                      Que el qubit puede ser 0 y 1 a la vez hasta ser medido.
-                    </label>
-                    <label className="block">
-                      <input type="radio" name="q1" className="mr-2" /> 
-                      Que el qubit siempre cambia entre 0 y 1 muy rápido.
-                    </label>
-                  </div>
+    {/* 🌙 Tarjeta principal de explicación */}
 
-                  <div>
-                    <p className="font-semibold mb-2">2. ¿Qué condición cumplen los coeficientes α y β?</p>
-                    <label className="block">
-                      <input type="radio" name="q2" className="mr-2" /> 
-                      Que ambos sean siempre números enteros.
-                    </label>
-                    <label className="block">
-                      <input type="radio" name="q2" className="mr-2" /> 
-                      Que su suma sea exactamente 10.
-                    </label>
-                    <label className="block">
-                      <input type="radio" name="q2" className="mr-2" /> 
-                      Que |α|² + |β|² = 1 (probabilidades suman 100%).
-                    </label>
-                  </div>
-                </form>
-              </div>
-            </div>
-          )}
+    <p className="text-justify leading-relaxed text-gray-700">
+  Probablemente ya hayas escuchado la palabra <strong>superposición</strong>.  
+  Suena misteriosa, pero en realidad describe algo muy simple.  
+  Es lo que ocurre cuando un <strong>qubit</strong> no está completamente en el estado <code>|0⟩</code>  
+  ni completamente en el estado <code>|1⟩</code>,  
+  sino en una mezcla de ambos al mismo tiempo.
+  <br /><br />
 
+      <div className="flex justify-center my-10">
+  <img
+    src="/gatoCompu.jpg"
+    alt="gato computadora"
+    className="
+      w-90 
+      rounded-2xl 
+      shadow-lg 
+      transition-all 
+      duration-700 
+      hover:scale-105 
+      hover:shadow-[0_0_35px_rgba(168,85,247,0.4)] 
+      animate-float-slow
+    "
+  />
+</div>
+
+
+
+  Sabemos que una computadora tradicional, como la de nuestros hogares, funciona con bits clásicos, donde solo existen dos opciones para procesar información:  
+  <strong> 1</strong> (verdadero) o <strong>0</strong> (falso).  
+  Pero en el mundo cuántico, el qubit no se limita a elegir.  
+  En lugar de decir “soy 0” o “soy 1”, dice algo como:  
+  <em> “soy un poco de los dos”</em>.  
+  Esa es la esencia de la superposición.
+</p>
+
+<p className="text-justify leading-relaxed text-gray-700">
+  Matemáticamente, podemos escribir a un qubit en superposición así:
+</p>
+
+
+    {/* 🧮 Ecuación del estado cuántico */}
+    <div className="bg-gray-100 text-gray-800 px-6 py-4 rounded-lg text-center font-mono shadow-md">
+      <BlockMath math="|\psi\rangle = \alpha|0\rangle + \beta|1\rangle" />
+    </div>
+
+    {/* 📘 Explicación intuitiva */}
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="bg-white rounded-xl p-6 shadow-md border border-quantum-purple/30">
+        <h3 className="text-xl font-bold text-quantum-purple mb-3">¿Qué significa?</h3>
+        <p className="text-gray-700 leading-relaxed">
+          En esta fórmula, <strong>α</strong> (alfa) y <strong>β</strong> (beta) son números que representan 
+  <strong> qué tanto del estado |0⟩ y del estado |1⟩</strong> hay dentro del qubit.  
+  <br></br>
+  <br></br>
+  Si <strong>α = 1</strong> y <strong>β = 0</strong>, el qubit es completamente <code>|0⟩</code>.  
+  Si <strong>α = 0</strong> y <strong>β = 1</strong>, es completamente <code>|1⟩</code>.  
+  Pero si ambos tienen valores intermedios, el qubit está en superposición.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 shadow-md border border-quantum-orange/30">
+        <h3 className="text-xl font-bold text-quantum-orange mb-3">Probabilidades</h3>
+        <p className="text-gray-700 leading-relaxed">
+          <strong>|α|²</strong> indica la probabilidad de medir <code>|0⟩</code>  
+          y <strong>|β|²</strong> la de medir <code>|1⟩</code>.  
+          Ambas suman 1, asegurando que el resultado sea coherente: ¡el qubit siempre colapsa a algo!
+        </p>
+      </div>
+    </div>
+
+    <p className="text-justify leading-relaxed text-gray-700">
+  Además, existe una relación muy importante con nuestros coeficientes α (alfa) y β (beta):
+</p>
+
+     {/* 🧮 Ecuación de probabilidad */}
+    <div className="bg-gray-100 text-gray-800 px-6 py-4 rounded-lg text-center font-mono shadow-md">
+      <BlockMath math="|\alpha|^2 + |\beta|^2 = 1" />
+    </div>
+
+
+<p className="text-justify leading-relaxed text-gray-700 mt-6">
+  La ecuación de arriba nos indica que la suma de probabilidades siempre es del 100%. <strong>|α|²</strong> indica la probabilidad de medir <code>|0⟩</code>  
+          y <strong>|β|²</strong> la de medir <code>|1⟩</code>.  
+          Ambas suman 1, asegurando que el resultado sea coherente. Esto significa que al medir el qubit, 
+          solo puede “colapsar” en uno de los dos estados posibles:  
+  <code>|0⟩</code> o <code>|1⟩</code>.  
+  La probabilidad de obtener <code>|0⟩</code> es <strong>|α|²</strong> y la de obtener <code>|1⟩</code> es <strong>|β|²</strong>.
+</p>
+
+
+{/* 🎶 Analogía visual */}
+    <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-quantum-orange">
+      <p className="text-gray-700 leading-relaxed">
+        Puedes pensar en la superposición como una <strong>nota musical</strong>.  
+        una sola nota está formada por muchas frecuencias combinadas.  
+  Antes de que la escuches, todas esas ondas están vibrando juntas, superpuestas.  
+  Solo al oírla tu cerebro percibe una nota concreta.  
+  Así funciona un qubit: vibra entre posibilidades,  
+  pero solo “elige” cuando lo observas.
+      </p>
+    </div>
+
+
+
+    {/* 🎛️ Control interactivo */}
+    <div className="bg-gradient-to-r from-quantum-purple/10 to-quantum-orange/10 p-6 rounded-xl shadow-inner">
+      <h3 className="text-center text-2xl font-semibold text-quantum-purple mb-2">
+        ¡Controla la superposición!
+      </h3>
+      <AlphaBetaSlider />
+    </div>
+
+
+    {/* 🧩 Quiz final */}
+    <QuizSuperposicion />
+
+    <p className="text-justify leading-relaxed text-gray-700 mt-6">
+  En lenguaje sencillo:  
+  la superposición es lo que permite que los computadores cuánticos 
+  puedan probar varias posibilidades al mismo tiempo.  
+  Si un bit clásico representa una respuesta,  
+  un qubit en superposición representa <strong>todas las respuestas posibles</strong> a la vez,  
+  hasta que se mide y revela solo una.
+</p>
+
+
+  </div>
+)}
 
             {s.id === "entrelazamiento" && (
               <div className="flex flex-col items-center">
