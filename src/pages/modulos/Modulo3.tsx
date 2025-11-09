@@ -45,7 +45,7 @@ export function Modulo3() {
       <div className="flex-1">
         <div className="relative bg-background">
           <section 
-            className="relative py-20 bg-gradient-quantum-hero relative min-h-screen flex items-center justify-center"
+            className="relative bg-gradient-quantum-hero h-[45vh] flex items-center justify-center"
             id="intro-header">
               <div className="max-w-4xl mx-auto text-center z-10 p-6 md:p-12"> 
               <h1 className="text-5xl md:text-6xl font-staatliches text-white">
