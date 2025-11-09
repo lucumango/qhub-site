@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, SectionCard } from "@/components/ui/card";
 import { Lightbulb, Zap, Atom, Cpu, Binary, Sparkles, Scale } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -16,12 +16,17 @@ const sections = [
     { id: "importancia", title: "¿Por qué es importante?" },
     { id: "aplicaciones", title: "Aplicaciones del Futuro" },
     { id: "reflexion", title: "Reflexión Final" },
+    { id: "clasificar-conceptos", title: "Quiz del módulo" },
   ];
 
 export function Modulo1() {
   const [bitState, setBitState] = useState(false);
   const [qubitRotation, setQubitRotation] = useState(0);
   const [activeSection, setActiveSection] = useState(sections[0].id);
+
+  useLayoutEffect(() => {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -203,7 +208,7 @@ export function Modulo1() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-24">
           {/* Sección 1 */}
           <div className="relative animate-fade-in-up" id="por-que-cuantica">
-            <div className="bg-white shadow rounded-xl p-10">
+            <SectionCard>
               <h2 className="text-3xl md:text-5xl font-staatliches text-foreground mb-8 text-center">
                 ¿Por qué nos importa la cuántica?
               </h2>
@@ -238,13 +243,13 @@ export function Modulo1() {
                       src="/mascota/schrodi-profile.png"
                       loading="lazy"
                       alt="Schrödi pensando"
-                      className="relative w-48 h-48 md:w-56 md:h-56 object-cover rounded-full border-4 border-quantum-orange shadow-2xl"
+                      className="relative w-64 h-64 md:w-72 md:h-72 border-quantum-orange"
                     />
                   </div>
-                </div>
+                </div> 
               </div>
-            </div>
-
+            </SectionCard> 
+            
             <div className="mt-8">
               <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl backdrop-blur-sm">
                 <CardHeader>
@@ -279,9 +284,9 @@ export function Modulo1() {
             </div>
           </div>
 
-          {/* Sección 2: Bits Clásicos y Visualización Interactiva */}
+          {/* Sección 2 */}
           <div className="relative animate-fade-in-up" id="bits-clasicos">
-            <div className="bg-white shadow rounded-xl p-10">
+            <SectionCard className="p-12"> 
               <div className="grid lg:grid-cols-3 gap-8 items-center">
               <div className="lg:col-span-2 space-y-6">
                 <h2 className="text-3xl md:text-5xl font-staatliches text-foreground">
@@ -361,7 +366,7 @@ export function Modulo1() {
 
               </div>
             </div>
-            </div>
+            </SectionCard>
 
             <div className="mt-8">
               <Card className="bg-gradient-to-br from-quantum-dark-blue/20 to-quantum-dark-blue/10 border-quantum-dark-blue/40 shadow-2xl backdrop-blur-sm">
@@ -412,16 +417,16 @@ export function Modulo1() {
             </div>
           </div>
 
-          {/* Sección 3: Qubits */}
-          <div className="relative animate-fade-in-up" id="qubits">
-            <div className="bg-white shadow rounded-xl p-10">
-              <div className="grid lg:grid-cols-3 gap-8 items-center">
-              <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
-                <div className="relative"> {/* grid md:grid-cols-2 gap-16 items-center */}
-                  <motion.div
+          {/* Sección 3 */}
+            <div id="qubits" className="relative animate-fade-in-up">
+              <SectionCard className="p-12">
+                <div className="grid lg:grid-cols-3 gap-8 items-center">
+                  <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
+                    <div className="relative"> {/* grid md:grid-cols-2 gap-16 items-center */}
+                      <motion.div
                     className="text-center space-y-6"
                     whileHover={{ scale: 1.02 }}
-                  >
+                    >
                     <h3 className="text-2xl font-staatliches text-quantum-purple">
                       Cúbit cuántico
                     </h3>
@@ -496,28 +501,28 @@ export function Modulo1() {
                         </span>
                       </p>
                     </div>
-                    <p className="text-gray-300 text-sm font-arimo">
+                      <p className="text-gray-300 text-sm font-arimo">
                       Un cúbit puede estar en una superposición de ambos estados
                       simultáneamente. ¡Arrástrame!
-                    </p>
-                  </motion.div>
-                </div>
-              </div>
+                      </p>
+                      </motion.div>
+                    </div>
+                  </div>
 
-              <div className="lg:col-span-2 space-y-6 order-1 lg:order-2">
-                <h2 className="text-3xl md:text-5xl font-staatliches text-foreground">
-                  Qubits: La Magia de la Superposición
-                </h2>
+                  <div className="lg:col-span-2 space-y-6 order-1 lg:order-2">
+                    <h2 className="text-3xl md:text-5xl font-staatliches text-foreground">
+                      Qubits: La Magia de la Superposición
+                    </h2>
 
-                <div className="bg-gradient-to-r from-quantum-purple/20 to-transparent p-6 rounded-xl mb-6 border-l-4 border-quantum-purple">
-                  <p className="italic text-lg font-flatory text-quantum-purple mb-2">
+                  <div className="bg-gradient-to-r from-quantum-purple/20 to-transparent p-6 rounded-xl mb-6 border-l-4 border-quantum-purple">
+                    <p className="italic text-lg font-flatory text-quantum-purple mb-2">
                     "Sígueme a la parte más fascinante de mi mundo cuántico. Aquí
                     es donde la realidad deja de ser lo que pensabas..."
-                  </p>
-                  <p className="text-right text-sm font-bold text-quantum-purple/70">
+                    </p>
+                    <p className="text-right text-sm font-bold text-quantum-purple/70">
                     — Schrödi, en estado de superposición
-                  </p>
-                </div>
+                    </p>
+                  </div>
 
                 <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
                   <h3 className="text-2xl font-staatliches text-foreground">
@@ -543,12 +548,13 @@ export function Modulo1() {
                     un 1, colapsando todas las posibilidades a un estado definitivo.
                     Es como si la realidad misma fuera probabilística hasta el
                     momento de la observación.
-                  </p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </SectionCard>
 
-            <Card className="bg-gradient-to-br from-quantum-purple/20 to-quantum-purple/10 border-quantum-purple/40 shadow-md">
+              <Card className="bg-gradient-to-br from-quantum-purple/20 to-quantum-purple/10 border-quantum-purple/40 shadow-md">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-purple">
@@ -607,17 +613,15 @@ export function Modulo1() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-          </div>
+            </div>
 
           {/* Sección 4 */}
-          <div className="animate-fade-in-up" id="importancia">
-            <div className="bg-white shadow rounded-xl p-10">
-            <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
-              ¿Por Qué es tan Importante esta Diferencia?
-            </h2>
-
-            <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
+            <div id="importancia" className="relative animate-fade-in-up">
+              <SectionCard className="p-12">
+                <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
+                ¿Por Qué es tan Importante esta Diferencia?
+                </h2>
+                <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
               <p className="text-xl mb-6">
                 La superposición le da a la computación cuántica un poder
                 increíble que crece de forma <strong>exponencial</strong>.
@@ -648,16 +652,16 @@ export function Modulo1() {
                 </ul>
               </div>
 
-              <p className="text-lg mb-8">
+                <p className="text-lg mb-8">
                 Esta capacidad de procesar múltiples posibilidades al mismo
                 tiempo es lo que hace a los ordenadores cuánticos
                 extraordinariamente rápidos para resolver ciertos tipos de
                 problemas que son prácticamente imposibles para las computadoras
                 clásicas.
-              </p>
-            </div>
+                </p>
+                </div>
 
-            <Card className="bg-gradient-to-br from-quantum-lilac/20 to-quantum-lilac/10 border-quantum-lilac/40 shadow-md hover-quantum">
+                <Card className="bg-gradient-to-br from-quantum-lilac/20 to-quantum-lilac/10 border-quantum-lilac/40 shadow-md hover-quantum">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-lilac">
@@ -688,12 +692,12 @@ export function Modulo1() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-          </div>
+              </SectionCard>
+            </div>
 
           {/* Sección 5*/}
           <div className="animate-fade-in-up" id="aplicaciones">
-            <div className="bg-white shadow rounded-xl p-10">
+            <SectionCard className="p-12">
             <h2 className="text-3xl md:text-4xl font-staatliches text-foreground mb-8 text-center">
               El Futuro Cuántico: Aplicaciones que Cambiarán el Mundo
             </h2>
@@ -735,7 +739,7 @@ export function Modulo1() {
                 ¿Estás listo para el salto cuántico?
               </p>
             </div>
-          </div>
+          </SectionCard>
           </div>
 
           {/* Preguntas con Schrodi */}
@@ -786,14 +790,6 @@ export function Modulo1() {
                       sociedad?
                     </p>
                   </div>
-                  <div className="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors">
-                    <p className="font-arimo">
-                      <strong>4.</strong> Considerando el crecimiento
-                      exponencial de la capacidad cuántica, ¿en qué área te
-                      gustaría especializarte para contribuir a esta revolución
-                      tecnológica?
-                    </p>
-                  </div>
                 </div>
                 <div className="mt-6 text-center">
                   <p className="font-flatory text-quantum-orange italic">
@@ -806,7 +802,10 @@ export function Modulo1() {
             </Card>
           </div>
 
-          <ConceptClassification />
+          <SectionCard className="p-12" id="clasificar-conceptos">
+            <ConceptClassification />
+          </SectionCard>
+
         </div>
       </section>
     </div>
