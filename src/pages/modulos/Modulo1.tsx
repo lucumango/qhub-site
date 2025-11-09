@@ -214,7 +214,7 @@ export function Modulo1() {
               </h2>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
-                  <p className="text-xl">
+                  <p className="text-lg">
                     La palabra "cuántica" puede sonar intimidante, como algo
                     reservado solo para científicos con batas blancas. Sin embargo,
                     su impacto ya está en nuestras vidas y promete revolucionar la
@@ -240,7 +240,7 @@ export function Modulo1() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-quantum-orange/20 rounded-full blur-2xl scale-150"></div>
                     <img
-                      src="/mascota/schrodi-profile.png"
+                      src="/mascota/schrodi-standing.png"
                       loading="lazy"
                       alt="Schrödi pensando"
                       className="relative w-64 h-64 md:w-72 md:h-72 border-quantum-orange"
@@ -271,12 +271,9 @@ export function Modulo1() {
                   <div className="bg-quantum-orange/10 p-6 rounded-xl border-l-4 border-quantum-orange">
                     <p className="font-arimo text-lg leading-relaxed">
                       <strong>
-                        ¿Sabías que mi amigo Google's Sycamore realizó en 2019 un
-                        cálculo que tomaría 10,000 años al superordenador más
-                        poderoso del mundo en tan solo 200 segundos?
+                        En 2019, mi colega Sycamore —un procesador cuántico de Google— logró algo asombroso: resolver en 200 segundos un cálculo que al superordenador clásico más veloz le habría tomado 10,000 años.
                       </strong>{" "}
-                      Esta demostración de "supremacía cuántica" marcó el inicio
-                      de una nueva era en la computación.
+                      Ese momento marcó el inicio de la llamada ‘ventaja cuántica’, el punto donde la física cuántica empezó a ganarle al silicio.
                     </p>
                   </div>
                 </CardContent>
@@ -294,7 +291,7 @@ export function Modulo1() {
                 </h2>
 
                 <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
-                  <p className="text-xl">
+                  <p className="text-lg">
                     Para entender el salto cuántico, primero debemos entender cómo
                     funciona la informática que usamos hoy.
                   </p>
@@ -343,7 +340,7 @@ export function Modulo1() {
                         <motion.div
                           className="w-10 h-10 bg-white rounded-full shadow-md"
                           animate={{
-                            x: bitState ? 14 : 2,
+                            x: bitState ? 64 : 2,
                           }}
                           transition={{
                             type: "spring",
@@ -529,7 +526,7 @@ export function Modulo1() {
                     El Qubit Cuántico: La Esfera Mágica
                   </h3>
 
-                  <p className="text-xl">
+                  <p className="text-lg">
                     Ahora, olvídate del interruptor y piensa en una esfera. Esta es
                     la mejor analogía para un qubit (quantum bit).
                   </p>
@@ -622,7 +619,7 @@ export function Modulo1() {
                 ¿Por Qué es tan Importante esta Diferencia?
                 </h2>
                 <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
-              <p className="text-xl mb-6">
+              <p className="text-lg mb-6">
                 La superposición le da a la computación cuántica un poder
                 increíble que crece de forma <strong>exponencial</strong>.
               </p>
@@ -681,13 +678,11 @@ export function Modulo1() {
                 <div className="bg-quantum-lilac/10 p-3 rounded-lg border-l-4 border-quantum-lilac w-full">
                   <p className="font-arimo">
                     <strong>
-                      ¡Esto te dejará con la boca abierta! Un ordenador cuántico
-                      de solo 300 qubits podría realizar más cálculos
-                      simultáneos que átomos hay en el universo observable
+                      Imagina esto: con unos 300 qubits, un ordenador cuántico podría hacer más cálculos que átomos 
+                      hay en el universo observable.
                     </strong>{" "}
-                    (aproximadamente 10^80). Esto demuestra el poder exponencial
-                    de la superposición cuántica y por qué esta tecnología
-                    promete resolver problemas que hoy consideramos imposibles.
+                    Sí, lo sé… eso suena exagerado, pero así es la cuántica: cuanto más la entiendes, más te vuela la mente.
+                    Y pensar que todo empezó con un gato en una caja…
                   </p>
                 </div>
               </CardContent>
@@ -703,7 +698,7 @@ export function Modulo1() {
             </h2>
 
             <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
-              <p className="text-xl mb-6">
+              <p className="text-lg mb-6">
                 La computación cuántica aún está en sus primeras etapas, pero
                 sus promesas son enormes y están más cerca de lo que imaginas:
               </p>
