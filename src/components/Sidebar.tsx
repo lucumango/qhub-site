@@ -2,9 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidebar({ sections, activeSection, setActiveSection, backLink }) {
-
   return (
-    <aside className="w-72 bg-[#1c0f4a] text-white p-6 sticky top-0 h-screen flex flex-col justify-between">
+    <aside className="hidden lg:flex w-72 bg-[#1c0f4a] text-white p-6 sticky top-0 h-screen flex-col justify-between">
       <div>
         <Link
           to={backLink || "/"}
