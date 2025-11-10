@@ -19,11 +19,14 @@ const queryClient = new QueryClient();
 const Modulo1 = lazy(() => import("./pages/modulos/Modulo1"));
 const Modulo2 = lazy(() => import("./pages/modulos/Modulo2"));
 const Modulo3 = lazy(() => import("./pages/modulos/Modulo3"));
+const Modulo4 = lazy(() => import("./pages/modulos/Modulo4"));
+
 
 const routes = [
   { path: "/aprendizaje/modulo1", component: Modulo1 },
   { path: "/aprendizaje/modulo2", component: Modulo2 },
   { path: "/aprendizaje/modulo3", component: Modulo3 },
+  { path: "/aprendizaje/modulo4", component: Modulo4 },
 ];
 
 const App = () => (
