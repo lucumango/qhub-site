@@ -217,6 +217,8 @@ const Modulo2 = () => {
             </SectionCard>
           </div>
 
+          
+
           </div>
         </section>
       </div>
@@ -224,33 +226,6 @@ const Modulo2 = () => {
   );
 };
 
-// Componente de partículas para el fondo
-const ParticlesBG = () => (
-  <div className="absolute inset-0">
-    {[...Array(20)].map((_, i) => (
-      <motion.div
-        key={i}
-        className="absolute w-1 h-1 bg-white rounded-full"
-        initial={{
-          x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-          y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
-          opacity: 0
-        }}
-        animate={{
-          x: [null, typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0],
-          y: [null, typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0],
-          opacity: [0, 0.6, 0],
-          scale: [0, 1, 0]
-        }}
-        transition={{
-          duration: Math.random() * 10 + 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: Math.random() * 5
-        }}
-      />
-    ))}
-  </div>
-);
+
 
 export default Modulo2;
