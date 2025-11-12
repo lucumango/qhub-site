@@ -208,9 +208,29 @@ const Modulo2 = () => {
               <h2 className="text-3xl md:text-5xl font-staatliches text-foreground text-center">
                 Entrelazamiento cuántico
               </h2>
-              <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
+              <div className="grid md:grid-cols-2 gap-12 items-center pt-12">
+                <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
+                  <p className="text-xl text-justify">
+                    En el mundo clásico, las cosas parecen estar separadas, y lo que le ocurre a una no tiene por qué afectar a la otra. 
+                    ¡Pero en mi <strong>universo cuántico</strong>, las reglas cambian! Aquí, algunas <strong>partículas están tan profundamente conectadas</strong>, tan enlazadas, que lo que sucede con una determina instantáneamente el estado de la otra, <strong>sin importar la distancia</strong> que las separe. ¡Es una conexión más rápida que la luz que desafía toda nuestra intuición clásica!
+                  </p>
 
+                  
+                </div>
 
+                <div className="relative flex justify-center">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-quantum-lilac/25 rounded-full blur-2xl scale-150"></div>
+                    <img
+                      src="/mascota/schrodi-pointing.png"
+                      loading="lazy"
+                      alt="Schrödi apuntando"
+                      className="relative w-64 h-64 md:w-72 md:h-72 border-quantum-orange"
+                    />
+                  </div>
+                </div> 
+              </div>
+              <div>
                 
               </div>
               
