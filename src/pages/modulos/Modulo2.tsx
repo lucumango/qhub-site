@@ -6,6 +6,7 @@ import "katex/dist/katex.min.css";
 import { BlockMath } from "react-katex";
 import { Lightbulb, Atom } from "lucide-react";
 import LaDobleRendijaCuantica from "@/components/quantum/LaDobleRendijaCuantica";
+import ElDesafíoDeLasCajasCuánticas from "@/components/quantum/ElDesafíoDeLasCajasCuánticas";
 
 const Modulo2 = () => {
   const [activeSection, setActiveSection] = useState("interferencia");
@@ -237,7 +238,7 @@ const Modulo2 = () => {
             </SectionCard>
           </div>
 
-          
+          <ElDesafíoDeLasCajasCuánticas />
 
           </div>
         </section>
