@@ -794,7 +794,6 @@ function ComplexControls() {
 }
 
 
-
 // ------------ Playground de matrices ------------
 function MatrixPlayground() {
   const [M, setM] = useState<Mat2>(presets.PAULI_X.M);
