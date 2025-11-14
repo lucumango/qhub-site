@@ -11,6 +11,7 @@ import { BlockMath } from 'react-katex'
 import QuantumMeasurementSim from "@/components/QuantumMeasurementSim";
 import QuantumDragGame from "@/components/QuantumDragGame";
 import VínculoCuanticoInstantaneo from "@/components/quantum/VínculoCuanticoInstantaneo";
+import LoncherasEntrelazadasFlip from "@/components/quantum/LoncherasEntrelazadasFlip";
 
 const sections = [
   { id: "superposicion", title: "Superposición" },
@@ -495,9 +496,7 @@ export function Modulo2() {
           {/* Interferencia */}
           {s.id === "interferencia" && (
             <div>
-              <h2 className="text-3xl md:text-5xl font-staatliches text-foreground text-center">
-                              Interferencia cuántica
-                            </h2>
+              
                             <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed mb-8">
                               
                                 
@@ -688,10 +687,8 @@ a las probabilidades teóricas.
           {/* Entrelazamiento */}
           {s.id === "entrelazamiento" && (
               <div>
-                <h2 className="text-3xl md:text-5xl font-staatliches text-foreground text-center">
-                Entrelazamiento cuántico
-              </h2>
-              <div className="grid md:grid-cols-2 gap-12 items-center pt-12">
+                
+              <div className="mt-3 grid md:grid-cols-2 gap-12 items-center pt-12">
                 <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed">
                   <p className="text-xl text-justify">
                     En el mundo clásico, las cosas parecen estar separadas, y lo que le ocurre a una no tiene por qué afectar a la otra. 
@@ -713,8 +710,10 @@ a las probabilidades teóricas.
                   </div>
                 </div> 
               </div>
-              
-              <div className="mt-8">
+              <div className="mt-12">
+                <LoncherasEntrelazadasFlip />
+              </div>
+              <div className="mt-10">
                             <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl backdrop-blur-sm">
                               <CardHeader>
                                 <div className="flex items-center gap-4">
