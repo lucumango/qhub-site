@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Q ⟩ Circuito (QuantumHub)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Estilos esenciales de Q -->
+    <link rel="stylesheet" href="Q/Q.css" />
+    <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f8fafc;
+        overflow: hidden; /* ❗No scroll vertical */
+      }
+
+      .wrapper {
+        padding: 20px;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .circuit-box {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        flex: 1;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      #playground {
+        height: 700px;         /* ajusta a lo que necesites */
+        
+      }
+
+      /* Probabilities panel */
+      .prob-box {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        height: 400px; /* Ajustable */
+        overflow: auto; /* NO vertical scroll global, solo dentro */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        margin: 0 0 12px 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+      }
+    </style>
+
+    <!-- Librerías Q.js -->
+    <script src="Q/Q.js"></script>
+    <script src="Q/Q-ComplexNumber.js"></script>
+    <script src="Q/Q-Matrix.js"></script>
+    <script src="Q/Q-Qubit.js"></script>
+    <script src="Q/Q-Gate.js"></script>
+    <script src="Q/Q-History.js"></script>
+    <script src="Q/Q-Circuit.js"></script>
+    <script src="Q/Q-Circuit-Editor.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Paleta + Circuito -->
+      <div class="circuit-box">
+        <div class="Q-circuit-palette"></div>
+        <div id="playground"></div>
+      </div>
+
+      <!-- Probabilidades -->
+      <div class="prob-box">
+        <h2>Result probabilities</h2>
+        <pre><samp id="probabilities"></samp></pre>
+      </div>
+    </div>
+
+    <script>
+      /* Crear paleta superior */
+      Array.from(document.querySelectorAll(".Q-circuit-palette")).forEach(
+        (el) => Q.Circuit.Editor.createPalette(el)
+      );
+
+      /* Texto original para 4 qubits */
+      const initialCircuit = `
+H-I-X#0-I---I-H
+H-I-I---X#0-I-H
+X-H-X#1-X#1-H-X
+I-I-I---I---I-I
+`.trim();
+
+      /* Inicializar circuito */
+      function renderCircuit() {
+        const circuit = Q(initialCircuit);
+
+        if (!(circuit instanceof Q.Circuit)) {
+          console.error("Circuito inválido.");
+          return;
+        }
+
+        circuit.name = "playground";
+
+        /* Render DOM */
+        const dom = document.getElementById("playground");
+        dom.innerHTML = "";
+        circuit.sort$();
+        circuit.toDom(dom);
+
+        circuit.evaluate$();
+
+        /* Render probabilidades */
+        const probEl = document.getElementById("probabilities");
+        probEl.innerText = circuit.report$();
+      }
+
+      window.addEventListener("DOMContentLoaded", renderCircuit);
+
+      /* Actualizar probabilidades cuando el usuario modifica el circuito */
+      window.addEventListener("Q gui altered circuit", function (evt) {
+        const circuit = evt.detail.circuit;
+        circuit.evaluate$();
+
+        document.getElementById("probabilities").innerText =
+          circuit.report$();
+      });
+    </script>
+  </body>
+</html>
