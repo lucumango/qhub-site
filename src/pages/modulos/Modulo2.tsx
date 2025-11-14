@@ -3,7 +3,7 @@ import Sidebar from "@/components/Sidebar";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, SectionCard } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Lightbulb, Atom } from "lucide-react";
+import { Lightbulb, Atom, ChevronRight } from "lucide-react";
 import QuizSuperposicion from "@/components/QuizSuperposicion";
 import AlphaBetaSlider from "@/components/AlphaBetaSlider";
 import 'katex/dist/katex.min.css'
@@ -745,16 +745,49 @@ a las probabilidades teóricas.
                           <div className="mt-8">
                             <VínculoCuanticoInstantaneo />
                           </div>
-                
+
+                          
+                            {/* --- Cierre y CTA al Módulo --- */}
+                        <Card className="bg-gradient-quantum border-quantum-purple/30 shadow-lg mt-12 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+                          <CardHeader className="text-center">
+                              <div className="flex justify-center mb-4">
+                                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-quantum-orange bg-white/20 p-2">
+                                      <img
+                                          src="/mascota/schrodi-reading.png"
+                                          loading="lazy"
+                                          alt="Schrödi sonriendo"
+                                          className="w-full h-full object-contain"
+                                      />
+                                  </div>
+                              </div>
+                              <p className="font-flatory text-2xl md:text-3xl text-white italic">
+                                  "¡Has navegado con éxito a través de la Superposición y la Interferencia, y has dominado el arte de la Medición y el Entrelazamiento!"
+                              </p>
+                          </CardHeader>
+                          <CardContent className="text-center space-y-6">
+                              <p className="font-flatory text-2xl text-quantum-orange italic">
+                                  "Ahora ves el universo no como una cosa fija, sino como un baile de probabilidades."
+                              </p>
+                              <p className="font-staatliches text-3xl text-white">
+                                  Para realmente construir y operar estas maravillas cuánticas, necesitamos las herramientas matemáticas correctas. ¡El siguiente paso es dominar los <strong>Números Complejos</strong> y las <strong>Matrices</strong>!
+                              </p>
+
+                              <Link
+                                  to="/aprendizaje/modulo3"
+                                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-quantum-orange text-white font-staatliches text-2xl rounded-lg shadow-lg hover:bg-quantum-orange/90 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-quantum-orange focus:ring-offset-2 focus:ring-offset-quantum-purple"
+                              >
+                                  Continúa al Módulo 3: Números Complejos y Matrices
+                                  <ChevronRight className="w-7 h-7" />
+                              </Link>
+                          </CardContent>
+                      </Card>
               </div>
           )}
-
           </SectionCard>
           </div> 
         </section>      
 </section>
           ))}
-
       </section>
         </div>
 

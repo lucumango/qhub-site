@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, SectionCard } from "@/components/ui/card";
-import { Lightbulb, Zap, Atom, Cpu, Binary, Sparkles, Scale } from "lucide-react";
+import { Lightbulb, Zap, Atom, Cpu, Binary, Sparkles, Scale, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { aplicacionesCuanticas } from "@/data/quantumData";
@@ -799,6 +799,41 @@ export function Modulo1() {
 
           <SectionCard className="p-12" id="clasificar-conceptos">
             <ConceptClassification />
+
+                      {/* --- Cierre y CTA al Módulo--- */}
+          <Card className="bg-gradient-quantum border-quantum-purple/30 shadow-lg mt-12">
+                  <CardHeader className="text-center">
+                    <div className="flex justify-center mb-4">
+                      <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-quantum-orange bg-white/20 p-2">
+                        <img
+                          src="/mascota/schrodi-reading.png"
+                          loading="lazy"
+                          alt="Schrödi sonriendo"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+                    <p className="font-flatory text-2xl md:text-3xl text-white italic">
+                      "¡Has completado tu inmersión en el mundo cuántico! Ahora sabes <strong>por qué nos importa</strong> y la diferencia entre Bits Clásicos y Qubits."
+                    </p>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-6">
+                    <p className="font-flatory text-2xl text-quantum-orange italic">
+                      "El futuro de la computación es prometedor, pero ahora... ¡a la acción!"
+                    </p>
+                    <p className="font-staatliches text-3xl text-white">
+                      Es hora de comprender los <strong>fenómenos clave</strong> que hacen posible la cuántica. ¡El Qubit te espera!
+                    </p>
+                    
+                    <Link 
+                      to="/aprendizaje/modulo2"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-quantum-orange text-white font-staatliches text-2xl rounded-lg shadow-lg hover:bg-quantum-orange/90 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-quantum-orange focus:ring-offset-2 focus:ring-offset-quantum-purple"
+                    >
+                      Continúa al Módulo 2: Superposición, Interferencia y Entrelazamiento
+                      <ChevronRight className="w-7 h-7" />
+                    </Link>
+                  </CardContent>
+                </Card>
           </SectionCard>
 
         </div>
