@@ -251,6 +251,35 @@ export function Modulo3() {
                     </div>
                     <p>Esta forma es muy poderosa porque nos muestra directamente <strong>cómo rota el vector</strong>.</p>
                     </div>
+                    
+                  {/* Analogía del GPS de Schrödi */}
+                  <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-md mt-8">
+                    <CardHeader>
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-orange">
+                          <img src="/mascota/schrodi-profile.png" alt="Schrödi" className="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                          <CardTitle className="font-staatliches text-quantum-orange">Analogía de Schrödi</CardTitle>
+                          <CardDescription className="text-quantum-orange/70">¡Mi GPS cuántico!</CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="relative">
+                      <div className="absolute -top-12 right-0 w-24 h-24 opacity-10">
+                        <MapPin className="w-full h-full text-quantum-orange" />
+                      </div>
+                      <div className="bg-quantum-orange/10 p-4 rounded-lg border-l-4 border-quantum-orange">
+                        <p className="font-arimo text-lg leading-relaxed">
+                          Piensa en un número complejo <Latex tex="z = a + bi" /> como una instrucción de GPS:
+                          <br />
+                          "Muévete <strong><Latex tex="a" /> pasos al este</strong> (eje real) y <strong><Latex tex="b" /> pasos al norte</strong> (eje imaginario)
+                          <br/> 
+                          Si cambias la fase, giras la brújula: ¡tu dirección cambia aunque tu distancia sea la misma!".
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </CardContent>
               </motion.div>
             </SectionCard>
@@ -304,35 +333,6 @@ export function Modulo3() {
                     <ComplexPlane />
                     {/* Panel de valores */}
                   </div>
-
-                  {/* Analogía del GPS de Schrödi */}
-                  <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-md mt-8">
-                    <CardHeader>
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-orange">
-                          <img src="/mascota/schrodi-profile.png" alt="Schrödi" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                          <CardTitle className="font-staatliches text-quantum-orange">Analogía de Schrödi</CardTitle>
-                          <CardDescription className="text-quantum-orange/70">¡Mi GPS cuántico!</CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="relative">
-                      <div className="absolute -top-12 right-0 w-24 h-24 opacity-10">
-                        <MapPin className="w-full h-full text-quantum-orange" />
-                      </div>
-                      <div className="bg-quantum-orange/10 p-4 rounded-lg border-l-4 border-quantum-orange">
-                        <p className="font-arimo text-lg leading-relaxed">
-                          Piensa en un número complejo <Latex tex="z = a + bi" /> como una instrucción de GPS:
-                          <br />
-                          "Muévete <strong><Latex tex="a" /> pasos al este</strong> (eje real) y <strong><Latex tex="b" /> pasos al norte</strong> (eje imaginario)
-                          <br/> 
-                          Si cambias la fase, giras la brújula: ¡tu dirección cambia aunque tu distancia sea la misma!".
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
 
                   <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed pt-8">
                     <h3 className="text-2xl font-staatliches text-foreground">
