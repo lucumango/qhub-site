@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+// import ScrollToTop from "./components/ScrollToTop"; // 👈 import
 
 import Home from "./pages/Home";
 import Equipo from "./pages/Equipo";
@@ -14,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import SobreNosotros from "./pages/About";
 import Aprendizaje from "./pages/Aprendizaje";
 import React, { Suspense, lazy } from "react";
+
 const queryClient = new QueryClient();
 
 const Modulo1 = lazy(() => import("./pages/modulos/Modulo1"));
@@ -32,6 +34,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* 👇 Esto asegura scroll al inicio en cada ruta */}
+        {/* <ScrollToTop /> */}
+
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,6 +46,7 @@ const App = () => (
             {/* <Route path="/noticias" element={<Noticias />} /> */}
             <Route path="/postulacion" element={<Postulacion />} />
             <Route path="/aprendizaje" element={<Aprendizaje />} />
+
             {routes.map(({ path, component: Component }) => (
               <Route
                 key={path}
@@ -52,7 +58,7 @@ const App = () => (
                 }
               />
             ))}
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
