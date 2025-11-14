@@ -499,31 +499,6 @@ export function Modulo3() {
                   </p>
                 </div>
 
-                {/* Dato Cuántico de Schrödi */}
-                {/* <Card className="bg-gradient-to-br from-quantum-lilac/20 to-quantum-lilac/10 border-quantum-lilac/40 shadow-md">
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-lilac">
-                        <img src="/mascota/schrodi-standing.png" alt="Schrödi" className="w-full h-full object-cover" />
-                      </div>
-                      <CardTitle className="font-staatliches text-quantum-lilac">
-                        Dato Cuántico de Schrödi 🐾
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="relative">
-                    <div className="absolute -top-12 right-0 w-24 h-24 opacity-10">
-                      <Sparkles className="w-full h-full text-quantum-lilac" />
-                    </div>
-                    <div className="bg-quantum-lilac/10 p-4 rounded-lg border-l-4 border-quantum-lilac">
-                      <p className="font-arimo text-lg leading-relaxed">
-                        "¡Y así, con unos cuantos números y una pizca de imaginación, acabas de aprender el{' '}
-                      <em>idioma</em> del universo cuántico!"
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card> */}
-
                 {/* --- Cierre y CTA al Módulo 4 --- */}
                 <Card className="bg-gradient-quantum border-quantum-purple/30 shadow-lg mt-12">
                   <CardHeader className="text-center">
