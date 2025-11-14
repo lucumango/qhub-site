@@ -4,4 +4,4 @@ export { default as BellStatesInteractive } from './BellStatesInteractive';
 export { default as EsferasEntrelazadas } from './EsferasEntrelazadas';
 export { default as MiniQuiz } from './MiniQuiz';
 export { default as ElCanceladorDeOlas } from './ElCanceladorDeOlas';
-export { default as LaDobleRendijaCuantica } from './LaDobleRendijaCuantica';
+export { default as LaDobleRendijaCuantica } from './DoubleSlitSimulator';
