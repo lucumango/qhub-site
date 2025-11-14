@@ -9,6 +9,7 @@ import { Calculator, MapPin, BookOpen, ChevronRight, Binary, Sparkles, Compass, 
 const sections = [
   { id: "introduccion", title: "Introducción" },
   { id: "numeros-complejos", title: "Números Complejos" },
+  { id: "por-que-importa", title: "¿Por qué importa?" },
   { id: "matrices", title: "Matrices" },
   { id: "conexion-final", title: "De la matemática al qubit" },
 ];
@@ -121,19 +122,19 @@ export function Modulo3() {
             <div className="py-2" id="introduccion">
               <motion.div {...fadeInAnimation}>
                 <Card className="bg-gradient-to-br from-quantum-purple/20 to-quantum-purple/10 border-quantum-purple/40 shadow-2xl backdrop-blur-sm p-0">
-                  {/* Contenedor principal con Flexbox para el diseño lateral */}
-                  <div className="flex">
-                    <div className="flex-grow p-8 md:p-12">
-                        
-                        {/* CardHeader */}
-                        <div className="mb-4">
-                            <CardTitle className="font-staatliches text-quantum-purple text-3xl">
-                                ¡Bienvenidos!
-                            </CardTitle>
-                            <CardDescription className="font-arimo text-quantum-purple/80 text-lg">
-                                El universo cuántico no habla con palabras...
-                            </CardDescription>
-                        </div>
+                {/* Contenedor principal con Flexbox para el diseño lateral */}
+                <div className="flex">
+                  <div className="flex-grow p-8 md:p-12">
+                      
+                      {/* CardHeader */}
+                      <div className="mb-4">
+                          <CardTitle className="font-staatliches text-quantum-purple text-3xl">
+                              ¡Bienvenidos!
+                          </CardTitle>
+                          <CardDescription className="font-arimo text-quantum-purple/80 text-lg">
+                              El universo cuántico no habla con palabras...
+                          </CardDescription>
+                      </div>
 
                         {/* CardContent */}
                         <div className="space-y-4">
@@ -158,7 +159,7 @@ export function Modulo3() {
                                     </p>
                                 </li>
                             </ul>
-                            <p>
+                            <p className="font-arimo text-lg md:text-xl text-foreground leading-relaxed">
                               Este módulo te guiará desde los números complejos <Latex tex="z=a+bi" /> —la clave para describir cómo es un estado cuántico (el famoso qubit)— hasta las matrices —la herramienta matemática que explica cómo estos estados cambian y evolucionan a través de las operaciones cuánticas (compuertas). Descubrirás que cada símbolo tiene un significado físico claro y directo, preparándote para construir tus primeros circuitos cuánticos.
                             </p>
                             <p className="font-arimo text-lg md:text-xl text-foreground leading-relaxed pt-4">
@@ -190,56 +191,111 @@ export function Modulo3() {
                 </CardHeader>
                 <CardContent className="space-y-8">
                   
-                  <div className="prose prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed">
+                  <div className="prose text-lg prose-lg max-w-none font-arimo text-muted-foreground leading-relaxed">
                     <h3 className="text-2xl font-staatliches text-foreground">
-                      De la Línea al Plano: Un Nuevo Eje
+                      El plano complejo: Donde los números ganan direcciones
                     </h3>
                     <p>
                       Recordemos que los números que usamos a diario <Latex tex="(1, -5, 0.5)" /> se representan en una sola <strong>línea</strong> (el eje real).
+                      Podemos avanzar hacia la derecha (positivos) o hacia la izquierda (negativos). Hasta aquí, todo cabe en un solo eje.
                     </p>
                     <p>
                       Pero, ¿qué pasa si intentamos resolver <Latex tex="\sqrt{-1}" />? El universo matemático se expande. Presentamos la <strong>unidad imaginaria <Latex tex="i" /></strong>, definida por la propiedad de que <Latex tex="i^2 = -1" />.
                     </p>
                     <p>
-                      Un <strong>Número Complejo</strong> es una combinación de ambos ejes: tiene un componente <strong>Real</strong> (<Latex tex="a" />) y un componente <strong>Imaginario</strong> (<Latex tex="b" />). Lo escribimos como:
+                      Un <strong>Número Complejo</strong> tiene dos partes:  
+                    </p>
+                    <div className="my-4">
+                      - una parte <strong>real</strong> (<Latex tex="a" />) 
+                    </div>
+                    <div className="my-4">
+                      - y una parte <strong>imaginaria</strong> (<Latex tex="b" />).
+                    </div>
+                    <p>
+                      Como tiene dos dimensiones, ya no cabe en una línea. Necesitamos un <strong>mapa</strong>: el plano complejo. Aquí:
+                    </p>
+                    <div className="my-4">
+                      - Eje horizontal → <strong>parte real</strong>
+                    </div>
+                    <div className="my-4">
+                      - Eje vertical → <strong>parte imaginaria</strong>.
+                    </div>
+                    <p>
+                      Cada número complejo es un punto en este plano, y podemos representarlo mediante un vector que va desde el centro (0,0) hasta ese punto.
+                    </p>
+                    <div className="my-4">
+                      Podemos describir ese punto de dos maneras:
+                    </div>
+                    <h3 className="text-2xl font-staatliches text-foreground mt-10">
+                      Forma rectangular (como coordenadas)
+                    </h3>
+                    <p>
+                      Te dice cuántos pasos vas hacia la derecha/izquierda (<Latex tex="a" />) y cuántos pasos subes/bajas (<Latex tex="b" />):
                     </p>
                     <div className="text-center my-4">
                       <Latex tex="z = a + bi" display />
                     </div>
-
-                    <h3 className="text-2xl font-staatliches text-foreground mt-12">
-                      El Plano Complejo
+                    <p>Es como una instrucción de GPS. </p>
+                    <h3 className="text-2xl font-staatliches text-foreground mt-10">
+                      Forma polar (como una brújula)
                     </h3>
-                    <p>
-                      Como un número complejo tiene dos partes, ya no podemos dibujarlo en una línea. ¡Necesitamos un plano! A continuación, puedes <strong>visualizar e interactuar</strong> con el plano complejo:
-                    </p>
-                  </div>
+                    <p>Aquí no hablamos de "pasos", sino de:</p>
+                    <div className=" my-4">
+                      <strong>r</strong> → qué tan lejos está el punto del centro (su "tamaño" o <strong>amplitud</strong>)
+                    </div> 
+                    <div className="my-4">
+                      <strong><Latex tex="\theta" /></strong> → el ángulo que forma el vector (su <strong>fase</strong> o dirección)
+                    </div>
+                    <div className="text-center my-4">
+                      <Latex tex="z = r \cdot e^{i\theta}" display />
+                    </div>
+                    <p>Esta forma es muy poderosa porque nos muestra directamente <strong>cómo rota el vector</strong>.</p>
+                    </div>
+                </CardContent>
+              </motion.div>
+            </SectionCard>
 
-                  {/* ====== VISUALIZACIÓN INTERACTIVA ====== */}
-                  <div className="grid lg:grid-cols-3 gap-8 items-start">
+
+            <SectionCard id="por-que-importa">
+              <motion.div {...fadeInAnimation}>
+                <CardHeader>
+                  <CardTitle className="text-3xl md:text-5xl font-staatliches text-foreground mb-8 text-center">
+                    ¿POR QUÉ IMPORTA TODO ESTO EN CUÁNTICA?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  <div className="prose prose-lg text-lg max-w-none font-arimo text-muted-foreground leading-relaxed">
+                    <p>
+                      En un qubit, los números complejos son los que guardan la información: sus <strong>amplitudes</strong> y sus <strong>fases</strong>.
+                    </p>
+                    <div className="my-4">
+                      - La <strong>amplitud</strong> afecta cuán probable es un estado.
+                    </div>
+                    <div className="my-4">
+                      - La <strong>fase</strong> afecta <strong>cómo se combinan</strong> las probabilidades cuando los estados interfieren.
+                    </div>
+                    <p>
+                      Sin fase <strong>no hay</strong> interferencia cuántica, y sin interferencia cuántica <strong>no existe</strong> la potencia de la computación cuántica.
+                    </p>
+                    {/* ====== VISUALIZACIÓN INTERACTIVA ====== */}
+                  <div className="grid lg:grid gap-8 items-start">
                     {/* Explicación de ejercicios */}
                     <div className="lg:col-span-1 space-y-4 font-arimo text-muted-foreground">
-                      <p>
-                        Un número complejo es <Latex tex="z=a+bi" />.
-                      </p>
-                      <p>
-                        Su forma polar es <Latex tex="z = r \cdot e^{i\theta}" /> con{" "}
-                        <Latex tex="r = \sqrt{a^2 + b^2}, \\ \theta = \operatorname{atan2}(b,a)" />.
-                      </p>
-
                       <div className="rounded-xl border p-4 bg-quantum-dark-blue/5">
-                        <div className="flex items-center gap-2 text-quantum-purple font-semibold mb-2">
+                        <div className="flex text-lg items-center gap-2 text-quantum-purple font-semibold mb-2">
                           <Compass className="w-4 h-4" />
-                          <span>Ejercicios rápidos</span>
+                          <span>Explora</span>
                         </div>
-                        <ul className="list-disc pl-5 text-sm space-y-2">
-                          <li>
+                        <ul className="list-disc pl-5 text-sm space-y-2 marker:text-quantum-orange">
+                          <li className="text-foreground text-lg">
                             Pulsa <strong>× i</strong>: verás que es un <em>giro</em> de 90°.
                           </li>
-                          <li>
-                            Arrastra el punto y observa <Latex tex="(a,b)" />, <Latex tex="r" /> y <Latex tex="\\ \theta" />.
+                          <li className="text-foreground text-lg">
+                            Arrastra el punto para ver cómo cambian <Latex tex="(a,b)" />, <Latex tex="r" /> y <Latex tex="\\ \theta" />.
                           </li>
-                          <li>Usa el slider para cambiar directamente la fase.</li>
+                          <li className="text-foreground text-lg">
+                            Usa el control deslizante para cambiar directamente la fase.
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -247,7 +303,6 @@ export function Modulo3() {
                     {/* Plano complejo interactivo */}
                     <ComplexPlane />
                     {/* Panel de valores */}
-                    <ComplexInspector />
                   </div>
 
                   {/* Analogía del GPS de Schrödi */}
@@ -271,7 +326,9 @@ export function Modulo3() {
                         <p className="font-arimo text-lg leading-relaxed">
                           Piensa en un número complejo <Latex tex="z = a + bi" /> como una instrucción de GPS:
                           <br />
-                          "Muévete <strong><Latex tex="a" /> pasos al este</strong> (eje real) y <strong><Latex tex="b" /> pasos al norte</strong> (eje imaginario)".
+                          "Muévete <strong><Latex tex="a" /> pasos al este</strong> (eje real) y <strong><Latex tex="b" /> pasos al norte</strong> (eje imaginario)
+                          <br/> 
+                          Si cambias la fase, giras la brújula: ¡tu dirección cambia aunque tu distancia sea la misma!".
                         </p>
                       </div>
                     </CardContent>
@@ -294,7 +351,7 @@ export function Modulo3() {
                       La <strong>Fase</strong> es el ingrediente secreto que permite la <strong>Interferencia Cuántica</strong> (donde las probabilidades pueden sumarse o cancelarse), ¡dando a las computadoras cuánticas su poder!
                     </p>
                   </div>
-
+                  </div>
                 </CardContent>
               </motion.div>
             </SectionCard>
@@ -316,7 +373,7 @@ export function Modulo3() {
                       Una matriz es simplemente una <strong>tabla rectangular de números</strong>. Es una forma organizada de datos que puede <strong>realizar una acción</strong> sobre un vector.
                     </p>
                     <p>
-                      Para un solo qubit, nos centraremos en matrices de <Latex tex="2 \times 2" /> (2 filas, 2 columnas):
+                      Para un solo qubit, nos centraremos en matrices de <Latex tex="2 \times 2" /> (<Latex tex="2" /> filas, <Latex tex="2" /> columnas), que se ven así:
                     </p>
                     <div className="text-center my-4">
                       <Latex tex="M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}" display />
@@ -442,24 +499,8 @@ export function Modulo3() {
                   </p>
                 </div>
 
-                {/* ====== VISUALIZACIÓN BLOCH-LIKE ====== */}
-                <div className="grid md:grid-cols-2 gap-8 items-center my-8">
-                  <BlochLike />
-                  <Card className="bg-gradient-to-br from-quantum-purple/10 to-transparent border-quantum-purple/30">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="font-staatliches text-quantum-purple flex items-center gap-2">
-                        <Sparkles className="w-5 h-5" /> Schrödi comenta
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="font-arimo">
-                      "¡Y así, con unos cuantos números y una pizca de imaginación, acabas de aprender el{' '}
-                      <em>idioma</em> del universo cuántico!"
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* Dato Cuántico de Schrödi (Sycamore) */}
-                <Card className="bg-gradient-to-br from-quantum-lilac/20 to-quantum-lilac/10 border-quantum-lilac/40 shadow-md">
+                {/* Dato Cuántico de Schrödi */}
+                {/* <Card className="bg-gradient-to-br from-quantum-lilac/20 to-quantum-lilac/10 border-quantum-lilac/40 shadow-md">
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-quantum-lilac">
@@ -476,14 +517,12 @@ export function Modulo3() {
                     </div>
                     <div className="bg-quantum-lilac/10 p-4 rounded-lg border-l-4 border-quantum-lilac">
                       <p className="font-arimo text-lg leading-relaxed">
-                        "En 2019, mis amigos humanos de Google Quantum AI hicieron historia con su procesador <strong>Sycamore</strong> (¡53 qubits!). Lograron realizar un cálculo en 200 segundos que, estimaron, tomaría 10,000 años a un superordenador clásico."
-                      </p>
-                      <p className="font-arimo text-lg leading-relaxed mt-2">
-                        A eso lo llamaron ‘supremacía cuántica’, aunque hoy muchos prefieren decir <strong>‘ventaja cuántica’</strong>, un término más justo para describir que los ordenadores cuánticos ya están mostrando lo que pueden hacer. ¡Fue el primer rugido del futuro cuántico!"
+                        "¡Y así, con unos cuantos números y una pizca de imaginación, acabas de aprender el{' '}
+                      <em>idioma</em> del universo cuántico!"
                       </p>
                     </div>
                   </CardContent>
-                </Card>
+                </Card> */}
 
                 {/* --- Cierre y CTA al Módulo 4 --- */}
                 <Card className="bg-gradient-quantum border-quantum-purple/30 shadow-lg mt-12">
@@ -551,6 +590,9 @@ function ComplexPlane() {
   const axis = size / 2;
   const scale = (size - padding * 2) / 2; // mapa: [-1,1] -> lienzo
 
+  // Calcular r y theta para el arco de fase
+  const { r, theta } = useMemo(() => toPolar(z), [z]);
+
   // arrastre
   const onPointer = (e: React.PointerEvent<SVGCircleElement>) => {
     if (!svgRef.current) return;
@@ -573,8 +615,11 @@ function ComplexPlane() {
     <ComplexContext.Provider value={{ z, setZ, setPhase }}>
       <Card className="lg:col-span-1 bg-white">
         <CardHeader className="pb-2">
-          <CardTitle className="font-staatliches">Plano complejo (arrástrame)</CardTitle>
-          <CardDescription>El eje horizontal es la parte real; el vertical, la imaginaria.</CardDescription>
+          <CardTitle className="font-staatliches">Plano complejo</CardTitle>
+          <CardDescription className="text-base">
+            <span className="text-blue-600 font-semibold text-lg">Eje horizontal</span> = parte real • 
+            <span className="text-purple-600 font-semibold ml-1 text-lg">Eje vertical</span> = parte imaginaria
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <svg
@@ -593,10 +638,48 @@ function ComplexPlane() {
             </defs>
             <rect x={0} y={0} width={size} height={size} fill="url(#g)" />
             {/* ejes */}
-            <line x1={padding} y1={axis} x2={size - padding} y2={axis} stroke="#94a3b8" strokeWidth={1} />
-            <line x1={axis} y1={padding} x2={axis} y2={size - padding} stroke="#94a3b8" strokeWidth={1} />
+            {/* Eje real (azul) */}
+            <line 
+              x1={padding} 
+              y1={axis} 
+              x2={size - padding} 
+              y2={axis} 
+              stroke="#3b82f6" 
+              strokeWidth={2} 
+              opacity={0.6}
+            />
+            <text x={size - padding - 10} y={axis - 8} fill="#3b82f6" fontSize="12" fontWeight="bold">Re</text>
+            
+            {/* Eje imaginario (morado) */}
+            <line 
+              x1={axis} 
+              y1={padding} 
+              x2={axis} 
+              y2={size - padding} 
+              stroke="#a855f7" 
+              strokeWidth={2}
+              opacity={0.6}
+            />
+            <text x={axis + 8} y={padding + 15} fill="#a855f7" fontSize="12" fontWeight="bold">Im</text>
             {/* círculo unitario */}
             <circle cx={axis} cy={axis} r={scale} fill="none" stroke="#e2e8f0" strokeDasharray="4 3" />
+
+            {/* arco de fase (sutil) con tooltip */}
+            {r > 0.1 && (
+              <g>
+                <path
+                  d={`M ${axis + 30} ${axis} A 30 30 0 ${Math.abs(theta) > Math.PI ? 1 : 0} ${theta > 0 ? 0 : 1} ${axis + 30 * Math.cos(theta)} ${axis - 30 * Math.sin(theta)}`}
+                  fill="none"
+                  stroke="#f59e0b"
+                  strokeWidth={1.5}
+                  strokeDasharray="3 2"
+                  opacity={0.5}
+                >
+                  <title>🧭 Fase = dirección del vector ({(theta * 180 / Math.PI).toFixed(1)}°)</title>
+                </path>
+              </g>
+            )}
+
             {/* vector */}
             <line
               x1={axis}
@@ -619,6 +702,29 @@ function ComplexPlane() {
           </svg>
 
           <ComplexControls />
+          <CardHeader className="pb-2">
+          <CardTitle className="font-staatliches">Lecturas cuánticas</CardTitle> 
+          </CardHeader>
+          <CardContent className="font-arimo text-sm space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-quantum-orange/10 p-3 rounded-lg border border-quantum-orange/30">
+            <p className="text-xs text-quantum-orange font-semibold mb-1">Amplitud <Latex tex={`|z|=r`} /></p>
+            <p><Latex tex={`|z|=${r.toFixed(3)}`} /></p>
+            {/* <p className="text-lg font-mono text-foreground">{r.toFixed(3)}</p> */}
+            <p className="text-xs text-muted-foreground mt-1">Es "qué tan fuerte" o "qué tan probable" es el estado.</p>
+          </div>
+          <div className="bg-quantum-dark-blue/10 p-3 rounded-lg border border-quantum-dark-blue/30">
+            <p className="text-xs text-quantum-dark-blue font-semibold mb-1">Fase <Latex tex={`\\ \\theta`} /></p>
+            <p><Latex tex={`\\ \\theta=${(theta * 180 / Math.PI).toFixed(1)}^\\circ`} /></p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Es la dirección de tu vector. 
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">En cuántica, esa dirección puede hacer que los estados se <em>refuercen</em> mutuamente o se <em>cancelen</em></p>
+            <p className="text-xs text-muted-foreground mt-1">(a eso le llamamos <strong>interferencia cuántica</strong>).</p>
+
+          </div>
+        </div>
+      </CardContent>
         </CardContent>
       </Card>
     </ComplexContext.Provider>
@@ -634,22 +740,19 @@ function ComplexControls() {
     <div className="mt-4 space-y-3 font-arimo">
       <div className="grid grid-cols-2 gap-3">
         <div className="p-3 rounded-lg bg-slate-50 border">
-          <div className="text-xs text-slate-500 mb-1">Número</div>
-          <div className="font-mono">
-            a = {z.re.toFixed(3)}, b = {z.im.toFixed(3)} &nbsp; ⟹ &nbsp; <Latex tex={`a+bi`} />
-          </div>
+          <div className="text-xs text-slate-500 mb-1">Número complejo</div>
+          <p><Latex tex={`a = ${z.re.toFixed(3)}, b = ${z.im.toFixed(3)} \\; ⟹ \\; a+bi`} /></p>
         </div>
         <div className="p-3 rounded-lg bg-slate-50 border">
           <div className="text-xs text-slate-500 mb-1">Polar</div>
-          <div className="font-mono">
-            r = {r.toFixed(3)}, θ = {(theta * 180 / Math.PI).toFixed(1)}°
-          </div>
+          <p><Latex tex={`r = ${r.toFixed(3)},  θ = ${(theta * 180 / Math.PI).toFixed(1)}°`} /></p>
         </div>
       </div>
 
       <div className="flex items-center gap-2">
         <button
-          className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-quantum-purple text-white hover:opacity-90"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-quantum-purple to-purple-600 
+          text-white hover:from-purple-600 hover:to-quantum-purple transition-all duration-300 shadow-md hover:shadow-lg transform"
           onClick={() => setZ(multiplyByI(z))}
         >
           <RotateCcw className="w-4 h-4" /> × i (giro 90°)
@@ -658,7 +761,10 @@ function ComplexControls() {
       </div>
 
       <div>
-        <div className="text-xs text-slate-500 mb-1">Fase (θ)</div>
+        <div className="flex items-center justify-between mb-2">
+          <div className="text-sm text-quantum-orange font-semibold">Control de Fase (<Latex tex="\\ \theta" />)</div>
+          <div className="text-sm font-mono text-foreground">{(theta * 180 / Math.PI).toFixed(1)}°</div>
+        </div>
         <input
           type="range"
           min={-Math.PI}
@@ -666,47 +772,28 @@ function ComplexControls() {
           step={0.01}
           value={theta}
           onChange={(e) => setPhase(Number(e.target.value))}
-          className="w-full accent-quantum-orange"
+          className="w-full h-2 accent-quantum-orange cursor-pointer"
+          style={{
+            background: `linear-gradient(to right, #a855f7 0%, #f59e0b ${((theta + Math.PI) / (2 * Math.PI)) * 100}%, #e5e7eb ${((theta + Math.PI) / (2 * Math.PI)) * 100}%)`
+          }}
         />
+        <div className="flex justify-between text-xs text-slate-500 mt-1">
+          <span>-180°</span>
+          <span>0°</span>
+          <span>+180°</span>
+        </div>
       </div>
 
-      <div className="text-sm text-slate-600">
+      {/* <div className="text-sm text-slate-600">
         En un qubit <Latex tex={"\\left|\\psi\\right\\rangle=\\begin{pmatrix}\\alpha\\\\\\beta\\end{pmatrix}"} />, las
         amplitudes <Latex tex={"\\alpha,\\,\\beta\\in\\mathbb{C}"} /> tienen <em>fase</em>; esa fase determina cómo
         interfieren estados al combinarse.
-      </div>
+      </div> */}
     </div>
   );
 }
 
-function ComplexInspector() {
-  const ctx = React.useContext(ComplexContext);
-  const z = ctx?.z ?? { re: 0, im: 0 };
-  const { r, theta } = toPolar(z);
-  return (
-    <Card className="lg:col-span-1">
-      <CardHeader className="pb-2">
-        <CardTitle className="font-staatliches">Lecturas y conexión cuántica</CardTitle>
-      </CardHeader>
-      <CardContent className="font-arimo text-sm space-y-3">
-        <p>
-          <strong>Amplitud:</strong> <Latex tex="|z|=r" /> = {r.toFixed(3)} &nbsp; • &nbsp;
-          <strong>Fase:</strong> <Latex tex="\\theta" /> = {(theta * 180 / Math.PI).toFixed(1)}°
-        </p>
-        <div className="rounded-lg p-3 bg-quantum-purple/10 border border-quantum-purple/30">
-          <p className="mb-1 text-quantum-purple font-semibold">Schrödi comenta</p>
-          <p>
-            Multiplicar por <Latex tex="i" /> no es "solo multiplicar": es girar tu brújula 90°. En cuántica, los giros
-            de fase cambian cómo se combinan probabilidades.
-          </p>
-        </div>
-        <p className="text-slate-600">
-          La <em>fase relativa</em> entre amplitudes es el "ingrediente secreto" de la interferencia cuántica.
-        </p>
-      </CardContent>
-    </Card>
-  );
-}
+
 
 // ------------ Playground de matrices ------------
 function MatrixPlayground() {
@@ -866,41 +953,5 @@ function MatrixToBloch({ out }: { out: Vec2 }) {
       </svg>
       <div className="text-sm mt-2 font-mono">ángulo ≈ {(angle * 180 / Math.PI).toFixed(1)}°</div>
     </div>
-  );
-}
-
-function BlochLike() {
-  const [theta, setTheta] = useState(20);
-  const size = 220;
-  const c = size / 2;
-  const r = c - 10;
-  const ang = (theta * Math.PI) / 180;
-
-  return (
-    <Card>
-      <CardHeader className="pb-2">
-        <CardTitle className="font-staatliches">Vector de estado (ilustración)</CardTitle>
-        <CardDescription>Ajusta la "rotación" como si aplicaras una compuerta.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <svg width={size} height={size} className="block mx-auto">
-          <circle cx={c} cy={c} r={r} fill="none" stroke="#e5e7eb" />
-          <line x1={c - r} y1={c} x2={c + r} y2={c} stroke="#cbd5e1" />
-          <line x1={c} y1={c - r} x2={c} y2={c + r} stroke="#cbd5e1" />
-          <line x1={c} y1={c} x2={c + r * Math.cos(ang)} y2={c - r * Math.sin(ang)} stroke="#a855f7" strokeWidth={3} />
-          <circle cx={c + r * Math.cos(ang)} cy={c - r * Math.sin(ang)} r={7} fill="#f59e0b" />
-        </svg>
-        <div className="mt-3">
-          <input
-            type="range"
-            min={-180}
-            max={180}
-            value={theta}
-            onChange={(e) => setTheta(Number(e.target.value))}
-            className="w-full accent-quantum-orange"
-          />
-        </div>
-      </CardContent>
-    </Card>
   );
 }
