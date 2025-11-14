@@ -5,8 +5,9 @@ import Sidebar from "@/components/Sidebar";
 import "katex/dist/katex.min.css";
 import { BlockMath } from "react-katex";
 import { Lightbulb, Atom } from "lucide-react";
-import LaDobleRendijaCuantica from "@/components/quantum/LaDobleRendijaCuantica";
+
 import ElDesafíoDeLasCajasCuánticas from "@/components/quantum/ElDesafíoDeLasCajasCuánticas";
+import VínculoCuanticoInstantaneo from "@/components/quantum/VínculoCuanticoInstantaneo";
 
 const Modulo2 = () => {
   const [activeSection, setActiveSection] = useState("interferencia");
@@ -231,14 +232,43 @@ const Modulo2 = () => {
                   </div>
                 </div> 
               </div>
-              <div>
-                
-              </div>
+              
+              <div className="mt-8">
+                            <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl backdrop-blur-sm">
+                              <CardHeader>
+                                <div className="flex items-center gap-4">
+                                  <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-quantum-orange shadow-lg">
+                                    <img
+                                      src="/mascota/schrodi-profile.png"
+                                      loading="lazy"
+                                      alt="Schrödi"
+                                      className="w-full h-full object-cover"
+                                    />
+                                  </div>
+                                  <CardTitle className="font-staatliches text-quantum-orange text-xl">
+                                    Dos partículas entrelazadas
+                                  </CardTitle>
+                                </div>
+                              </CardHeader>
+                              <CardContent>
+                                <div className="bg-quantum-orange/10 p-6 rounded-xl border-l-4 border-quantum-orange">
+                                  <p className="font-arimo text-lg leading-relaxed">
+                                    El entrelazamiento cuántico conecta partículas de forma misteriosa. 
+                                    Lo que le pase a una afecta instantáneamente a la otra. 
+                                    No importa la distancia, la correlación es total.
+                                  </p>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </div>
+                          <div className="mt-8">
+                            <VínculoCuanticoInstantaneo />
+                          </div>
               
             </SectionCard>
           </div>
 
-          <ElDesafíoDeLasCajasCuánticas />
+          
 
           </div>
         </section>
