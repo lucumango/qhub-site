@@ -276,7 +276,7 @@ export function Modulo2() {
             {/*  Schrödi da la bienvenida */}
             <div className="flex items-start gap-4 mb-4">
               <img
-                src="mascota/gato.png"
+                src="/mascota/gato.png"
                 alt="Schrödi"
                 className="w-16 h-16 animate-float-slow"
               />
@@ -309,7 +309,7 @@ export function Modulo2() {
 
               <div className="flex justify-center my-10">
           <img
-            src="mascota/gatoCompu.jpg"
+            src="/mascota/gatoCompu.jpg"
             alt="gato computadora"
             className="
               h-96 
