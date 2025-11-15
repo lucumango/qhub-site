@@ -42,9 +42,10 @@
       }
 
       #playground {
-        height: 700px;         /* ajusta a lo que necesites */
-        
+        height: 400px;         /* reducido para menos espacio */
+        overflow: hidden;     /* eliminar scroll */
       }
+      
 
       /* Probabilities panel */
       .prob-box {
@@ -86,10 +87,7 @@
       <div class="circuit-box">
         <div class="Q-circuit-palette"></div>
         <div id="playground"></div>
-      </div>
-
-      <!-- Probabilidades -->
-      <div class="prob-box">
+      
         <h2>Result probabilities</h2>
         <pre><samp id="probabilities"></samp></pre>
       </div>
@@ -101,12 +99,11 @@
         (el) => Q.Circuit.Editor.createPalette(el)
       );
 
-      /* Texto original para 4 qubits */
+      /* Texto para 3 qubits */
       const initialCircuit = `
 H-I-X#0-I---I-H
 H-I-I---X#0-I-H
 X-H-X#1-X#1-H-X
-I-I-I---I---I-I
 `.trim();
 
       /* Inicializar circuito */

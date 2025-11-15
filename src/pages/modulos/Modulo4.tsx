@@ -614,8 +614,7 @@ export function Modulo4() {
                   Circuito cuántico
                 </h2>
                 <CardDescription className="text-base md:text-lg text-muted-foreground">
-                  Cómo se organizan las puertas en el tiempo para formar un
-                  algoritmo cuántico.
+                  Esquema que muestra qué operaciones cuánticas se aplican, a qué qubits, y en qué momento dentro del flujo del algoritmo.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 space-y-8">
@@ -633,43 +632,17 @@ export function Modulo4() {
 
                 <p className="text-lg text-gray-700 leading-relaxed text-justify">
                   Un <strong>circuito cuántico</strong> se representa como una
-                  serie de líneas horizontales (una por qubit) y símbolos sobre
-                  ellas que representan puertas aplicadas en distintos instantes
-                  de tiempo. Se lee de izquierda a derecha.
+                  serie de líneas horizontales, una por cada qubit, sobre las que se colocan las puertas.
+                  Estas puertas actúan en momentos específicos y, juntas, van construyendo el algoritmo.
+                  El circuito se lee de <strong>izquierda a derecha</strong>, igual que una secuencia temporal.
                 </p>
 
-                <div className="bg-white rounded-xl shadow p-6 border border-gray-100">
-                  <p className="text-lg text-gray-700 leading-relaxed mb-3">
-                    Ejemplo de circuito de 2 qubits:
-                  </p>
-                  <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-                    <li>
-                      En <strong>t₀</strong>: ambos qubits comienzan en |0⟩.
-                    </li>
-                    <li>
-                      En <strong>t₁</strong>: aplicamos una puerta H (Hadamard)
-                      al qubit 0 → lo ponemos en superposición.
-                    </li>
-                    <li>
-                      En <strong>t₂</strong>: aplicamos una puerta CNOT (control
-                      en qubit 0, objetivo qubit 1) → los qubits se
-                      entrelazan.
-                    </li>
-                    <li>
-                      En <strong>t₃</strong>: aplicamos una X a cada qubit.
-                    </li>
-                  </ul>
-                </div>
+                
 
-                <CircuitDragAndDrop />
+                
+                
 
-                <p className="text-lg text-gray-700 leading-relaxed text-justify">
-                  A medida que avanzas en computación cuántica, aprenderás a
-                  leer estos diagramas casi como leer música: cada puerta, cada
-                  línea y cada conexión tiene un significado preciso.
-                </p>
-
-                <div> <QuantumCircuit/> </div>
+                
                 <div> <QuantumPlayground/> </div>
               </CardContent>
             </SectionCard>
