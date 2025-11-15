@@ -4,8 +4,18 @@ import { Zap, CheckCircle, XCircle, RotateCcw } from "lucide-react";
 
 // Definición de los estados del postre
 const POSTRES = [
-    { id: 0, nombre: "Arroz con Leche", emoji: "🍚", color: "bg-orange-500" },
-    { id: 1, nombre: "Mazamorra Morada", emoji: "🍇", color: "bg-purple-600" },
+    { 
+        id: 0, 
+        nombre: "pancake",  
+        color: "bg-orange-500",
+        imagen: "/img/pancake.avif" // Asegúrate de tener esta imagen en tu carpeta public
+    },
+    { 
+        id: 1, 
+        nombre: "cake", 
+        color: "bg-purple-600",
+        imagen: "/img/cake.jpg" // Asegúrate de tener esta imagen en tu carpeta public
+    },
 ];
 
 const schrodiMessages = {
@@ -116,10 +126,23 @@ const ElDesafíoDeLasCajasCuanticas = () => {
     };
 
     return (
-        <div className="bg-white p-6 md:p-8 rounded-xl shadow-2xl border border-quantum-purple/40 relative">
-            <h2 className="text-3xl font-staatliches text-quantum-purple mb-4 text-center">
-                🎁 Desafío: El Entrelazamiento de Schrödi
+        <div className="    relative mt-8">
+            <h2 className="text-3xl font-staatliches mb-4 text-left">
+                Desafío: El Entrelazamiento de Schrödi
             </h2>
+            <div className="space-y-6 font-arimo text-muted-foreground leading-relaxed mb-12">
+                  <p className="text-xl text-justify">
+                    Schrödi ha preparado dos cajas cuánticas para sus amigas, Ariana y Camila, con una torta y unos panqueques. 
+                    Lo esencial es que las <strong>cajas están entrelazadas.</strong>
+                  </p>
+                  <p className="text-xl text-justify">
+                    Hasta que no abren, ninguna sabe qué le tocó. 
+                    Pero en cuanto Ariana abre su caja y ve el contenido, Camila aunque esté muy lejos sabe automáticamente que le tocó el postre opuesto. 
+                    ¡Su destino está unido al instante!
+                  </p>
+
+                  
+            </div>
             
             {/* Mensaje de Schrödi (Feedback) con imagen */}
             <AnimatePresence mode="wait">
@@ -182,11 +205,23 @@ const ElDesafíoDeLasCajasCuanticas = () => {
                 
                 {[0, 1].map((idx) => {
                     const postre = POSTRES[assignment[idx]];
-                    const status = isOpened[idx] ? postre.emoji : '❓';
+                    const status = isOpened[idx] ? (
+                        <img 
+                            src={postre.imagen} 
+                            alt={postre.nombre}
+                            className="w-40 h-40 object-cover"
+                        />
+                    ) : (
+                    <img 
+                        src="/learning-path-icons/modulo1.png" 
+                        alt="Caja cerrada" 
+                        className="w-40 h-40 object-cover"
+                    />
+                    );
                     
-                    // Estilo de la caja como cubo morado
-                    const boxStyleClasses = `w-36 h-36 flex flex-col items-center justify-center rounded-xl shadow-lg transition-all duration-200 transform 
-                        ${isOpened[idx] ? postre.color + ' border-4 border-white/80' : 'bg-gradient-to-br from-purple-700 to-indigo-800 border-4 border-purple-500 hover:scale-[1.03] hover:-translate-y-1 cursor-pointer'}
+                    // Estilo de la caja
+                    const boxStyleClasses = `w-40 h-40 flex flex-col items-center justify-center transition-all duration-200 transform 
+                        ${isOpened[idx] ? 'bg-transparent rounded-xl border-4 border-white/80' : 'hover:scale-[1.03] hover:-translate-y-1 cursor-pointer'}
                     `;
 
                     return (
@@ -214,8 +249,12 @@ const ElDesafíoDeLasCajasCuanticas = () => {
                                 }
                             }}
                         >
-                            <span className="text-6xl z-10">{status}</span>
-                            <span className="mt-2 text-sm font-semibold text-white z-10">Caja {idx === 0 ? 'A' : 'B'}</span>
+                            <div className="flex flex-col items-center">
+                                <div className="w-40 h-40 flex items-center justify-center overflow-hidden">
+                                    {status}
+                                </div>
+                                <span className="text-quantum-purple font-bold text-lg mt-2">Caja {String.fromCharCode(65 + idx)}</span>
+                            </div>
                             {isOpened[idx] && <span className="text-xs text-white/80 z-10">{postre.nombre}</span>}
                         </motion.div>
                     );
@@ -225,7 +264,7 @@ const ElDesafíoDeLasCajasCuanticas = () => {
             {/* Instrucciones y Predicción */}
             {isAnyBoxOpen && feedbackType === null && (
                 <>
-                    <p className="text-center font-semibold text-gray-700 mb-4">Paso 2: ¡La magia del Entrelazamiento! ¿Cuál es el contenido de la caja que NO abriste?</p>
+                    <p className="text-center font-semibold text-gray-700 mb-4">¡La magia del Entrelazamiento! ¿Cuál es el contenido de la caja que NO abriste?</p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4 justify-center">
                         {POSTRES.map(postre => (
                             <motion.button
@@ -240,7 +279,7 @@ const ElDesafíoDeLasCajasCuanticas = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                {postre.emoji} {postre.nombre}
+                                {postre.nombre}
                             </motion.button>
                         ))}
                     </div>
