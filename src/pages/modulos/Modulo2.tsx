@@ -12,6 +12,8 @@ import QuantumMeasurementSim from "@/components/QuantumMeasurementSim";
 import QuantumDragGame from "@/components/QuantumDragGame";
 import VínculoCuanticoInstantaneo from "@/components/quantum/VínculoCuanticoInstantaneo";
 import LoncherasEntrelazadasFlip from "@/components/quantum/LoncherasEntrelazadasFlip";
+import ElDesafíoDeLasCajasCuánticas from "@/components/quantum/ElDesafíoDeLasCajasCuánticas";
+import DoubleSlitInterference from "@/components/quantum/DoubleSlitInterference";
 
 const sections = [
   { id: "superposicion", title: "Superposición" },
@@ -589,7 +591,7 @@ export function Modulo2() {
                                                     </CardTitle>
                                                   </div>
                                                 </CardHeader>
-                                                <CardContent className="flex flex-col md:flex-row gap-4 items-center">
+                                                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
                                                   <div className="bg-quantum-lilac/10 p-3 rounded-lg border-l-4 border-quantum-lilac w-full">
                                                     <p className="font-arimo">
                                                       <strong>¡Atención!</strong> El Experimento de la Doble Rendija Cuántica nos prueba que un qubit, en superposición, es una onda de probabilidad. Esa onda atraviesa ambas rendijas y genera interferencia consigo misma. Esta Interferencia es nuestro motor cuántico, la técnica que utilizamos para filtrar el caos. La onda se manipula para que sus picos refuercen la solución correcta y sus valles anulen las probabilidades de error. ¡Así, la Interferencia nos entrega directamente la única verdad!
@@ -603,6 +605,18 @@ export function Modulo2() {
                                                           loading="lazy"
                                                       />
                                                   </div>
+
+                                                  <CardHeader>
+                                                  
+                                                  
+                                                  <h2 className="text-xl font-staatliches text-quantum-lilac">
+                                                      Simulación: Experimento de la Doble rendija cuántica
+                                                  </h2>
+                                                  <div className="mt-6">
+                                                  <DoubleSlitInterference />
+                                                  </div>
+                                                  
+                                                </CardHeader>
               
                                                 </CardContent>
                                               </Card>
@@ -711,7 +725,7 @@ a las probabilidades teóricas.
                 </div> 
               </div>
               <div className="mt-12">
-                <LoncherasEntrelazadasFlip />
+                <ElDesafíoDeLasCajasCuánticas />
               </div>
               <div className="mt-10">
                             <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl backdrop-blur-sm">
@@ -741,7 +755,8 @@ a las probabilidades teóricas.
                               </CardContent>
                             </Card>
                           </div>
-                          <div className="mt-8">
+                          
+                          <div className="mt-6">
                             <VínculoCuanticoInstantaneo />
                           </div>
 

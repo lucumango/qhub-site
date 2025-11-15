@@ -2,11 +2,24 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, SectionCard } from "@/components/ui/card";
+import QubitMascot from "@/components/QubitMascot";
 
 // Estados de la moneda (Cara o Cruz)
 const ESTADOS = {
-  CARA: { id: 1, label: 'Cara', emoji: '😊', color: 'bg-amber-300' },
-  CRUZ: { id: 0, label: 'Cruz', emoji: '⭕', color: 'bg-indigo-300' },
+  CARA: { 
+    id: 1, 
+    label: 'Cara', 
+    emoji: '⭕', 
+    color: 'bg-amber-300',
+    imagen: '/img/cara.jpg'  // Asegúrate de tener esta imagen en tu carpeta public/img/
+  },
+  CRUZ: { 
+    id: 0, 
+    label: 'Cruz', 
+    emoji: '❌', 
+    color: 'bg-indigo-300',
+    imagen: '/img/sello.jpg'  // Asegúrate de tener esta imagen en tu carpeta public/img/
+  },
 };
 
 const VínculoCuanticoInstantaneo = () => {
@@ -41,7 +54,12 @@ const VínculoCuanticoInstantaneo = () => {
 
   // Determina los estados de las monedas
   const obtenerEstadoMoneda = (estado: number | null) => {
-    if (estado === null) return { emoji: '🪙', color: 'bg-slate-200' };
+    if (estado === null) return { 
+      emoji: '🪙', 
+      color: 'bg-slate-200', 
+      imagen: '/img/moneda.jpg',
+      label: 'Girando'
+    };
     return estado === ESTADOS.CARA.id ? ESTADOS.CARA : ESTADOS.CRUZ;
   };
 
@@ -49,7 +67,7 @@ const VínculoCuanticoInstantaneo = () => {
   const monedaB = obtenerEstadoMoneda(estadoB);
 
   return (
-    <div>
+    <div className="mt-18">
       {/* Glow de fondo */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.25),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(236,72,153,0.25),_transparent_55%)]" />
 
@@ -57,24 +75,29 @@ const VínculoCuanticoInstantaneo = () => {
       <header className=" flex items-center">
         
           
-        <h3 className="text-2xl font-staatliches text-foreground">
+        <h3 className="text-3xl font-staatliches mb-4 text-left">
             Monedas cuánticas entrelazadas
         </h3>
+      </header>
+        <p className="text-xl text-justify font-arimo text-muted-foreground leading-relaxed">
+          Estas monedas están unidas por el vínculo cuántico, sus destinos son opuestos. 
+          Solo al medir una, el estado de la otra se define al instante.
+        </p>
        
         
-      </header>
+      
 
       {/* Zona principal */}
-      <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center">
+      <div className="grid gap-6 md:grid-cols-[1fr_auto_1fr] md:items-start">
         {/* Moneda A */}
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 mt-7">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             Moneda A
           </span>
 
           <motion.div
             onClick={lanzarMoneda}
-            className={`flex h-24 w-24 cursor-pointer items-center justify-center rounded-full text-5xl shadow-[0_18px_35px_rgba(15,23,42,0.25)] ring-4 ring-white ${monedaA.color}`}
+            className="cursor-pointer"
             animate={girando ? { rotateY: 360 } : { rotateY: 0, scale: 1 }}
             transition={
               girando
@@ -88,7 +111,15 @@ const VínculoCuanticoInstantaneo = () => {
                 : 'Haz clic para volver a lanzar'
             }
           >
-            {monedaA.emoji}
+            {monedaA.imagen ? (
+              <img 
+                src={monedaA.imagen} 
+                alt={monedaA.label || 'Moneda'}
+                className="w-24 h-24 object-contain"
+              />
+            ) : (
+              <span className="text-4xl">{monedaA.emoji}</span>
+            )}
           </motion.div>
 
           <p className="text-sm font-semibold text-slate-800">
@@ -100,41 +131,20 @@ const VínculoCuanticoInstantaneo = () => {
           </p>
         </div>
 
-        {/* Indicador central */}
-        <div className="flex flex-col items-center gap-2 md:gap-3">
-          <motion.div
-            className="flex h-16 w-16 flex-col items-center justify-center rounded-full border border-purple-200 bg-purple-50/80 px-2 text-center text-xs font-medium text-purple-700 shadow-inner"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{
-              scale: entrelazadas ? [1, 1.06, 1] : 0.9,
-              opacity: 1,
-            }}
-            transition={
-              entrelazadas
-                ? { repeat: Infinity, duration: 1.6, ease: 'easeInOut' }
-                : { duration: 0.4 }
-            }
-          >
-            
-          </motion.div>
-
-          <motion.div
-            className="h-0.5 w-16 rounded-full bg-gradient-to-r from-purple-400/70 to-pink-400/70 md:h-20 md:w-0.5"
-            initial={{ scale: 0 }}
-            animate={{ scale: entrelazadas ? 1 : 0.7, opacity: 1 }}
-            transition={{ duration: 0.4 }}
-          />
+        {/* QubitMascot en el centro */}
+        <div className="flex items-center justify-center mt-16">
+          <QubitMascot className="w-20 h-20" />
         </div>
 
         {/* Moneda B */}
-        <div className="mt-8 flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 mt-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             Moneda B
           </span>
 
           <motion.div
             onClick={lanzarMoneda}
-            className={`flex h-24 w-24 cursor-pointer items-center justify-center rounded-full text-5xl shadow-[0_18px_35px_rgba(15,23,42,0.25)] ring-4 ring-white ${monedaB.color}`}
+            className="cursor-pointer"
             animate={girando ? { rotateY: -360 } : { rotateY: 0, scale: 1 }}
             transition={
               girando
@@ -148,7 +158,15 @@ const VínculoCuanticoInstantaneo = () => {
                 : 'Haz clic para volver a lanzar'
             }
           >
-            {monedaB.emoji}
+            {monedaB.imagen ? (
+              <img 
+                src={monedaB.imagen} 
+                alt={monedaB.label || 'Moneda'}
+                className="w-24 h-24 object-contain"
+              />
+            ) : (
+              <span className="text-4xl">{monedaB.emoji}</span>
+            )}
           </motion.div>
 
           <p className="text-sm font-semibold text-slate-800">
