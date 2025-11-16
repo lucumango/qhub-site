@@ -208,7 +208,7 @@ const Aprendizaje = () => {
               <a
                 href="#modules"
                 className="mt-20 bg-white text-quantum-purple px-8 py-3 rounded-full font-semibold shadow-lg 
-                          hover:bg-quantum-orange hover:text-quantum-black transition-all"
+                          hover:bg-quantum-orange hover:text-quantum-black  transition-all"
               >
                 Iniciar misión
               </a>
