@@ -107,7 +107,7 @@ export function Modulo3() {
             id="intro-header">
               <div className="max-w-4xl mx-auto text-center z-10 p-6 md:p-12"> 
               <h1 className="text-5xl md:text-6xl font-staatliches text-white">
-                Módulo 3: Lógica Cuántica
+                Módulo 3: Matemática para Cuántica
               </h1>
               <p className="mt-4 text-xl text-white/100 font-flatory">
                 Explora los fundamentos matemáticos de la computación cuántica, incluyendo números complejos (para <em>cómo es</em> un estado) y matrices (para <em>cómo cambia</em>). Verás que cada símbolo tiene un significado físico claro.
