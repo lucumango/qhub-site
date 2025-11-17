@@ -134,7 +134,7 @@ const Aprendizaje = () => {
             <img
               src="/quantum-hero.png"
               alt="Computador cuántico"
-              className="w-[0px]   lg:w-[520px] xl:w-[530px] drop-shadow-[0_10px_60px_rgba(255,115,0,0.35)] transition-all duration-300 animate-float-slow"
+              className="w-[0px] lg:w-[520px] xl:w-[530px] drop-shadow-[0_10px_60px_rgba(255,115,0,0.35)] transition-all duration-300 animate-float-slow"
             />
           </div>
         </div>
