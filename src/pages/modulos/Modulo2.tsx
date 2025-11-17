@@ -14,6 +14,7 @@ import VínculoCuanticoInstantaneo from "@/components/quantum/VínculoCuanticoIn
 import LoncherasEntrelazadasFlip from "@/components/quantum/LoncherasEntrelazadasFlip";
 import ElDesafíoDeLasCajasCuánticas from "@/components/quantum/ElDesafíoDeLasCajasCuánticas";
 import DoubleSlitInterference from "@/components/quantum/DoubleSlitInterference";
+import DoubleSlitSimulator from "@/components/quantum/DoubleSlitSimulator";
 
 const sections = [
   { id: "superposicion", title: "Superposición" },
@@ -613,7 +614,7 @@ export function Modulo2() {
                                                       Simulación: Experimento de la Doble rendija cuántica
                                                   </h2>
                                                   <div className="mt-6">
-                                                  <DoubleSlitInterference />
+                                                  <DoubleSlitSimulator />
                                                   </div>
                                                   
                                                 </CardHeader>
