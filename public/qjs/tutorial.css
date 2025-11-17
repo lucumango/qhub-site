@@ -1,0 +1,366 @@
+/* Tutorial Styles */
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px) saturate(180%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: clamp(1rem, 2rem, 4rem);
+  box-sizing: border-box;
+}
+
+.tutorial-overlay.active {
+  display: flex;
+}
+
+.tutorial-box {
+  background: #F6ECF9;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2), 0 0 0 1px rgba(168, 85, 247, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 1001;
+}
+
+.tutorial-content-wrapper {
+  flex: 1;
+}
+
+.tutorial-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: none;
+  border: none;
+  flex-shrink: 0;
+}
+
+.tutorial-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #432b5e;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tutorial-title {
+  font-size: 1.5rem;
+  font-family: 'Staatliches';
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #432b5e;
+}
+
+.tutorial-content {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.tutorial-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.tutorial-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tutorial-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tutorial-btn:hover::before {
+  left: 100%;
+}
+
+.tutorial-btn-primary {
+  background: linear-gradient(135deg, #432b5e 0%, #2d1b3d 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(67, 43, 94, 0.3);
+}
+
+.tutorial-btn-primary:hover {
+  background: linear-gradient(135deg, #2d1b3d 0%, #1a0e26 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(67, 43, 94, 0.4);
+}
+
+.tutorial-btn-secondary {
+  background: rgba(67, 43, 94, 0.1);
+  color: #432b5e;
+  border: 2px solid rgba(67, 43, 94, 0.3);
+  backdrop-filter: blur(8px);
+  font-weight: 600;
+}
+
+.tutorial-btn-secondary:hover {
+  background: rgba(67, 43, 94, 0.2);
+  color: #2d1b3d;
+  border-color: rgba(67, 43, 94, 0.5);
+  transform: translateY(-1px);
+}
+
+.tutorial-highlight {
+  position: relative;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.tutorial-highlight::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  background-clip: padding-box;
+  animation: highlightPulse 2s ease-in-out infinite;
+}
+
+.tutorial-highlight::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 12px;
+  background: transparent;
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(8px);
+  animation: highlightGlow 2s ease-in-out infinite;
+}
+
+@keyframes highlightPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes highlightGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.tutorial-hint {
+  position: absolute;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 1002;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  animation: hintSlideIn 0.3s ease-out;
+}
+
+.tutorial-hint::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #1f2937;
+}
+
+@keyframes hintSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.help-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #432b5e;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  z-index: 999;
+}
+
+
+
+.help-button:hover::before {
+  animation: shimmer 0.5s ease-out;
+}
+
+.help-button:hover {
+  background: #614d78;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px #9c94a6;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+}
+
+.animated-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: all 0.8s ease;
+  opacity: 0.9;
+  transform: scale(1);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+}
+
+.animated-cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #a855f7;
+}
+
+.animated-cursor.dragging {
+  transform: scale(1.2);
+  background: linear-gradient(135deg, #9333ea 0%, #6d28d9 100%);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.5);
+}
+
+.ghost-gate {
+  position: fixed;
+  background: rgba(168, 85, 247, 0.3);
+  border: 2px solid #a855f7;
+  border-radius: 4px;
+  padding: 5px;
+  pointer-events: none;
+  z-index: 9999;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: all 0.8s ease;
+  transform: scale(1);
+}
+
+.click-effect {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #3b82f6;
+  border-radius: 50%;
+  z-index: 1002;
+  pointer-events: none;
+  animation: clickRipple 0.6s ease-out;
+}
+
+@keyframes clickRipple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.drag-line {
+  position: fixed;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0.3));
+  z-index: 1001;
+  pointer-events: none;
+  transform-origin: left center;
+  animation: dragPulse 1s infinite;
+}
+
+@keyframes dragPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

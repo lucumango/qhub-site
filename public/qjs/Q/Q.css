@@ -58,13 +58,24 @@ svg, :root {
 		var( --Q-color-red-saturation ),
 		var( --Q-color-red-lightness )
 	);
+	
+	/*  Purple  */
+	
+	--Q-color-purple-hue: 268;
+	--Q-color-purple-saturation: 37%;
+	--Q-color-purple-lightness:  27%;
+	--Q-color-purple: hsl(
 
+		var( --Q-color-purple-hue ),
+		var( --Q-color-purple-saturation ),
+		var( --Q-color-purple-lightness )
+	);
 
 	/*  Orange  */
 	
-	--Q-color-orange-hue: calc( var( --Q-color-base-hue ) + 180 - 15 );
-	--Q-color-orange-saturation: 85%;
-	--Q-color-orange-lightness:  50%;
+	--Q-color-orange-hue: calc( 37 );
+	--Q-color-orange-saturation: 93%;
+	--Q-color-orange-lightness:  51%;
 	--Q-color-orange: hsl(
 
 		var( --Q-color-orange-hue ),

@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <title>Q ⟩ Circuito (QuantumHub)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <!-- Estilos esenciales de Q -->
     <link rel="stylesheet" href="Q/Q.css" />
     <link rel="stylesheet" href="Q/Q-Circuit-Editor.css" />
+    
+    <!-- Estilos del Tutorial -->
+    <link rel="stylesheet" href="tutorial.css" />
 
     <style>
       * {
@@ -20,42 +23,70 @@
         font-family: system-ui, -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
         background: #f8fafc;
-        overflow: hidden; /* ❗No scroll vertical */
+        overflow-y: auto; /* Permitir scroll vertical */
       }
 
       .wrapper {
         padding: 20px;
-        height: 100vh;
-        overflow: hidden;
+        height: 770px;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        background-color: white;
+
       }
+
+      .prob-box {
+        display: inline-block;   /* Se ajusta al contenido */
+        padding: 8px 12px;        /* Opcional para que no quede pegado */
+        background: white;        /* Mantiene la tarjeta */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        overflow: visible;        /* Permite crecer libremente */
+        height: auto !important;  /* Sobrescribe cualquier altura previa */
+        max-width: 100%;          /* Evita desbordes */
+        white-space: pre-wrap;    /* Mantiene formato sin romper diseño */
+      }
+
 
       .circuit-box {
         background: white;
-        border-radius: 12px;
+        
         padding: 16px;
-        flex: 1;
+        min-height: 400px;
         overflow: hidden;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        
       }
 
+      .prob-title {
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Staatliches', sans-serif;
+        color: #432b5e; /* tu quantum-purple */
+        margin-bottom: 8px;
+      }
+
+
       #playground {
-        height: 400px;         /* reducido para menos espacio */
-        overflow: hidden;     /* eliminar scroll */
+                 /* reducido para menos espacio */
+        overflow: hidden; 
+        margin-bottom: 3%;    /* eliminar scroll */
       }
       
 
       /* Probabilities panel */
       .prob-box {
         background: white;
-        border-radius: 12px;
-        padding: 16px;
+
         height: 400px; /* Ajustable */
-        overflow: auto; /* NO vertical scroll global, solo dentro */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden; /* NO vertical scroll global, solo dentro */
+        box-shadow: none;
       }
+
+      #probabilities-wrapper {
+        position: relative;    /* permite anclar cosas encima */
+      }
+
 
       h2 {
         margin: 0 0 12px 0;
@@ -69,6 +100,8 @@
         white-space: pre-wrap;
       }
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 
     <!-- Librerías Q.js -->
     <script src="Q/Q.js"></script>
@@ -79,6 +112,7 @@
     <script src="Q/Q-History.js"></script>
     <script src="Q/Q-Circuit.js"></script>
     <script src="Q/Q-Circuit-Editor.js"></script>
+    
   </head>
 
   <body>
@@ -87,11 +121,40 @@
       <div class="circuit-box">
         <div class="Q-circuit-palette"></div>
         <div id="playground"></div>
-      
-        <h2>Result probabilities</h2>
-        <pre><samp id="probabilities"></samp></pre>
+        <div id="probabilities-wrapper">
+          <h2 class="prob-title">Probabilidades de medición</h2>
+          <pre class="prob-box">
+            <samp id="probabilities"></samp>
+          </pre>
+        </div>
+
+        
       </div>
     </div>
+
+    <!-- Tutorial Overlay -->
+    <div class="tutorial-overlay" id="tutorialOverlay">
+      <div class="tutorial-box">
+        <img class="tutorial-image" id="tutorialImage" src="/mascota/gato.png" alt="Tutorial Image">
+        <div class="tutorial-content-wrapper">
+          <div>
+            <h3 class="tutorial-title" id="tutorialTitle">Bienvenido al Quantum Circuit Editor</h3>
+            <div class="tutorial-content" id="tutorialContent">
+              <p>Aprende a usar el editor de circuitos cuánticos interactivo.</p>
+            </div>
+            <div class="tutorial-buttons">
+              <button class="tutorial-btn tutorial-btn-secondary" onclick="skipTutorial()">Omitir</button>
+              <button class="tutorial-btn tutorial-btn-primary" id="tutorialNextBtn" onclick="nextTutorialStep()">Siguiente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Help Button -->
+    <button class="help-button" onclick="startTutorial()" title="Tutorial">?</button>
 
     <script>
       /* Crear paleta superior */
@@ -101,9 +164,9 @@
 
       /* Texto para 3 qubits */
       const initialCircuit = `
-H-I-X#0-I---I-H
-H-I-I---X#0-I-H
-X-H-X#1-X#1-H-X
+H-I-X#0-I---I-I
+I-I-I---I-I-I
+X-I-X#1-I-I-I
 `.trim();
 
       /* Inicializar circuito */
@@ -141,5 +204,8 @@ X-H-X#1-X#1-H-X
           circuit.report$();
       });
     </script>
+    
+    <!-- Tutorial JavaScript -->
+    <script src="tutorial.js"></script>
   </body>
 </html>
