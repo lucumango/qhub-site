@@ -147,6 +147,10 @@ html {
     animation: quantumFloat 6s ease-in-out infinite;
   }
 
+  .animate-quantum-beat {
+  animation: quantumBeat 1.5s ease-in-out infinite;
+}
+
   .animate-quantum-pulse {
     animation: quantumPulse 2s ease-in-out infinite;
   }
