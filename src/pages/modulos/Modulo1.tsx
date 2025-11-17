@@ -250,7 +250,7 @@ export function Modulo1() {
               </div>
             </SectionCard> 
             
-            <div className="mt-8">
+            <div className="mt-8 grid">
               <Card className="bg-gradient-to-br from-quantum-orange/20 to-quantum-orange/10 border-quantum-orange/40 shadow-2xl backdrop-blur-sm">
                 <CardHeader>
                   <div className="flex items-center gap-4">
@@ -268,15 +268,26 @@ export function Modulo1() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-quantum-orange/10 p-6 rounded-xl border-l-4 border-quantum-orange">
-                    <p className="font-arimo text-lg leading-relaxed">
-                      <strong>
+                <div className="flex flex-col md:flex-row bg-quantum-orange/10 p-6 rounded-xl border-l-4 border-quantum-orange items-center md:space-x-8">
+                  <div className="flex-1 order-2 md:order-1 mt-6 md:mt-0">
+                    <p className="font-arimo text-lg leading-relaxed text-gray-800">
+                      <strong className="text-xl text-quantum-orange block mb-2">
                         En 2019, mi colega Sycamore —un procesador cuántico de Google— logró algo asombroso: resolver en 200 segundos un cálculo que al superordenador clásico más veloz le habría tomado 10,000 años.
                       </strong>{" "}
                       Ese momento marcó el inicio de la llamada ‘ventaja cuántica’, el punto donde la física cuántica empezó a ganarle al silicio.
                     </p>
                   </div>
-                </CardContent>
+
+                  <div className="order-1 md:order-2">
+                    <img
+                      src="/img/sycamore.png"
+                      loading="lazy"
+                      alt="Chip cuántico Sycamore"
+                      className="w-full max-w-xs h-auto md:w-72 md:h-auto rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </CardContent>
               </Card>
             </div>
           </div>
