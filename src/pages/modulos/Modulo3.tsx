@@ -1,6 +1,8 @@
 import React, { useLayoutEffect, useEffect, useState, useRef, useMemo } from "react";
 import Sidebar from "@/components/Sidebar";
 import { Latex } from '@/components/MathRenderer';
+import PolarComplexPlane from "@/data/PolarComplexPlane";
+import ComplexPlaneGraph from "@/data/ComplexPlaneGraph";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, SectionCard } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -199,9 +201,30 @@ export function Modulo3() {
                       Recordemos que los números que usamos a diario <Latex tex="(1, -5, 0.5)" /> se representan en una sola <strong>línea</strong> (el eje real).
                       Podemos avanzar hacia la derecha (positivos) o hacia la izquierda (negativos). Hasta aquí, todo cabe en un solo eje.
                     </p>
+                    {/* 1. DIAGRAMA SIMULADO: Eje Real */}
+                <div className="flex justify-center my-6">
+                    <div className="relative w-full max-w-sm h-12 flex items-center justify-center">
+                        <div className="w-full h-1 bg-muted-foreground/50"></div>
+                        <div className="absolute top-0 w-full flex justify-between px-2 text-sm text-foreground/70">
+                            <span><Latex tex="-5" /></span>
+                            <span>0</span>
+                            <span><Latex tex="1" /></span>
+                        </div>
+                        <div className="absolute bottom-0 text-xs font-staatliches text-primary">
+                            EJE REAL
+                        </div>
+                    </div>
+                </div>
                     <p>
                       Pero, ¿qué pasa si intentamos resolver <Latex tex="\sqrt{-1}" />? El universo matemático se expande. Presentamos la <strong>unidad imaginaria <Latex tex="i" /></strong>, definida por la propiedad de que <Latex tex="i^2 = -1" />.
                     </p>
+                    {/* 2. Unidad Imaginaria */}
+                <div className="flex justify-center my-6">
+                    <div className="p-4 bg-primary/10 rounded-xl border-l-4 border-primary shadow-lg max-w-xs text-center font-staatliches text-xl text-primary">
+                        <Latex tex="i = \sqrt{-1}" display />
+                        <span className="block text-sm font-arimo mt-1 text-primary/80">Unidad Imaginaria</span>
+                    </div>
+                </div>
                     <p>
                       Un <strong>Número Complejo</strong> tiene dos partes:  
                     </p>
@@ -223,6 +246,7 @@ export function Modulo3() {
                     <p>
                       Cada número complejo es un punto en este plano, y podemos representarlo mediante un vector que va desde el centro (0,0) hasta ese punto.
                     </p>
+                    <ComplexPlaneGraph />
                     <div className="my-4">
                       Podemos describir ese punto de dos maneras:
                     </div>
@@ -249,6 +273,7 @@ export function Modulo3() {
                     <div className="text-center my-4">
                       <Latex tex="z = r \cdot e^{i\theta}" display />
                     </div>
+                    <PolarComplexPlane />
                     <p>Esta forma es muy poderosa porque nos muestra directamente <strong>cómo rota el vector</strong>.</p>
                     </div>
                     
