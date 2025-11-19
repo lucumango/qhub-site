@@ -252,11 +252,10 @@ const sections = [
 
 export function Modulo4() {
   const [activeSection, setActiveSection] = useState(sections[0].id);
-{/* INCLUIR LO QUE BORRASTEEEE */}
-{/* INCLUIR LO QUE BORRASTEEEE */}
-{/* INCLUIR LO QUE BORRASTEEEE */}
-{/* INCLUIR LO QUE BORRASTEEEE */}
 
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -982,7 +981,7 @@ export function Modulo4() {
             "
           >
             <img
-              src="/public/esfera-bloch-2.png"
+              src="/esfera-bloch-2.png"
               alt="Esfera de Bloch"
               className="w-72 md:w-96 object-contain drop-shadow-lg"
             />
