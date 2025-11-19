@@ -412,6 +412,7 @@ export function Modulo1() {
                 </CardContent>
               </Card>
             </div>
+            
           </div>
 
           {/* Sección 3 */}
