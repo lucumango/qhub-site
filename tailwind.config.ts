@@ -100,6 +100,13 @@ export default {
 						height: '0'
 					}
 				},
+
+				floatSlow: {
+					'0%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-12px)' },
+					'100%': { transform: 'translateY(0px)' },
+					},
+					
 				// Quantum animations
 				quantumFloat: {
 					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
@@ -144,8 +151,11 @@ export default {
 				'quantum-superposition': 'quantumSuperposition 4s ease-in-out infinite',
 				'quantum-entanglement': 'quantumEntanglement 5s linear infinite',
 				'fade-in-up': 'fadeInUp 0.6s ease-out forwards'
+				
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+
