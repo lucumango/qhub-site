@@ -50,7 +50,7 @@ const Home = () => {
                 size="lg"
                 className="border-white text-quantum-dark-blue px-8 py-4 text-lg hover-quantum"
               >
-                <Link to="/curso">Conoce el Curso</Link>
+                <Link to="/aprendizaje">Aprende con nosotros</Link>
               </Button>
             </div>
           </div>
