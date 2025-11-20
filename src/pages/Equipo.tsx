@@ -48,10 +48,14 @@ En 2025 fundó QuantumHub Perú, un ecosistema cuántico nacional que articula p
   },
   {
     id: 3,
-    name: "Vania Alexandra Pachas Acuña",
+    name: "Vania Pachas Acuña",
     image:
       "https://static.wixstatic.com/media/9552ba_68a9b4fc26c6412393cfc35c17e4a4aa~mv2.jpg/v1/fill/w_456,h_458,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_1957_edited_edited.jpg",
-    bio: `Fundadora, instructora y diseñadora de programas educativos en programación, electrónica y robótica en Tech Para Mí, organización que promueve la educación STEM impactando a más de 170 estudiantes. Lidera Misión Tech, el primer campamento gratuito de robótica del Perú. Becaria de STEM Para Todas 2024 y del curso de Computación Cuántica de The Coding School & Google AI. Desarrolló el capstone "Optimizing Satellite Placement with QAOA", nominado a Mejor Comunicación Visual en el Graduation Showcase. Finalista global top 30 en el NGFP Young Voices Award 2024 y mentee en el REYES Mentorship Program de UC Berkeley.`,
+    bio: `Vania Pachas es una líder STEM y aspirante a Ingeniera Eléctrica y Computacional, apasionada por la robótica, la ingeniería y las iniciativas educativas con impacto social.
+Fue becaria del curso de Computación Cuántica de The Coding School, Qubit by Qubit y Google AI, donde desarrolló el proyecto “Optimizing Satellite Placement with QAOA”, nominado a Mejor Comunicación Visual en el Graduation Showcase. Además, es fundadora de iniciativas STEM como Tech Para Mí, con la que ha capacitado gratuitamente a más de 300 estudiantes en 8 países mediante talleres de robótica, electrónica y programación. También lidera Misión Tech, el primer campamento peruano de robótica, realizado en la UTEC con el apoyo del Ministerio de la Mujer y Poblaciones Vulnerables.
+Es Premio Nacional del IAAC 2025 y campeona nacional de la World Robot Olympiad 2025, donde construyó un vehículo autónomo y representará al Perú en la WRO en Singapur.
+Actualmente, Vania se desempeña como desarrolladora de la plataforma educativa de computación cuántica de QuantumHub Perú, donde crea un entorno interactivo en React, TypeScript y Tailwind que integra simulaciones, módulos visuales y evaluaciones para facilitar el aprendizaje cuántico en español.
+`,
     linkedin: "https://www.linkedin.com/in/vania-pachas/",
     departments: ["Ejecutivo", "Innovación"],
     positions: {
@@ -216,7 +220,7 @@ bio:"Estudiante de cuarto año de Ciencias de la Computación en la Universidad 
   },
   {
     id: 20,
-     name: "Dayana Gómez",
+     name: "Dayana Gomez",
 image:"/dayana.jpeg",
 bio:"Estudiante de Ingeniería de Ciencias de la Computación. Actualmente, Dayana se desempeña como Desarrolladora Full-Stack en Quantum Hub Peru. En este rol, implementa una plataforma web interactiva enfocada en la democratización de la computación cuántica para el público general. Su trabajo abarca desde la conceptualización de módulos educativos interactivos y accesibles hasta la construcción de la infraestructura, buscando reducir la brecha de conocimiento e inspirar interés en las ciencias cuánticas. Su perfil técnico se complementa con diversas experiencias y formación, destacando su interés por la GenAI y la Computación Cuántica, conocimiento que aplica directamente en su rol. De hecho, ha completado el taller QBronze: Quantum Computing & Programming de QWorld, obteniendo experiencia práctica en conceptos fundamentales cuánticos. Adicionalmente, cuenta con experiencia sólida como Desarrolladora Backend, donde impulsó el desarrollo de servicios y APIs con Java y Spring Boot.",
 linkedin: "https://www.linkedin.com/in/dayana-gomez-rd/",

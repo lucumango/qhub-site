@@ -1179,6 +1179,28 @@ export function Modulo4() {
                 </div>
               </CardContent>
             </SectionCard>
+            <SectionCard>
+              <CardHeader className="p-0 mb-6">
+                <h2 className="text-3xl md:text-5xl font-staatliches text-quantum-purple mb-4">
+                  ¿Nos ayudas a seguir mejorando?
+                </h2>
+              </CardHeader>
+                <p className="text-lg text-gray-700 leading-relaxed text-justify">
+                  Tu opinión es muy valiosa. Si tienes 1 minuto, cuéntanos cómo fue tu experiencia usando la plataforma.
+                  <br />
+                  Tus respuestas nos ayudarán a mejorar los módulos y a crear nuevos contenidos para futuros estudiantes.
+                  <br />
+                  <div className="mt-6 flex flex-wrap gap-4">
+                  <Link
+                    to="https://forms.gle/VCfDau4qi9obhL4V7"
+                    className="px-6 py-2 rounded-full bg-quantum-purple text-white font-semibold shadow hover:shadow-lg transition-all"
+                  >
+                    Formulario
+                  </Link>
+            
+                </div>
+                </p>
+            </SectionCard>
           </div>
         </section>
       </div>

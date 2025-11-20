@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import QubitMascot from "@/components/QubitMascot";
+import { BlochSphere } from "@/components/BlochSphere";
 
 const modules = [
   {
@@ -249,16 +250,75 @@ const Aprendizaje = () => {
                 <h3 className="text-2xl font-extrabold text-quantum-orange uppercase tracking-wider">
                   MÓDULO #{id}
                 </h3>
-                <p className="text-lg font-semibold text-gray-900">{title}</p>
+                <p className="text-lg font-flatory text-gray-900">{title}</p>
                 <p className="mt-2 text-sm text-gray-600">{desc}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
-
   
+      {/* Bloch */}
+      <section className="py-32 bg-gradient-to-br from-white via-[#F9F8FF] to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-[4px] h-[4px] bg-gradient-to-r from-quantum-purple to-quantum-orange rounded-full animate-float-slow"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 0.4}s`,
+                animationDuration: `${5 + Math.random() * 3}s`,
+              }}
+            />
+          ))}
+        </div>
 
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-quantum-purple to-quantum-orange text-transparent bg-clip-text text-sm uppercase tracking-wider font-bold">
+                ✨ Visualización Interactiva
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-quantum-purple mb-6 font-staatliches">
+              Explora la Esfera de Bloch
+            </h2>
+            <p className="text-lg md:text-lg text-gray-700 max-w-3xl mx-auto font-flatory leading-relaxed">
+              Una representación visual 3D del estado de un qubit. Interactúa con ella aplicando puertas cuánticas 
+              y observa cómo el vector de estado cambia en tiempo real. ¡Este es el corazón de la computación cuántica!
+            </p>
+          </div>
+
+          <div className="grid  gap-12 items-center">
+            {/* Columna izquierda: Esfera interactiva */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-quantum-purple/5 to-quantum-orange/5 rounded-2xl p-8 shadow-2xl border-2 border-quantum-purple/20 hover:border-quantum-purple/40 transition-all duration-500">
+                <div className="bg-gradient-to-r from-quantum-purple/10 to-quantum-orange/10 p-6 rounded-xl shadow-inner">
+                  <BlochSphere />
+                </div>
+              </div>
+              {/* Efecto de brillo decorativo */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-quantum-orange/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-quantum-purple/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            </div>
+            {/* Llamado a la acción decorativo */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 text-lg font-flatory mb-4">
+              💡 <strong>¿Quieres profundizar más?</strong> Esta esfera aparece en el <strong>Módulo 4</strong> con ejercicios y explicaciones detalladas.
+            </p>
+            <a
+              href="#modules"
+              className="inline-block text-quantum-purple hover:text-quantum-orange font-semibold transition-colors duration-300 underline underline-offset-4"
+            >
+              Ver todos los módulos →
+            </a>
+          </div>
+
+          </div>
+        </div>
+      </section>
 
 
       {/* How It Works Section */}
@@ -285,8 +345,6 @@ const Aprendizaje = () => {
       </section>
 
       
-
-
       {/* FAQ con acordeón estilo original y legible */}
       <section className="py-20 mt-20 mb-20 bg-white max-w-4xl mx-auto px-10 rounded-xl border border-quantum-purple/20 shadow-lg">
         <h2 className="text-3xl font-bold text-quantum-purple mb-10 text-center font-staatliches">
