@@ -26,6 +26,12 @@ Visit our site here: **[http://qhubperu.com](http://qhubperu.com)**
 
 ---
 
+## 📹 Video DEMO
+
+Visit our QHub Learning Platform demo hre: **[Video](https://www.youtube.com/watch?v=AfuGV5t9_6g&feature=youtu.be)**  
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Vite** – Lightning-fast build tool for modern development.
