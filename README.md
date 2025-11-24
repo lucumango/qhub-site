@@ -1,8 +1,8 @@
-# ⚛️ **QHub Learning Platform — Quantum Hub Perú**
+# ⚛️ **QHub Learning Platform — QuantumHub Perú**
 
 **The future is not deterministic — it’s quantum.**
 
-Welcome to the QHub Learning Platform, an interactive learning environment created by Quantum Hub Perú to make quantum computing education accessible, visual, and intuitive for students across Peru and Latin America.
+Welcome to the QHub Learning Platform, an interactive learning environment created by QuantumHub Perú to make quantum computing education accessible, visual, and intuitive for students across Peru and Latin America.
 
 The platform is designed for high school learners and early-year university students, enabling them to explore quantum concepts through animations, guided interactions, and hands-on simulations — no prior background required.
 
