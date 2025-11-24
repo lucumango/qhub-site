@@ -8,13 +8,13 @@ The platform is designed for high school learners and early-year university stud
 
 ---
 
-## 📚 **Resources**
+## 📚 **Check out our product**
 
-| Resource            | Link                                                                                                                                                                     |
+| Resources            | Link                                                                                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|  **Live Website** | [http://qhubperu.com](http://qhubperu.com)                                                                                                                               |
+|  **Product platform** | [http://qhubperu.com](http://qhubperu.com/aprendizaje)                                                                                                               |
 |  **Video DEMO**   | [https://www.youtube.com/watch?v=AfuGV5t9_6g&feature=youtu.be](https://www.youtube.com/watch?v=AfuGV5t9_6g&feature=youtu.be)                                             |
-|  **Portfolio**    | [https://drive.google.com/file/d/1GboRhb6kQ_9SkXwZ4ldn90xUy1h2QtVH/view?usp=sharing](https://drive.google.com/file/d/1GboRhb6kQ_9SkXwZ4ldn90xUy1h2QtVH/view?usp=sharing) |
+|  **Product Portfolio**    | [https://drive.google.com/file/d/1GboRhb6kQ_9SkXwZ4ldn90xUy1h2QtVH/view?usp=sharing](https://drive.google.com/file/d/1GboRhb6kQ_9SkXwZ4ldn90xUy1h2QtVH/view?usp=sharing) |
 
 ---
 
@@ -114,7 +114,7 @@ Finally, part of the funding would also support the Community and Public Relatio
 * **Dayana Gomez** — Full Stack Developer
   *Responsibilities:* Developed mathematical visualizations, complex-number tools, and module navigation flow.
 
-#### **(2) Second Author — Institutional Leadership**
+#### **(2) Last Author — Institutional Leadership**
 
 * **Freddy Herrera Cueva** — CEO, QuantumHub Perú; Research Associate at the University of Maryland
   *Responsibilities:* Strategic oversight, alignment with organizational mission, validation of educational objectives.
