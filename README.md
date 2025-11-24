@@ -8,7 +8,7 @@ The platform is designed for high school learners and early-year university stud
 
 ---
 
-### 📚 **Resources**
+## 📚 **Resources**
 
 | Resource            | Link                                                                                                                                                                     |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -18,7 +18,7 @@ The platform is designed for high school learners and early-year university stud
 
 ---
 
-# 🏷️ **Demo Title**
+## 🏷️ **Demo Title**
 
 ### **QHub Learning Platform**
 
@@ -70,13 +70,13 @@ cd quantum-hub-peru
 
 ---
 
-# 🎮 **Underpinning educational theory**
+## 🎮 **Underpinning educational theory**
 
-The platform is grounded in an experiential learning approach, where students construct understanding by directly interacting with quantum systems through visual and dynamic tools. Rather than relying on traditional lecture-style explanations, the platform uses gamification elements—such as drag-and-drop challenges, step-based progress, quizzes, and real-time feedback—to sustain engagement and encourage active discovery. The learning flow follows generative learning principles: students manipulate states, test predictions, observe outcomes, and refine intuition as they progress, reinforcing mental models at each step. By combining interactivity, immediate consequences for user actions, and conceptual scaffolding, the platform ensures that learners build accurate, experience-driven understanding of quantum concepts, even without prior mathematical or physics background.
+The platform is grounded in an experiential learning approach, where students construct understanding by directly interacting with quantum systems through visual and dynamic tools. Rather than relying on traditional lecture-style explanations, the platform uses gamification elements such as drag-and-drop challenges, step-based progress, quizzes, and real-time feedback—to sustain engagement and encourage active discovery. The learning flow follows generative learning principles: students manipulate states, test predictions, observe outcomes, and refine intuition as they progress, reinforcing mental models at each step. By combining interactivity, immediate consequences for user actions, and conceptual scaffolding, the platform ensures that learners build an accurate, experience-driven understanding of quantum concepts, even without prior mathematical or physics background.
 
 ---
 
-# 🎯 **Intended Usage & Outcomes**
+## 🎯 **Intended Usage & Outcomes**
 
 ### **Intended Audience of the Platform**
 
@@ -90,13 +90,13 @@ The attached short demonstration video ([https://youtu.be/AfuGV5t9_6g](https://y
 
 ---
 
-# 💰 **Budget & Budget Justification**
+## 💰 **Budget & Budget Justification**
 
 *(Section intentionally left blank — you can paste your budget table here when ready.)*
 
 ---
 
-# 🗂️ **Project Organization**
+## 🗂️ **Project Organization**
 
 ### **Roles**
 
