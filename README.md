@@ -8,11 +8,11 @@ The platform is designed for high school learners and early-year university stud
 
 ---
 
-## 📚 **Check out our product**
+## 📚 **Check out our Product**
 
 | Resources            | Link                                                                                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|  **Product platform** | [http://qhubperu.com](http://qhubperu.com/aprendizaje)                                                                                                               |
+|  **Product Platform** | [http://qhubperu.com/aprendizaje](http://qhubperu.com/aprendizaje)                                                                                                               |
 |  **Video DEMO**   | [https://www.youtube.com/watch?v=AfuGV5t9_6g&feature=youtu.be](https://www.youtube.com/watch?v=AfuGV5t9_6g&feature=youtu.be)                                             |
 |  **Product Portfolio**    | [https://drive.google.com/file/d/1GboRhb6kQ_9SkXwZ4ldn90xUy1h2QtVH/view?usp=sharing](https://drive.google.com/file/d/1GboRhb6kQ_9SkXwZ4ldn90xUy1h2QtVH/view?usp=sharing) |
 
