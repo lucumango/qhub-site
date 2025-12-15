@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cronograma Cuántico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: transparent;
+        overflow: hidden;
+      }
+
+      .wrapper {
+        padding: 10px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circuit {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .qubit-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+      }
+
+      .qubit-label {
+        color: #bca0cc;  /* Updated to match the purple color */
+        font-family: 'Staatliches', system-ui, -apple-system, sans-serif; /* Added font */
+        text-shadow: 0 0 5px rgba(188, 160, 204, 0.5); /* Added subtle glow */
+      }
+
+      
+
+      .gate {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: max-content;
+      }
+
+      .gate:hover .gate-rounded {
+        transform: scale(1.05);
+      }
+
+      .gate:hover .gate-rounded.active {
+        transform: scale(1.1);
+        
+      }
+
+      .gate-rounded {
+        width: 160px;
+        padding: 10px 24px;
+        background: rgba(188, 160, 204, 0.3);  /* Semi-transparent purple */
+        border-radius: 16px;  /* More rounded corners */
+        border: 2px solid transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: white;  /* Light purple text */
+        transition: all 0.3s ease;
+        text-align: center;
+        font-family: 'Staatliches', system-ui, -apple-system, sans-serif;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;  /* Uppercase text like in the image */
+      }
+
+      .gate-rounded:hover {
+        background: rgba(188, 160, 204, 0.4);  /* Slightly more visible on hover */
+        color: white;
+      }
+
+      .gate-rounded.active {
+        background: rgba(188, 160, 204, 0.6);  /* More solid purple */
+        color: white;
+        border: 2px solid #bca0cc;
+        box-shadow: 0 0 15px 3px rgba(188, 160, 204, 0.5);  /* Glow effect */
+         /* Text glow */
+      }
+
+      /* Adjust the wire to be more subtle */
+      .wire {
+        flex: 1;
+        height: 1px;  /* Thinner wire */
+        background: rgba(188, 160, 204, 0.3);  /* Lighter wire */
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      /* Make the active wire more visible */
+      .qubit-row.active .wire {
+        height: 2px;
+        background: rgba(188, 160, 204, 0.6);
+      }
+      .gate-pos-1 {
+        left: 20%;
+        transform: translate(-50%, -50%);
+      }
+
+      .gate-pos-2 {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .gate-pos-3 {
+        left: 80%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="circuit">
+        <!-- Qubit 0 - Día 1 (Viernes) -->
+        <div class="qubit-row">
+          <span class="qubit-label">|D-1⟩</span>
+          <div class="wire">
+            <div class="gate gate-pos-1" onclick="selectDay(1)" data-day="1">
+              <div class="gate-rounded active" id="gate-1">Viernes 19</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Qubit 1 - Día 2 (Sábado) -->
+        <div class="qubit-row">
+          <span class="qubit-label">|D-2⟩</span>
+          <div class="wire">
+            <div class="gate gate-pos-2" onclick="selectDay(2)" data-day="2">
+              <div class="gate-rounded" id="gate-2">Sábado 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Qubit 2 - Día 3 (Domingo) -->
+        <div class="qubit-row">
+          <span class="qubit-label">|D-3⟩</span>
+          <div class="wire">
+            <div class="gate gate-pos-3" onclick="selectDay(3)" data-day="3">
+              <div class="gate-rounded" id="gate-3">Domingo 21</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectDay(day) {
+        // Remove active class from all gates
+        document.querySelectorAll('.gate-rounded, .qubit-row').forEach(gate => {
+          gate.classList.remove('active');
+        });
+        
+        // Add active class to selected gate
+        const activeGate = document.getElementById('gate-' + day);
+        activeGate.classList.add('active');
+        activeGate.closest('.qubit-row').classList.add('active');
+        
+        // Emit event to parent React component
+        window.parent.postMessage({ 
+          type: 'daySelected', 
+          day: day 
+        }, '*');
+      }
+
+      // Listen for messages from parent React component
+      window.addEventListener('message', function(event) {
+        if (event.data.type === 'updateSelectedDay') {
+          selectDay(event.data.day);
+        }
+      });
+    </script>
+  </body>
+</html>
