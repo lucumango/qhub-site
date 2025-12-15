@@ -1,7 +1,7 @@
 // src/pages/QuantumAISummit.tsx
 import React from 'react';
 import EventPresentation from '../components/EventPresentation';
-import QuantumScheduleWhitCircuit from '../components/Quantumschedulewithcircuit';
+import EventRegistration from '@/components/EventRegistration';
 import EventMap from '../components/EventMap';
 import QuantumScheduleWithCircuit from '../components/Quantumschedulewithcircuit';
 
@@ -11,7 +11,9 @@ const QuantumAISummit = () => {
 
       {/* Main Content */}
       <main>
+        
         <EventPresentation />
+        <EventRegistration  />
         <QuantumScheduleWithCircuit />
         <EventMap />
       </main>

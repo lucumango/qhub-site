@@ -53,37 +53,45 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
           
         },
         {
-          time: '2:00 - 2:20 PM',
-          title: 'Apertura del Evento',
-          speaker: 'Ms. Miguel Martinez'
+          time: '2:00 - 2:15 PM',
+          title: 'Palabras de Inicio',
+          speaker: 'CEDDITEC & QUANTUMHUB PERU'
         },
         {
-          time: '2:20 - 3:10 PM',
-          title: 'Conferencia: Historia de la mecánica cuántica ',
-          speaker: 'Dr. Bernabé Mejía',
+          time: '2:15 - 2:30 PM',
+          title: 'Palabras de Bienvenida',
+          speaker: 'Congresista Diego Bazán Calderón',
+          speakerTitle: 'Presidente de la Mesa de Jóvenes Parlamentarios del Perú'
         },
         {
-          time: '3:10 - 4:00 PM',
-          title: 'Conferencia: El futuro tecnológico del Perú en la era cuántica e inteligente',
-          speaker: 'Mario Rodriguez',
-          speakerTitle: 'Gerente General Microsoft Perú',
-          description: ''
+          time: '2:30 - 3:20 PM',
+          title: 'Sesión 0 (QC): Historia de la mecánica cuántica ',
+          speaker: 'Mg. Bernabé Alonso Mejía Cordero',
+          speakerTitle: 'Docente universitario y coordinador académico EPF -UNFV',
         },
         {
-          time: '4:00 - 4:15 PM',
+          time: '3:20 - 4:00 PM',
+          title: 'Introducción a SPINQ Gemini Mini y SPINQ Triangulum y sus aplicaciones en educación e investigación',
+          speaker: 'PhD. Aurelio Arbildo Lopez,  Mg. Juan Francisco Madrid Cisneros',
+          speakerTitle: '',
+
+        },
+        {
+          time: '4:00 - 4:20 PM',
           title: 'Networking',
           description: ''
         },
         {
-          time: '4:15 - 5:45 PM',
+          time: '4:20 - 5:40 PM',
           title: 'Sesión 1 (QC): Fundamentos de la Computación Cuántica',
           description: '',
-          speaker: 'Ing. Diego Correa',
+          speaker: 'Ing. Diego Correa Núñez',
+          speakerTitle: ''
         },
         {
-          time: '5:45 - 6:30 PM',
-          title: 'Panel: Experiencias de Jóvenes investigadores latinoamericanos',
-          speaker: 'Freddy Herrera, Sebastián Rodriguez, Ricardo Mendizabal'
+          time: '5:40 - 6:30 PM',
+          title: 'Conferencia: Frontier AI Firms - Microsoft & SoftwareOne',
+          speaker: ''
         }
       ]
     },
@@ -93,52 +101,56 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
       events: [
         { 
           time: '9:30 - 10:00 AM', 
-          title: 'Recepción',
+          title: 'Recepción y Palabras de Inicio',
+          speaker: 'CEDDITEC & QUANTUMHUB PERU'
         },
         { 
-          time: '10:00 - 11:00 AM', 
+          time: '10:00 - 10:50 AM', 
           title: 'Conferencia: Convergencia entre la Inteligencia Artificial y la Computación Cuántica',
-          speaker: 'Narciso Lema',
-          speakerTitle: 'Technical Community Leader en IBM Colombia, Perú, Ecuador, Venezuela, Bolivia'
+          speaker: '',
+          speakerTitle: ''
         },
         { 
-          time: '11:05 AM - 12:35 PM', 
+          time: '10:50 AM - 12:20 PM', 
           title: 'Sesión 2 (QC): Circuitos cuánticos: donde la física se convierte en código',
-          speaker: 'Ms. Miguel Martinez',
+          speaker: 'Mg. Hebert Diaz Moraga',
+          speakerTitle: 'Estudiante de Maestría en Física Teórica, Pontificia Universidad Católica de Chile'
         }, 
         { 
-          time: '12:35 - 1:00 PM', 
+          time: '12:20 - 12:45 PM', 
           title: 'Networking',
         },
         { 
-          time: '2:00 - 3:15 PM', 
-          title: 'Sesión 1 (IA): Fronteras de la Inteligencia Artificial: multimodalidad, agentes y ética aumentada',
-          speaker: 'Eduardo Ñique & Maribel Maza',
-          speakerTitle: 'GenAI Engineer, NTT Data',
+          time: '1:45 - 2:45 PM', 
+          title: 'Conferencia: Construyendo el Ecosistema Cuántico del Perú: Logros y Visión de QuantumHub Perú',
+          speaker: '',
+          speakerTitle: '',
           description: ''
         },
         { 
-          time: '3:15 - 4:00 PM', 
-          title: 'Quantum Voice: El poder de creer en ti: de Perú a Tesla, IBM y Microsoft',
-          speaker: 'Anthonny Porlles',
-          speakerTitle: 'Data & AI Technical Specialist',
+          time: '2:45 - 3:45 PM', 
+          title: 'Presentación Académica: IA para la medición de carbono en el suelo',
+          speaker: 'Mg. Pedro Gonzales Sánchez',
+          speakerTitle: '',
           description: ''
         },
         { 
-          time: '4:00 - 4:20 PM', 
+          time: '3:45 - 4:05 PM', 
           title: 'Networking',
           description: ''
         },
         { 
-          time: '4:20 - 5:50 PM', 
+          time: '4:05 - 5:35 PM', 
           title: 'Sesión 3 (QC): Algoritmos cuánticos y el futuro del cómputo inteligente',
-          speaker: 'Lic. Sebastián Rodriguez',
+          speaker: 'Mg. Miguel Martinez',
+          speakerTitle: '',
           description: ''
         },
         { 
-          time: '5:50 - 6:30 PM', 
-          title: 'Sesión 2 (IA): IA aplicada a salud',
-          speaker: 'PhD student Pedro Rodriguez',
+          time: '5:35 - 6:30 PM', 
+          title: 'Panel: Construyendo un Ecosistema Cuántico desde Cero',
+          speaker: '',
+          speakerTitle: '',
           description: ''
         }
       ]
@@ -149,49 +161,57 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
       events: [
         { 
           time: '9:30 - 10:00 AM', 
-          title: 'Recepción',
+          title: 'Recepción y Palabras de Inicio',
           speaker: 'CEDDITEC & QUANTUMHUB PERU'
         },
         { 
-          time: '10:00 - 11:00 AM', 
+          time: '10:00 - 10:50 AM', 
           title: 'Conferencia 3: Latinoamérica como semillero científico: educación, colaboración e innovación cuántica',
-          speaker: 'Dr. César Vílchez, CIP Ex Secretario de Gobierno y Transformación Digital'
+          speaker: ''
         },
         { 
-          time: '11:05 - 12:35 AM', 
-          title: 'Sesión (IA + QC): Quantum Machine Learning: cuando la IA aprende en el dominio cuántico',
+          time: '10:50 - 11:50 AM', 
+          title: 'Presentación académica: Algoritmos variacionales en química cuántica',
           description: '',
-          speaker: 'Lic. Sebastián Rodriguez'
+          speaker: ''
         },
         { 
-          time: '12:35 AM - 1:00 PM', 
-          title: 'Networking',
+          time: '11:50 AM - 12:50 PM', 
+          title: 'Sesión 2 (IA): Arquitecturas Generativas y Agentes Inteligentes para la Innovación Empresarial',
+          speaker: 'Ing. Eduardo Salvador Ñique',
+          speakerTitle: ''
         },
         { 
-          time: '2:00 - 3:00 PM', 
+          time: '2:00 - 2:40 PM', 
           title: 'Panel Quantum Hackathon LATAM',
-          speaker: 'Concursantes de Quantum Hackathon LATAM',
-          description: ''
+          speaker: 'Kelvin Cahuana, Jose Quispe, Maria Pareja, Ariana Lopez, Mario Vilca, Paolo Flores',
+          speakerTitle: 'Concursantes de Quantum Hackathon LATAM'
         },
         { 
-          time: '3:00 - 3:45 PM', 
-          title: 'Quantum Voice',
-          speaker: 'Soleil Kamitto'
+          time: '2:40 - 3:20 PM', 
+          title: 'Quantum Voice: El poder de creer en ti y en tu historia: de Perú a Tesla, IBM y Microsoft',
+          speaker: 'Ing. Antonny Porlles',
+          speakerTitle: 'Data & AI Solutions Engineer, Microsoft'
         },
         { 
-          time: '3:45 - 4:15 PM', 
+          time: '3:20 - 3:50 PM', 
           title: 'Networking',
           description: ''
         },
         { 
-          time: '4:15 - 5:00 PM', 
-          title: 'Presentación de SpinQ',
+          time: '3:50 - 5:45 PM', 
+          title: 'Clausura y Graduación QC301: Nuevas Generaciones de Talento Cuántico',
           description: ''
         },
         { 
-          time: '5:00 - 6:00 PM', 
-          title: 'Panel Quantum Hub',
-          speaker: 'Miembros de Quantum Hub',
+          time: '5:45 - 6:15 PM', 
+          title: 'Brindis de honor y entrega de certificados a participantes',
+          speaker: '',
+        },
+        { 
+          time: '6:15 - 6:30 PM', 
+          title: 'Agradecimiento y Palabras Finales',
+          speaker: 'CEDDITEC & QUANTUMHUB PERU',
         },
         
       ]
@@ -276,12 +296,18 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
               <p className="text-quantum-purple/90 mb-3">{event.description}</p>
             )}
             {event.speaker && (
-              <p className="text-quantum-purple/90">
+              <p className="text-quantum-purple/100">
                 <span className="font-['Staatliches'] text-quantum-purple text-[1.05rem] font-medium mr-2">
-                  Ponente <ChevronRight className="inline-block w-5 h-5 ml-1 -mt-[0.25rem]" />
+                  {event.speaker}
+                  {event.speakerTitle && (
+                    <>
+                      <ChevronRight className="inline-block w-5 h-5 ml-1 -mt-[0.25rem]" />
+                      <span className="font-sans text-quantum-purple/100 text-[0.95rem] font-normal">
+                        {event.speakerTitle}
+                      </span>
+                    </>
+                  )}
                 </span>
-                {event.speaker}
-                {event.speakerTitle && `, ${event.speakerTitle}`}
               </p>
             )}
           </div>
