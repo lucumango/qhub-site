@@ -16,12 +16,14 @@
         padding: 0;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: transparent;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
       }
 
       .wrapper {
         padding: 10px;
-        height: 300px;
+        min-height: 300px;
+        height: auto; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -43,12 +45,13 @@
       }
 
       .qubit-label {
-        color: #bca0cc;  /* Updated to match the purple color */
-        font-family: 'Staatliches', system-ui, -apple-system, sans-serif; /* Added font */
-        text-shadow: 0 0 5px rgba(188, 160, 204, 0.5); /* Added subtle glow */
+        color: #bca0cc;
+        font-family: 'Staatliches', system-ui, -apple-system, sans-serif;
+        text-shadow: 0 0 5px rgba(188, 160, 204, 0.5);
+        font-size: 16px;
+        min-width: 50px;
+        flex-shrink: 0;
       }
-
-      
 
       .gate {
         position: absolute;
@@ -64,52 +67,50 @@
 
       .gate:hover .gate-rounded.active {
         transform: scale(1.1);
-        
       }
 
       .gate-rounded {
         width: 160px;
         padding: 10px 24px;
-        background: rgba(188, 160, 204, 0.3);  /* Semi-transparent purple */
-        border-radius: 16px;  /* More rounded corners */
+        background: rgba(188, 160, 204, 0.3);
+        border-radius: 16px;
         border: 2px solid transparent;
         font-size: 14px;
         font-weight: 600;
-        color: white;  /* Light purple text */
+        color: white;
         transition: all 0.3s ease;
         text-align: center;
         font-family: 'Staatliches', system-ui, -apple-system, sans-serif;
         letter-spacing: 0.5px;
-        text-transform: uppercase;  /* Uppercase text like in the image */
+        text-transform: uppercase;
+        white-space: nowrap;
       }
 
       .gate-rounded:hover {
-        background: rgba(188, 160, 204, 0.4);  /* Slightly more visible on hover */
+        background: rgba(188, 160, 204, 0.4);
         color: white;
       }
 
       .gate-rounded.active {
-        background: rgba(188, 160, 204, 0.6);  /* More solid purple */
+        background: rgba(188, 160, 204, 0.6);
         color: white;
         border: 2px solid #bca0cc;
-        box-shadow: 0 0 15px 3px rgba(188, 160, 204, 0.5);  /* Glow effect */
-         /* Text glow */
+        box-shadow: 0 0 15px 3px rgba(188, 160, 204, 0.5);
       }
 
-      /* Adjust the wire to be more subtle */
       .wire {
         flex: 1;
-        height: 1px;  /* Thinner wire */
-        background: rgba(188, 160, 204, 0.3);  /* Lighter wire */
+        height: 1px;
+        background: rgba(188, 160, 204, 0.3);
         position: relative;
         transition: all 0.3s ease;
       }
 
-      /* Make the active wire more visible */
       .qubit-row.active .wire {
         height: 2px;
         background: rgba(188, 160, 204, 0.6);
       }
+
       .gate-pos-1 {
         left: 20%;
         transform: translate(-50%, -50%);
@@ -124,6 +125,118 @@
         left: 80%;
         transform: translate(-50%, -50%);
       }
+
+      /* Tablets */
+@media (max-width: 768px) {
+  .wrapper {
+    min-height: 360px;
+  }
+
+  .circuit {
+    gap: 32px;
+  }
+  
+  .gate-rounded {
+    width: 130px;  /* ✅ Más pequeño */
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .qubit-label {
+    font-size: 14px;
+    min-width: 40px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 8px;
+    min-height: 340px;
+  }
+
+  .circuit {
+    gap: 30px;
+  }
+  
+  .gate-rounded {
+    width: 110px;  /* ✅ Reducido */
+    font-size: 11px;
+    padding: 7px 14px;
+    border-radius: 14px;
+  }
+  
+  .qubit-label {
+    font-size: 13px;
+    min-width: 38px;
+  }
+
+  .qubit-row {
+    gap: 14px;
+  }
+}
+
+/* Móviles medianos (como tu pantalla) */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 6px;
+    min-height: 210px;
+  }
+
+  .circuit {
+    gap: 28px;
+  }
+  
+  .gate-rounded {
+    width: 90px;  /* ✅ Mucho más pequeño */
+    font-size: 10px;
+    padding: 6px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.2px;
+  }
+  
+  .qubit-label {
+    font-size: 12px;
+    min-width: 35px;
+  }
+
+  .qubit-row {
+    gap: 12px;
+  }
+}
+
+
+/* iPhone SE y pantallas muy pequeñas */
+@media (max-width: 375px) {
+  .wrapper {
+    padding: 3px;
+    min-height: 200px;
+  }
+
+  .circuit {
+    gap: 22px;
+  }
+  
+  .gate-rounded {
+    width: 70px;  /* ✅ Súper pequeño */
+    font-size: 8px;
+    padding: 4px 6px;
+    border-radius: 8px;
+  }
+  
+  .qubit-label {
+    font-size: 10px;
+    min-width: 28px;
+  }
+
+  .qubit-row {
+    gap: 8px;
+  }
+}
+
+     
+
+      
     </style>
   </head>
 
@@ -164,24 +277,20 @@
 
     <script>
       function selectDay(day) {
-        // Remove active class from all gates
         document.querySelectorAll('.gate-rounded, .qubit-row').forEach(gate => {
           gate.classList.remove('active');
         });
         
-        // Add active class to selected gate
         const activeGate = document.getElementById('gate-' + day);
         activeGate.classList.add('active');
         activeGate.closest('.qubit-row').classList.add('active');
         
-        // Emit event to parent React component
         window.parent.postMessage({ 
           type: 'daySelected', 
           day: day 
         }, '*');
       }
 
-      // Listen for messages from parent React component
       window.addEventListener('message', function(event) {
         if (event.data.type === 'updateSelectedDay') {
           selectDay(event.data.day);

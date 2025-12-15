@@ -46,16 +46,25 @@ const QuantumScheduleWithCircuit: React.FC = () => {
     <div className="w-full p-3 sm:p-4" style={{ backgroundColor: '#35022d' }}> {/* Reduced padding */}
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col gap-1"> {/* Reduced gap */}
-          <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 font-['Staatliches'] text-white mt-0 sm:mt-2"> {/* Reduced margins */}
+          <h1 className="text-center text-3xl  font-bold font-['Staatliches'] text-white"> {/* Reduced margins */}
             CRONOGRAMA DEL EVENTO
           </h1>
           {/* Top - Circuit */}
-          <div className="w-full aspect-video max-h-[300px]">
+          <div className="w-full 
+            h-[200px]      // Móvil (default)
+            xs:h-[260px]   // ~400px-639px
+            sm:h-[280px]   // 640px-767px
+            md:h-[300px]   // 768px-1023px
+            lg:h-[300px]   // 1024px-1279px
+            xl:h-[300px]   // 1280px-1535px
+            2xl:h-[300px]  // 1536px+
+            overflow-hidden"
+          >
             <iframe
               ref={iframeRef}
               title="Quantum Circuit Schedule"
               src="/qjs/schedule-circuit.html"
-              className="w-full h-full border-0"
+              className="w-full min-h-[280px]"
               style={{
                 backgroundColor: "transparent",
               }}
@@ -63,7 +72,7 @@ const QuantumScheduleWithCircuit: React.FC = () => {
           </div>
         </div>
         {/* Bottom - Schedule */}
-        <div className="bg-transparent mt-0"> {/* Removed margin top */}
+        <div className="bg-transparent "> {/* Removed margin top */}
           <QuantumSchedule selectedDay={selectedDay} onDayChange={setSelectedDay} />
         </div>
       </div>
