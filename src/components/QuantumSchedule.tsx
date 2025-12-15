@@ -184,8 +184,8 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
         { 
           time: '2:00 - 2:40 PM', 
           title: 'Panel Quantum Hackathon LATAM',
-          speaker: 'Kelvin Cahuana, Jose Quispe, Maria Pareja, Ariana Lopez, Mario Vilca, Paolo Flores',
-          speakerTitle: 'Concursantes de Quantum Hackathon LATAM'
+          speaker: 'Ariana Lopez, Kelvin Cahuana, Jose Quispe, Maria Pareja, Mario Vilca, Paolo Flores',
+          speakerTitle: 'Concursantes de la Quantum Hackathon LATAM'
         },
         { 
           time: '2:40 - 3:20 PM', 
@@ -223,38 +223,28 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
   return (
     <div className="w-full bg-transparent p-4 min-h-[700px]">
       {/* Day Tabs */}
-      <div className="flex gap-2 mb-8 flex-wrap">
-        <button
-          onClick={() => handleDayChange('viernes')}
-          className={`px-8 py-2 rounded-2xl font-bold transition-all duration-300 ${
-            selectedDay === 'viernes'
-            ? 'bg-[#bca0cc]/60 text-white shadow-[0_0_15px_3px_rgba(188,160,204,0.8)] border-2 border-[#bca0cc]'
-            : 'bg-[#bca0cc]/30 text-[#bca0cc] hover:bg-[#bca0cc]/40 border-2 border-transparent'
-          }`}
-        >
-          Viernes 19
-        </button>
-        <button
-          onClick={() => handleDayChange('sabado')}
-          className={`px-8 py-2 rounded-2xl font-bold transition-all duration-300 ${
-            selectedDay === 'sabado'
-              ? 'bg-[#bca0cc]/60 text-white shadow-[0_0_15px_3px_rgba(188,160,204,0.8)] border-2 border-[#bca0cc]'
-              : 'bg-[#bca0cc]/30 text-[#bca0cc] hover:bg-[#bca0cc]/40 border-2 border-transparent'
-          }`}
-        >
-          Sábado 20
-        </button>
-        <button
-          onClick={() => handleDayChange('domingo')}
-          className={`px-8 py-2 rounded-2xl font-bold transition-all duration-300 ${
-            selectedDay === 'domingo'
-              ? 'bg-[#bca0cc]/60 text-white shadow-[0_0_15px_3px_rgba(188,160,204,0.8)] border-2 border-[#bca0cc]'
-              : 'bg-[#bca0cc]/30 text-[#bca0cc] hover:bg-[#bca0cc]/40 border-2 border-transparent'
-          }`}
-        >
-          Domingo 21
-        </button>
-      </div>
+      <div className="flex flex-wrap gap-2 mb-8 justify-center sm:justify-start">
+  {['viernes', 'sabado', 'domingo'].map((day) => (
+    <button
+      key={day}
+      onClick={() => handleDayChange(day as DayKey)}
+      className={`
+        px-3 sm:px-4 md:px-7 py-2
+        rounded-2xl font-bold 
+        transition-all duration-300 
+        text-sm sm:text-base
+        w-auto max-w-[120px] sm:max-w-none
+        ${selectedDay === day
+          ? 'bg-[#bca0cc]/60 text-white shadow-[0_0_15px_3px_rgba(188,160,204,0.8)] border-2 border-[#bca0cc]'
+          : 'bg-[#bca0cc]/30 text-[#bca0cc] hover:bg-[#bca0cc]/40 border-2 border-transparent'
+        }`}
+    >
+      {day === 'viernes' && 'Viernes 19'}
+      {day === 'sabado' && 'Sábado 20'}
+      {day === 'domingo' && 'Domingo 21'}
+    </button>
+  ))}
+</div>
 
       {/* Date Header */}
       <div className="mb-6">
@@ -297,18 +287,18 @@ const QuantumSchedule: React.FC<{ selectedDay?: DayKey; onDayChange?: (day: DayK
             )}
             {event.speaker && (
               <p className="text-quantum-purple/100">
-                <span className="font-['Staatliches'] text-quantum-purple text-[1.05rem] font-medium mr-2">
-                  {event.speaker}
-                  {event.speakerTitle && (
-                    <>
-                      <ChevronRight className="inline-block w-5 h-5 ml-1 -mt-[0.25rem]" />
-                      <span className="font-sans text-quantum-purple/100 text-[0.95rem] font-normal">
-                        {event.speakerTitle}
-                      </span>
-                    </>
-                  )}
-                </span>
-              </p>
+  <div className="font-['Staatliches'] text-quantum-purple text-[1.05rem] font-medium">
+    {event.speaker}
+  </div>
+  {event.speakerTitle && (
+    <div className="flex items-start mt-1">
+      <ChevronRight className="inline-block w-5 h-5 text-quantum-purple/80 mt-0.5" />
+      <span className="font-sans text-quantum-purple/100 text-[0.95rem] font-normal ml-1">
+        {event.speakerTitle}
+      </span>
+    </div>
+  )}
+</p>
             )}
           </div>
         </CardContent>
