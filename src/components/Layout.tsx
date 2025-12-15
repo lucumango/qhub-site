@@ -63,7 +63,7 @@ const Layout = ({ children }: LayoutProps) => {
               
               <Button 
                 asChild
-                className="font-['Staatliches'] text-base bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white  w-full transition-all duration-300"
+                className="font-['Staatliches'] text-base bg-gradient-to-r from-[#e258d4] to-[#e76745] hover:from-[#e258d4] hover:to-[#e76745]  text-white  w-full transition-all duration-300"
               >
                 <Link to="/quantumaisummit" onClick={() => setIsMenuOpen(false)}>
                   QUANTUM AI SUMMIT
@@ -110,7 +110,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <div className="px-3 py-2">
                   <Button 
                     asChild
-                    className="font-['Staatliches'] text-base bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white  w-full transition-all duration-300"
+                    className="font-['Staatliches'] text-base bg-gradient-to-r from-[#e258d4] to-[#e76745] hover:from-[#e258d4] to-[#e76745] text-white  w-full transition-all duration-300"
                   >
                     <Link to="/quantumaisummit" onClick={() => setIsMenuOpen(false)}>
                       QUANTUM AI SUMMIT
