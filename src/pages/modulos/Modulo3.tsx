@@ -162,7 +162,7 @@ export function Modulo3() {
                                 </li>
                             </ul>
                             <p className="font-arimo text-lg md:text-xl text-foreground leading-relaxed">
-                              Este módulo te guiará desde los números complejos <Latex tex="z=a+bi" /> —la clave para describir cómo es un estado cuántico (el famoso qubit)— hasta las matrices —la herramienta matemática que explica cómo estos estados cambian y evolucionan a través de las operaciones cuánticas (compuertas). Descubrirás que cada símbolo tiene un significado físico claro y directo, preparándote para construir tus primeros circuitos cuánticos.
+                              Este módulo te guiará desde los números complejos <Latex tex="z=a+bi" />, la clave para describir cómo es un estado cuántico (el famoso qubit), hasta las matrices, la herramienta matemática que explica cómo estos estados cambian y evolucionan a través de las operaciones cuánticas (compuertas). Descubrirás que cada símbolo tiene un significado físico claro y directo, preparándote para construir tus primeros circuitos cuánticos.
                             </p>
                             <p className="font-arimo text-lg md:text-xl text-foreground leading-relaxed pt-4">
                                 ¡Vamos a aprender a hablar cuántico!
