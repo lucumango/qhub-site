@@ -235,7 +235,7 @@ const ConceptClassification: React.FC<ConceptClassificationProps> = () => {
             {["classical", "quantum"].map((boxType) => (
               <motion.div
                 key={boxType}
-                className={`flex-1 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 rounded-2xl border-2 transition-all duration-300 shadow-2xl min-h-[220px] ${
+                className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-6 rounded-2xl border-2 transition-all duration-300 shadow-2xl min-h-[180px] ${
                   dragOverBox === boxType
                     ? boxType === "classical"
                       ? "border-quantum-dark-blue bg-quantum-dark-blue/20 shadow-quantum-dark-blue/30"
@@ -303,7 +303,7 @@ const ConceptClassification: React.FC<ConceptClassificationProps> = () => {
                     </span>
                   )}
                 </h3>
-                <div className="space-y-3 min-h-[80px]">
+                <div className="space-y-3 min-h-[80px] max-h-[300px] overflow-y-auto">
                   <AnimatePresence mode="popLayout">
                     {Object.entries(draggedItems)
                       .filter(([_, target]) => target === boxType)
@@ -388,90 +388,125 @@ const ConceptClassification: React.FC<ConceptClassificationProps> = () => {
           </div>
         </div>
 
-        {/* mensaje de exito */}
-        {allItemsPlaced && (
-          <motion.div
-            className="mt-8 p-8 bg-gradient-to-r from-green-500/20 to-quantum-purple/20 border-2 border-green-500/50 rounded-2xl shadow-2xl"
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-          >
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="flex-shrink-0"
-              >
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-quantum-orange shadow-2xl">
-                  <img
-                    src="/mascota/schrodi-flying.png"
-                    alt="Schrödi celebrando"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Mensaje de felicitación */}
-              <div className="flex-1 text-center md:text-left">
-                <motion.h3
-                  className="text-3xl md:text-4xl font-staatliches text-green-400 mb-3"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 0.6, delay: 0.2, repeat: Infinity, repeatDelay: 2 }}
-                >
-                  ¡Felicidades, Explorador cuántico! 🎉
-                </motion.h3>
-                <p className="text-lg text-black font-arimo font-medium mb-4">
-                  ¡Miau-ravilloso! Has clasificado todos los conceptos correctamente.
-                  Estás listo para seguir explorando los misterios del universo cuántico.
-                  ¡Sigue así! ✨
-                </p>
+        {/* mensaje de resultado final */}
+        {allItemsPlaced && (() => {
+          const feedbackValues = Object.values(feedback);
+          const allCorrect = feedbackValues.length > 0 && feedbackValues.every(v => v === true);
+          const correctCount = feedbackValues.filter(v => v === true).length;
+          const totalCount = feedbackValues.length;
+          
+          return (
+            <motion.div
+              className={`mt-8 p-8 border-2 rounded-2xl shadow-2xl ${
+                allCorrect 
+                  ? "bg-gradient-to-r from-green-500/20 to-quantum-purple/20 border-green-500/50"
+                  : "bg-gradient-to-r from-orange-500/20 to-red-500/20 border-orange-500/50"
+              }`}
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
+            >
+              <div className="flex flex-col md:flex-row items-center gap-6">
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    onClick={resetPuzzle}
-                    className="bg-quantum-purple hover:bg-quantum-purple/80 text-white font-staatliches text-lg px-6 py-3"
-                  >
-                    <RotateCcw className="w-5 h-5 mr-2" />
-                    Jugar de Nuevo
-                  </Button>
-                </motion.div>
-              </div>
-
-              {[...Array(15)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-3 h-3 bg-quantum-orange rounded-full"
-                  initial={{
-                    opacity: 0,
-                    x: "50%",
-                    y: "50%",
-                  }}
-                  animate={{
-                    opacity: [0, 1, 0],
-                    x: `${50 + Math.random() * 100 - 50}%`,
-                    y: `${50 + Math.random() * 100 - 50}%`,
-                    scale: [0, 2, 0],
+                  animate={allCorrect ? {
+                    y: [0, -20, 0],
+                    rotate: [0, 5, -5, 0],
+                  } : {
+                    rotate: [0, -5, 5, 0],
                   }}
                   transition={{
                     duration: 2,
-                    delay: i * 0.1,
                     repeat: Infinity,
-                    repeatDelay: 1,
+                    ease: "easeInOut",
                   }}
-                />
-              ))}
-            </div>
-          </motion.div>
-        )}
+                  className="flex-shrink-0"
+                >
+                  <div className={`w-32 h-32 rounded-full overflow-hidden border-4 shadow-2xl ${
+                    allCorrect ? "border-quantum-orange" : "border-orange-400"
+                  }`}>
+                    <img
+                      src={allCorrect ? "/mascota/schrodi-flying.png" : "/mascota/schrodi-reading.png"}
+                      alt={allCorrect ? "Schrödi celebrando" : "Schrödi pensando"}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </motion.div>
+
+                <div className="flex-1 text-center md:text-left">
+                  {allCorrect ? (
+                    <>
+                      <motion.h3
+                        className="text-3xl md:text-4xl font-staatliches text-green-400 mb-3"
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 0.6, delay: 0.2, repeat: Infinity, repeatDelay: 2 }}
+                      >
+                        ¡Felicidades, Explorador cuántico! 🎉
+                      </motion.h3>
+                      <p className="text-lg text-black font-arimo font-medium mb-4">
+                        ¡Miau-ravilloso! Has clasificado todos los conceptos correctamente.
+                        Estás listo para seguir explorando los misterios del universo cuántico.
+                        ¡Sigue así! ✨
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <motion.h3
+                        className="text-3xl md:text-4xl font-staatliches text-orange-400 mb-3"
+                      >
+                        ¡Casi lo logras!  
+                      </motion.h3>
+                      <p className="text-lg text-black font-arimo font-medium mb-4">
+                        Acertaste {correctCount} de {totalCount} conceptos. 
+                        ¡No te preocupes! Revisa los conceptos marcados en rojo y vuelve a intentarlo.
+                        Puedes usar el botón de reinicio en cada concepto para moverlo de nuevo. 💪
+                      </p>
+                    </>
+                  )}
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button
+                      onClick={resetPuzzle}
+                      className={`${
+                        allCorrect 
+                          ? "bg-quantum-purple hover:bg-quantum-purple/80" 
+                          : "bg-orange-500 hover:bg-orange-600"
+                      } text-white font-staatliches text-lg px-6 py-3`}
+                    >
+                      <RotateCcw className="w-5 h-5 mr-2" />
+                      {allCorrect ? "Jugar de Nuevo" : "Intentar de Nuevo"}
+                    </Button>
+                  </motion.div>
+                </div>
+
+                {allCorrect && [...Array(15)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-3 h-3 bg-quantum-orange rounded-full pointer-events-none"
+                    initial={{
+                      opacity: 0,
+                      x: "50%",
+                      y: "50%",
+                    }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                      x: `${50 + Math.random() * 100 - 50}%`,
+                      y: `${50 + Math.random() * 100 - 50}%`,
+                      scale: [0, 2, 0],
+                    }}
+                    transition={{
+                      duration: 2,
+                      delay: i * 0.1,
+                      repeat: Infinity,
+                      repeatDelay: 1,
+                    }}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          );
+        })()}
       </div>
     </div>
   );
