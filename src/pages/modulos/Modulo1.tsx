@@ -499,14 +499,12 @@ export function Modulo1() {
                       <p className="text-lg font-arimo">
                         Superposición:{" "}
                         <span className="text-quantum-orange font-bold">
-                          {Math.round(
-                            (Math.sin((qubitRotation * Math.PI) / 180) + 1) * 50
-                          )}
-                          % |0⟩ +{" "}
-                          {Math.round(
-                            (Math.cos((qubitRotation * Math.PI) / 180) + 1) * 50
-                          )}
-                          % |1⟩
+                          {(() => {
+                            const prob0 = Math.round(
+                              Math.pow(Math.cos((qubitRotation * Math.PI) / 360), 2) * 100
+                            );
+                            return `${prob0}% |0⟩ + ${100 - prob0}% |1⟩`;
+                          })()}
                         </span>
                       </p>
                     </div>

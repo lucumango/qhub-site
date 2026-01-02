@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useState, useRef, useMemo } from "react";
+import React, { useLayoutEffect, useEffect, useState, useRef, useMemo, useCallback } from "react";
 import Sidebar from "@/components/Sidebar";
 import { Latex } from '@/components/MathRenderer';
 import PolarComplexPlane from "@/data/PolarComplexPlane";
@@ -204,13 +204,21 @@ export function Modulo3() {
                     {/* 1. DIAGRAMA SIMULADO: Eje Real */}
                 <div className="flex justify-center my-6">
                     <div className="relative w-full max-w-sm h-12 flex items-center justify-center">
-                        <div className="w-full h-1 bg-muted-foreground/50"></div>
-                        <div className="absolute top-0 w-full flex justify-between px-2 text-sm text-foreground/70">
-                            <span><Latex tex="-5" /></span>
-                            <span>0</span>
-                            <span><Latex tex="1" /></span>
+                        <div className="relative w-full flex items-center">
+                          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[8px] border-r-muted-foreground/50"></div>
+                          <div className="flex-1 h-[2px] bg-muted-foreground/50"></div>
+                          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-muted-foreground/50"></div>
                         </div>
-                        <div className="absolute bottom-0 text-xs font-staatliches text-primary">
+                        <div className="absolute top-0 left-[15%] text-sm text-foreground/70">
+                            <Latex tex="-5" />
+                        </div>
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 text-sm text-foreground/70">
+                            0
+                        </div>
+                        <div className="absolute top-0 right-[25%] text-sm text-foreground/70">
+                            <Latex tex="1" />
+                        </div>
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-xs font-staatliches text-primary">
                             EJE REAL
                         </div>
                     </div>
@@ -594,16 +602,30 @@ function ComplexPlane() {
   const { r, theta } = useMemo(() => toPolar(z), [z]);
 
   // arrastre
-  const onPointer = (e: React.PointerEvent<SVGCircleElement>) => {
+  const updatePosition = useCallback((clientX: number, clientY: number) => {
     if (!svgRef.current) return;
     const rect = svgRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left - axis) / scale;
-    const y = -(e.clientY - rect.top - axis) / scale;
-    // acotar a disco de radio 1.4 por estética
+    const x = (clientX - rect.left - axis) / scale;
+    const y = -(clientY - rect.top - axis) / scale;
     const r = Math.hypot(x, y);
-    const cap = 1.4;
+    const cap = 1.0;
     const k = r > cap ? cap / r : 1;
     setZ({ re: x * k, im: y * k });
+  }, [axis, scale]);
+
+  const onPointerDown = (e: React.PointerEvent<SVGCircleElement>) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    updatePosition(e.clientX, e.clientY);
+  };
+
+  const onPointerMove = (e: React.PointerEvent<SVGCircleElement>) => {
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      updatePosition(e.clientX, e.clientY);
+    }
+  };
+
+  const onPointerUp = (e: React.PointerEvent<SVGCircleElement>) => {
+    e.currentTarget.releasePointerCapture(e.pointerId);
   };
 
   const setPhase = (theta: number) => {
@@ -696,8 +718,11 @@ function ComplexPlane() {
               r={8}
               fill="#f59e0b"
               className="cursor-grab active:cursor-grabbing"
-              onPointerDown={onPointer}
-              onPointerMove={(e) => e.buttons === 1 && onPointer(e)}
+              style={{ touchAction: 'none' }}
+              onPointerDown={onPointerDown}
+              onPointerMove={onPointerMove}
+              onPointerUp={onPointerUp}
+              onPointerCancel={onPointerUp}
             />
           </svg>
 
@@ -763,7 +788,7 @@ function ComplexControls() {
       <div>
         <div className="flex items-center justify-between mb-2">
           <div className="text-sm text-quantum-orange font-semibold">Control de Fase (<Latex tex="\\ \theta" />)</div>
-          <div className="text-sm font-mono text-foreground">{(theta * 180 / Math.PI).toFixed(1)}°</div>
+          <div className="text-sm text-foreground">{(theta * 180 / Math.PI).toFixed(1)}°</div>
         </div>
         <input
           type="range"
@@ -841,9 +866,14 @@ function MatrixPlayground() {
                     <input
                       key={`${r}${c}`}
                       type="number"
-                      step="any"
+                      step="0.1"
+                      min="-10"
+                      max="10"
                       value={M[r as 0 | 1][c as 0 | 1]}
-                      onChange={(e) => setCell(r as 0 | 1, c as 0 | 1, Number(e.target.value))}
+                      onChange={(e) => {
+                        const val = Math.max(-10, Math.min(10, Number(e.target.value) || 0));
+                        setCell(r as 0 | 1, c as 0 | 1, val);
+                      }}
                       className="w-20 px-2 py-1 border rounded"
                     />
                   ))
@@ -861,11 +891,14 @@ function MatrixPlayground() {
                   <input
                     key={`v${r}`}
                     type="number"
-                    step="any"
+                    step="0.1"
+                    min="-10"
+                    max="10"
                     value={v[r as 0 | 1]}
                     onChange={(e) => {
+                      const val = Math.max(-10, Math.min(10, Number(e.target.value) || 0));
                       const nv: Vec2 = [...v] as Vec2;
-                      nv[r as 0 | 1] = Number(e.target.value);
+                      nv[r as 0 | 1] = val;
                       setV(nv);
                     }}
                     className="w-20 px-2 py-1 border rounded"
@@ -950,7 +983,7 @@ function MatrixToBloch({ out }: { out: Vec2 }) {
         <line x1={c} y1={c} x2={c + r * Math.cos(angle)} y2={c - r * Math.sin(angle)} stroke="#a855f7" strokeWidth={2} />
         <circle cx={c + r * Math.cos(angle)} cy={c - r * Math.sin(angle)} r={6} fill="#f59e0b" />
       </svg>
-      <div className="text-sm mt-2 font-mono">ángulo ≈ {(angle * 180 / Math.PI).toFixed(1)}°</div>
+      <div className="text-sm mt-2"><Latex tex={`\\theta \\approx ${(angle * 180 / Math.PI).toFixed(1)}^\\circ`} /></div>
     </div>
   );
 }

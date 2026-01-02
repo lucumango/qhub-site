@@ -41,7 +41,7 @@ const PolarComplexPlane = () => {
         ></div>
         
         <div className="absolute w-full h-px bg-gray-700 top-1/2"></div>
-        <div className="absolute right-[-20px] top-1/2 transform -translate-y-1/2 translate-x-1 text-blue-700 font-semibold text-sm">Eje real</div>
+        <div className="absolute right-[-60px] top-1/2 transform -translate-y-1/2 text-blue-700 font-semibold text-sm">Eje real</div>
         
         <div className="absolute h-full w-px bg-gray-700 left-1/2"></div>
         <div className="absolute bottom-[10px] left-[10px] text-blue-700 font-semibold text-sm">
@@ -68,18 +68,22 @@ const PolarComplexPlane = () => {
           }}
         ></div>
 
-        <div
-          className="absolute border border-black rounded-full"
+        <svg 
+          className="absolute"
           style={{
-            left: `calc(50% - ${arcRadius}px)`, 
-            top: `calc(50% - ${arcRadius}px)`, 
+            left: `calc(50% - ${arcRadius}px)`,
+            top: `calc(50% - ${arcRadius}px)`,
             width: `${arcSize}px`,
             height: `${arcSize}px`,
-            clipPath: 'polygon(50% 50%, 100% 50%, 100% 0%, 50% 0%)', 
-            border: '1px solid black',
-            // backgroundColor: 'rgba(0, 0, 0, 0.05)',
           }}
-        ></div>
+        >
+          <path
+            d={`M ${arcSize} ${arcRadius} A ${arcRadius} ${arcRadius} 0 0 0 ${arcRadius + arcRadius * Math.cos(angleRad)} ${arcRadius - arcRadius * Math.sin(angleRad)}`}
+            fill="none"
+            stroke="black"
+            strokeWidth="1"
+          />
+        </svg>
 
         <span 
           className="absolute text-sm font-bold text-red-600"

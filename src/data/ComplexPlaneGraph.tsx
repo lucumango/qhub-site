@@ -12,7 +12,7 @@ const ComplexPlaneGraph = () => {
       <div className="relative w-64 h-64">
 
         <div className="absolute w-full h-px bg-gray-700 top-1/2"></div>
-        <div className="absolute right-[-20px] top-1/2 transform -translate-y-1/2 translate-x-1 text-blue-700 font-semibold text-sm">
+        <div className="absolute right-[-60px] top-1/2 transform -translate-y-1/2 text-blue-700 font-semibold text-sm">
           Eje real
         </div>
         <div className="absolute h-full w-px bg-gray-700 left-1/2"></div>
