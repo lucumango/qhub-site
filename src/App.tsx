@@ -17,6 +17,7 @@ import Aprendizaje from "./pages/Aprendizaje";
 import React, { Suspense, lazy } from "react";
 import Modulo4 from "./pages/modulos/Modulo4";
 import QuantumAISummit from "./pages/QuantumAISummit";
+import AuthPage from "./pages/AuthPage";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
             {/* <Route path="/noticias" element={<Noticias />} /> */}
             <Route path="/postulacion" element={<Postulacion />} />
             <Route path="/aprendizaje" element={<Aprendizaje />} />
+            <Route path="/login" element={<AuthPage />} />
 
             {routes.map(({ path, component: Component }) => (
               <Route
